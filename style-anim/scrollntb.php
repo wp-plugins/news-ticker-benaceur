@@ -1,6 +1,6 @@
 
 				  <div class="n_t_ntb_b"><div class="n_t_ntb_b2">
-       <span class="n_t_ntb_b-name">آخر المواضيع</span>
+       <span class="n_t_ntb_b-name">Latest posts</span>
         <div id="scroll-ntb">
          <div>
 			      	<?php if ( $lp->have_posts() ) : ?>
@@ -34,12 +34,12 @@
 		font-weight:<?php echo $ntb_font_weight ;?>;
 		background:<?php if (!empty($ntb_color_back)) { echo $ntb_color_back; } else {echo "#FFFFFF";}  ?>;
 	    border-top:<?php if (!empty($ntb_border_top)) { echo $ntb_border_top; } else {echo "0";} ?>px solid <?php if (!empty($ntb_color_border)) { echo $ntb_color_border; } else {echo "#CE1031";} ?>;
-    	border-bottom:<?php if (!empty($ntb_border_bottom)) { echo $ntb_border_bottom; } elseif ($ntb_border_bottom == '0') {echo "0";} else {echo "2";} ?>px solid <?php if (!empty($ntb_color_border)) { echo $ntb_color_border; } else {echo "#CE1031";} ?>;
+    	border-bottom:<?php if (!empty($ntb_border_bottom)) { echo $ntb_border_bottom; } else {echo "2";} ?>px solid <?php if (!empty($ntb_color_border)) { echo $ntb_color_border; } else {echo "#CE1031";} ?>;
     	border-right:<?php if (!empty($ntb_border_right)) { echo $ntb_border_right; } else {echo "0";} ?>px solid <?php if (!empty($ntb_color_border)) { echo $ntb_color_border; } else {echo "#CE1031";} ?>;
     	border-left:<?php if (!empty($ntb_border_left)) { echo $ntb_border_left; } else {echo "0";} ?>px solid <?php if (!empty($ntb_color_border)) { echo $ntb_color_border; } else {echo "#CE1031";} ?>;
-    	border-radius:<?php if (!empty($ntb_border_radius)) { echo $ntb_border_radius; } elseif ($ntb_border_radius == '0') {echo "0";} else {echo "1";} ?>px;
-    	-moz-border-radius:<?php if (!empty($ntb_border_radius)) { echo $ntb_border_radius; } elseif ($ntb_border_radius == '0') {echo "0";} else {echo "1";} ?>px;
-    	-webkit-border-radius:<?php if (!empty($ntb_border_radius)) { echo $ntb_border_radius; } elseif ($ntb_border_radius == '0') {echo "0";} else {echo "1";} ?>px;
+    	border-radius:<?php if (!empty($ntb_border_radius)) { echo $ntb_border_radius; } else {echo "1";} ?>px;
+    	-moz-border-radius:<?php if (!empty($ntb_border_radius)) { echo $ntb_border_radius; } else {echo "1";} ?>px;
+    	-webkit-border-radius:<?php if (!empty($ntb_border_radius)) { echo $ntb_border_radius; } else {echo "1";} ?>px;
     	box-shadow:<?php echo $ntb_box_shadow; ?> <?php if (!empty($ntb_box_shadow_v)) { echo $ntb_box_shadow_v; } else {echo "0";} ?>px <?php if (!empty($ntb_box_shadow_color)) { echo $ntb_box_shadow_color; } else {echo "#B5B5B5";} ?>;
     	-moz-box-shadow:<?php echo $ntb_box_shadow; ?> <?php if (!empty($ntb_box_shadow_v)) { echo $ntb_box_shadow_v; } else {echo "0";} ?>px <?php if (!empty($ntb_box_shadow_color)) { echo $ntb_box_shadow_color; } else {echo "#B5B5B5";} ?>;
     	-webkit-box-shadow:<?php echo $ntb_box_shadow; ?> <?php if (!empty($ntb_box_shadow_v)) { echo $ntb_box_shadow_v; } else {echo "0";} ?>px <?php if (!empty($ntb_box_shadow_color)) { echo $ntb_box_shadow_color; } else {echo "#B5B5B5";} ?>;
@@ -47,7 +47,7 @@
 		width:<?php if (!empty($ntb_width)) { echo $ntb_width; } else {echo "100%";} ?>;
 		height:28px;
     	margin-top:<?php if (!empty($ntb_margin_top)) { echo $ntb_margin_top; } else {echo "0";} ?>px;
-    	margin-bottom:<?php if (!empty($ntb_margin_bottom)) { echo $ntb_margin_bottom; } elseif ($ntb_margin_bottom == '0') {echo "0";} else {echo "25";} ?>px;
+    	margin-bottom:<?php if (!empty($ntb_margin_bottom)) { echo $ntb_margin_bottom; } else {echo "25";} ?>px;
     	opacity:<?php if (!empty($ntb_opacity)) { echo $ntb_opacity; } else {echo "1";} ?>;
 		overflow:hidden;
 		position:relative;	
@@ -100,12 +100,12 @@
 		font-weight:<?php echo $ntb_font_weight ;?>;
 		background:<?php if (!empty($ntb_color_back)) { echo $ntb_color_back; } else {echo "#FFFFFF";}  ?>;
 	    border-top:<?php if (!empty($ntb_border_top)) { echo $ntb_border_top; } else {echo "0";} ?>px solid <?php if (!empty($ntb_color_border)) { echo $ntb_color_border; } else {echo "#CE1031";} ?>;
-    	border-bottom:<?php if (!empty($ntb_border_bottom)) { echo $ntb_border_bottom; } elseif ($ntb_border_bottom == '0') {echo "0";} else {echo "2";} ?>px solid <?php if (!empty($ntb_color_border)) { echo $ntb_color_border; } else {echo "#CE1031";} ?>;
+    	border-bottom:<?php if (!empty($ntb_border_bottom)) { echo $ntb_border_bottom; } else {echo "2";} ?>px solid <?php if (!empty($ntb_color_border)) { echo $ntb_color_border; } else {echo "#CE1031";} ?>;
     	border-right:<?php if (!empty($ntb_border_right)) { echo $ntb_border_right; } else {echo "0";} ?>px solid <?php if (!empty($ntb_color_border)) { echo $ntb_color_border; } else {echo "#CE1031";} ?>;
     	border-left:<?php if (!empty($ntb_border_left)) { echo $ntb_border_left; } else {echo "0";} ?>px solid <?php if (!empty($ntb_color_border)) { echo $ntb_color_border; } else {echo "#CE1031";} ?>;
-    	border-radius:<?php if (!empty($ntb_border_radius)) { echo $ntb_border_radius; } elseif ($ntb_border_radius == '0') {echo "0";} else {echo "1";} ?>px;
-    	-moz-border-radius:<?php if (!empty($ntb_border_radius)) { echo $ntb_border_radius; } elseif ($ntb_border_radius == '0') {echo "0";} else {echo "1";} ?>px;
-    	-webkit-border-radius:<?php if (!empty($ntb_border_radius)) { echo $ntb_border_radius; } elseif ($ntb_border_radius == '0') {echo "0";} else {echo "1";} ?>px;
+    	border-radius:<?php if (!empty($ntb_border_radius)) { echo $ntb_border_radius; } else {echo "1";} ?>px;
+    	-moz-border-radius:<?php if (!empty($ntb_border_radius)) { echo $ntb_border_radius; } else {echo "1";} ?>px;
+    	-webkit-border-radius:<?php if (!empty($ntb_border_radius)) { echo $ntb_border_radius; } else {echo "1";} ?>px;
     	box-shadow:<?php echo $ntb_box_shadow; ?> <?php if (!empty($ntb_box_shadow_v)) { echo $ntb_box_shadow_v; } else {echo "0";} ?>px <?php if (!empty($ntb_box_shadow_color)) { echo $ntb_box_shadow_color; } else {echo "#B5B5B5";} ?>;
     	-moz-box-shadow:<?php echo $ntb_box_shadow; ?> <?php if (!empty($ntb_box_shadow_v)) { echo $ntb_box_shadow_v; } else {echo "0";} ?>px <?php if (!empty($ntb_box_shadow_color)) { echo $ntb_box_shadow_color; } else {echo "#B5B5B5";} ?>;
     	-webkit-box-shadow:<?php echo $ntb_box_shadow; ?> <?php if (!empty($ntb_box_shadow_v)) { echo $ntb_box_shadow_v; } else {echo "0";} ?>px <?php if (!empty($ntb_box_shadow_color)) { echo $ntb_box_shadow_color; } else {echo "#B5B5B5";} ?>;
@@ -113,7 +113,7 @@
 		width:<?php if (!empty($ntb_width)) { echo $ntb_width; } else {echo "100%";} ?>;
 		height:28px;
     	margin-top:<?php if (!empty($ntb_margin_top)) { echo $ntb_margin_top; } else {echo "0";} ?>px;
-    	margin-bottom:<?php if (!empty($ntb_margin_bottom)) { echo $ntb_margin_bottom; } elseif ($ntb_margin_bottom == '0') {echo "0";} else {echo "25";} ?>px;
+    	margin-bottom:<?php if (!empty($ntb_margin_bottom)) { echo $ntb_margin_bottom; } else {echo "25";} ?>px;
     	opacity:<?php if (!empty($ntb_opacity)) { echo $ntb_opacity; } else {echo "1";} ?>;
 		overflow:hidden;
 		position:relative;	

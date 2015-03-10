@@ -249,7 +249,7 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" id="news-ticker-benaceur-txtclr_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_border_bottom)) { echo $ntb_border_bottom; } elseif ($ntb_border_bottom == '0') {echo "0";} else {echo "2";} ?>" name="news_ticker_benaceur_border_bottom" />
+								<input type="text" id="news-ticker-benaceur-txtclr_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_border_bottom)) { echo $ntb_border_bottom; } else {echo "2";} ?>" name="news_ticker_benaceur_border_bottom" />
 							</div></div>
 						</td>
 						<div class="colwrap-display"><td><?php _e("border bottom",'news-ticker-benaceur'); ?> </td></div></br>
@@ -273,7 +273,7 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" id="news-ticker-benaceur-txtclr_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_border_radius)) { echo $ntb_border_radius; } elseif ($ntb_border_radius == '0') {echo "0";} else {echo "1";} ?>" name="news_ticker_benaceur_border_radius" />
+								<input type="text" id="news-ticker-benaceur-txtclr_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_border_radius)) { echo $ntb_border_radius; } else {echo "1";} ?>" name="news_ticker_benaceur_border_radius" />
 							</div></div>
 						</td>
 						<div class="colwrap-display"><td><?php _e("border radius",'news-ticker-benaceur'); ?> </td></div></br>
@@ -329,7 +329,7 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_margin_bottom)) { echo $ntb_margin_bottom; } elseif ($ntb_margin_bottom == '0') {echo "0";} else {echo "25";} ?>" name="news_ticker_benaceur_margin_bottom" />
+								<input type="text" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_margin_bottom)) { echo $ntb_margin_bottom; } else {echo "25";} ?>" name="news_ticker_benaceur_margin_bottom" />
 							</div></div>
 						</td>
 						<div class="colwrap-display"><td><?php _e("margin bottom",'news-ticker-benaceur'); ?> </td></div></br>
