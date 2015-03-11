@@ -1,6 +1,6 @@
 
 				  <div class="n_t_ntb_b"><div class="n_t_ntb_b2">
-       <span class="n_t_ntb_b-name">Latest posts</span>
+       <span class="n_t_ntb_b-name"><?php if (!empty($ntb_title)) { echo $ntb_title; } else {echo "Latest news";} ?></span>
         <div id="scroll-ntb">
          <div>
 			      	<?php if ( $lp->have_posts() ) : ?>

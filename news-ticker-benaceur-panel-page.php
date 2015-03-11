@@ -159,6 +159,12 @@ foreach($category_ids as $cat_id) {
                     &nbsp;&nbsp;<em><?php _e( 'Separate between id by commas, for example: 2,16,223', 'news-ticker-benaceur' ); ?></em></td>
                     
                 </tr>
+                <tr valign="top">
+                    <th style="font-size: 13px;font-weight:normal;" scope="row"><?php _e('The title', 'news-ticker-benaceur'); ?></th>
+                    <td>
+					<div class="sm_benaceurlist_caps_input"><input style="font-weight:bold;max-width:250px;" type="text" name="news_ticker_benaceur_title" value="<?php if (!empty($ntb_title)) { echo $ntb_title; } else {echo "Latest news";} ?>" /></div>
+                   </td>
+                </tr>
                  <tr valign="top">
                     <th style="font-size: 13px;font-weight:normal;" scope="row"><?php _e('Animation', 'news-ticker-benaceur'); ?></th>
                     

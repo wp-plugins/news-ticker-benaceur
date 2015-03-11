@@ -7,7 +7,7 @@ function news_ticker_benaceur_post() {
 	if ($ntb_st != 'ScrollNTB') {
 	?>
 			 <div class="news-ticker-ntb">
-		 <span>Latest posts</span>
+		 <span><?php if (!empty($ntb_title)) { echo $ntb_title; } else {echo "Latest news";} ?></span>
 	<?php
 	}
 	 $lp = new WP_Query(

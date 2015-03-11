@@ -27,3 +27,4 @@ $ntb_box_shadow_v = get_option( 'news_ticker_benaceur_box_shadow_v' );
 $ntb_padding_top_title = get_option( 'news_ticker_benaceur_padding_top_title' );
 $ntb_links_admin_bar_front = get_option( 'news_ticker_benaceur_links_admin_bar_front' );
 $ntb_links_admin_bar_admin = get_option( 'news_ticker_benaceur_links_admin_bar_admin' );
+$ntb_title = get_option( 'news_ticker_benaceur_title' );
