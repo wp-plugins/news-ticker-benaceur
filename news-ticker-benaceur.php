@@ -45,6 +45,7 @@ add_action('admin_init', 'news_ticker_benaceur_register_options');
     register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_for_cat');
     register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_for_all_expt_admin');
     register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_title');
+    register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_num_posts');
 	
     register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_color_back_');
     register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_color_back_title');

@@ -13,8 +13,9 @@ function news_ticker_benaceur_post() {
 	 $lp = new WP_Query(
 		array(
 			'post_type' => 'post',
-			'posts_per_page' => 5,
-			'cat' => get_option('news_ticker_benaceur_for_cat')
+			'posts_per_page' => $ntb_num_posts,
+			'cat' => $ntb_cat,
+			'order'    => 'DESC'
 				)
 			); 
 			if ($ntb_st == 'ScrollNTB') {

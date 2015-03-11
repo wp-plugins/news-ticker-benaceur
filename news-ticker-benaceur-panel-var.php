@@ -28,3 +28,6 @@ $ntb_padding_top_title = get_option( 'news_ticker_benaceur_padding_top_title' );
 $ntb_links_admin_bar_front = get_option( 'news_ticker_benaceur_links_admin_bar_front' );
 $ntb_links_admin_bar_admin = get_option( 'news_ticker_benaceur_links_admin_bar_admin' );
 $ntb_title = get_option( 'news_ticker_benaceur_title' );
+$ntb_num_posts = get_option( 'news_ticker_benaceur_num_posts' );
+$ntb_cat = get_option( 'news_ticker_benaceur_for_cat' );
+

@@ -165,6 +165,12 @@ foreach($category_ids as $cat_id) {
 					<div class="sm_benaceurlist_caps_input"><input style="font-weight:bold;max-width:250px;" type="text" name="news_ticker_benaceur_title" value="<?php if (!empty($ntb_title)) { echo $ntb_title; } else {echo "Latest news";} ?>" /></div>
                    </td>
                 </tr>
+                <tr valign="top">
+                    <th style="font-size: 13px;font-weight:normal;" scope="row"><?php _e('Numbre of posts', 'news-ticker-benaceur'); ?></th>
+                    <td>
+					<div class="sm_benaceurlist_caps_input"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_num_posts" value="<?php if (!empty($ntb_num_posts)) { echo $ntb_num_posts; } else {echo "10";} ?>" /></div>
+                   </td>
+                </tr>
                  <tr valign="top">
                     <th style="font-size: 13px;font-weight:normal;" scope="row"><?php _e('Animation', 'news-ticker-benaceur'); ?></th>
                     
