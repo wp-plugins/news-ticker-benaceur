@@ -57,8 +57,8 @@ function news_ticker_benaceur_page_options() {
 						</div></div>
 						</td>
 					</tr>
-<tr valign="top"><td  scope="row"><?php _e('Enable Notif-Admin-Benaceur on admin bar in frontend', 'news-ticker-benaceur'); ?></td><td><label class="switch-nab"><input type="checkbox" name="news_ticker_benaceur_links_admin_bar_front" class="switch-input" value="1"<?php if( $ntb_links_admin_bar_front) { echo 'checked="checked"'; } ?>/><span class="switch-label" data-on="On" data-off="Off"></span><span class="switch-handle"></span></label></td></tr>
-<tr valign="top"><td scope="row"><?php _e('Enable Notif-Admin-Benaceur on admin bar in admin panel', 'news-ticker-benaceur'); ?></td><td><label class="switch-nab"><input type="checkbox" name="news_ticker_benaceur_links_admin_bar_admin" class="switch-input" value="1"<?php if( $ntb_links_admin_bar_admin) { echo 'checked="checked"'; } ?>/><span class="switch-label" data-on="On" data-off="Off"></span><span class="switch-handle"></span></label></td></tr>
+<tr valign="top"><td  scope="row"><?php _e('Enable News Ticker Benaceur on admin bar in frontend', 'news-ticker-benaceur'); ?></td><td><label class="switch-nab"><input type="checkbox" name="news_ticker_benaceur_links_admin_bar_front" class="switch-input" value="1"<?php if( $ntb_links_admin_bar_front) { echo 'checked="checked"'; } ?>/><span class="switch-label" data-on="On" data-off="Off"></span><span class="switch-handle"></span></label></td></tr>
+<tr valign="top"><td scope="row"><?php _e('Enable News Ticker Benaceur on admin bar in admin panel', 'news-ticker-benaceur'); ?></td><td><label class="switch-nab"><input type="checkbox" name="news_ticker_benaceur_links_admin_bar_admin" class="switch-input" value="1"<?php if( $ntb_links_admin_bar_admin) { echo 'checked="checked"'; } ?>/><span class="switch-label" data-on="On" data-off="Off"></span><span class="switch-handle"></span></label></td></tr>
 </table>
 </div>
 </br>

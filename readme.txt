@@ -3,7 +3,7 @@ Contributors: Benaceur
 Tags: news ticker, latest post, latest posts, news post, Last posts bar, Last news ticker, Latest news, bar
 Requires at least: 3.0
 Tested up to: 4.1.1
-Stable tag: 1.1.3
+Stable tag: 1.1.4
 License: GPLv2 or later
 
 This plugin allow you to display the latest news or latest articles in a bar with four beautiful animations...
@@ -31,6 +31,8 @@ you also the possibility to appear the bar to the particular group or member ...
 
 == Changelog ==
 
+= 1.1.4 =
+* Some adjustment.
 = 1.1.3 =
 * Addition timeout and speed of animation and the ability to disable the title.
 = 1.1.2 =
