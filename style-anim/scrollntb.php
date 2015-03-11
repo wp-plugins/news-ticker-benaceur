@@ -1,6 +1,8 @@
 
 				  <div class="n_t_ntb_b"><div class="n_t_ntb_b2">
+	   <?php if (!$ntb_disable_title) { ?>			  
        <span class="n_t_ntb_b-name"><?php if (!empty($ntb_title)) { echo $ntb_title; } else {echo "Latest news";} ?></span>
+	   <?php } ?>
         <div id="scroll-ntb">
          <div>
 			      	<?php if ( $lp->have_posts() ) : ?>
@@ -12,12 +14,14 @@
         </div>
       </div></div>
       <script type="text/javascript">
-						divScrollerNTB("scroll-ntb", "ntb-hor", 17, 6000);
+						divScrollerNTB("scroll-ntb", "ntb-hor", <?php if (!empty($ntb_speed_scrollntb)) { echo $ntb_speed_scrollntb; } else {echo "17";} ?>, 6000);
 		 			</script>
 
 <?php if ($dir == 'ltr' || $dir == '') { ?>					
 		<style>
-	.n_t_ntb_b2 { padding-right:10px; }
+	.n_t_ntb_b2 { padding-right:10px;
+	 <?php if ($ntb_disable_title) {echo "padding-left: 10px;";} ?>
+	}
 	.n_t_ntb_b {
 		font-family:<?php if (!empty($ntb_font_family)) { echo $ntb_font_family; } else {echo "DroidKufi_Ben, Arial";} ?>;
 		font-size:<?php if (!empty($ntb_font_size)) { echo $ntb_font_size; } else {echo "14";} ?>px;
@@ -73,7 +77,9 @@
 </style>
 <?php } elseif ($dir == 'rtl') { ?>
 <style>
-	.n_t_ntb_b2 { padding-left:10px; }
+	.n_t_ntb_b2 { padding-left:10px;
+	 <?php if ($ntb_disable_title) {echo "padding-right: 10px;";} ?>
+	}
 	.n_t_ntb_b {
 		font-family:<?php if (!empty($ntb_font_family)) { echo $ntb_font_family; } else {echo "DroidKufi_Ben, Arial";} ?>;
 		font-size:<?php if (!empty($ntb_font_size)) { echo $ntb_font_size; } else {echo "14";} ?>px;

@@ -13,9 +13,12 @@
 <?php  if($ntb_st == 'TickerNTB' || $ntb_st == '' ){ ?>
 createTickerNTB();
 <?php } else { ?>
-jQuery('.news-ticker-ntb ul').innerfade({animationtype: "<?php echo $ntb_st ?>" , speed: 500 , timeout: 3500});
+jQuery('.news-ticker-ntb ul').innerfade({animationtype: "<?php echo $ntb_st ?>" , speed: <?php if (!empty($ntb_anim_speed)) { echo $ntb_anim_speed; } else {echo "500";} ?> , timeout: <?php if (!empty($ntb_timeout)) { echo $ntb_timeout; } else {echo "3500";} ?>});
 <?php } ?>
 });
+function rotateTicker() {
+    i == tickerItems.length && (i = 0), tickerText = tickerItems[i], c = 0, typetext(), setTimeout("rotateTicker()", <?php if (!empty($ntb_timeout_tickerntb)) { echo $ntb_timeout_tickerntb; } else {echo "5000";} ?>), i++
+}
 		</script>
 
 <?php if ($dir == 'ltr' || $dir == '') { ?>	
@@ -35,6 +38,7 @@ jQuery('.news-ticker-ntb ul').innerfade({animationtype: "<?php echo $ntb_st ?>" 
 		white-space:nowrap;
 	    color:<?php if (!empty($ntb_color_text_back)) { echo $ntb_color_text_back; } else {echo "#000000";} ?>;
 		text-decoration: none!important;
+		<?php if ($ntb_disable_title) {echo "padding-left: 10px;";} ?>
 	}
 	.news-ticker-ntb ul a:hover {
 		color: #333;
@@ -93,6 +97,7 @@ jQuery('.news-ticker-ntb ul').innerfade({animationtype: "<?php echo $ntb_st ?>" 
 		white-space:nowrap;
 	    color:<?php if (!empty($ntb_color_text_back)) { echo $ntb_color_text_back; } else {echo "#000000";} ?>;
 		text-decoration: none!important;
+		<?php if ($ntb_disable_title) {echo "padding-right: 10px;";} ?>
 	}
 	.news-ticker-ntb ul a:hover {
 		color: #333;

@@ -30,4 +30,11 @@ $ntb_links_admin_bar_admin = get_option( 'news_ticker_benaceur_links_admin_bar_a
 $ntb_title = get_option( 'news_ticker_benaceur_title' );
 $ntb_num_posts = get_option( 'news_ticker_benaceur_num_posts' );
 $ntb_cat = get_option( 'news_ticker_benaceur_for_cat' );
+$ntb_timeout_tickerntb = get_option( 'news_ticker_benaceur_timeout_tickerntb' );
+$ntb_anim_speed = get_option( 'news_ticker_benaceur_anim_speed' );
+$ntb_timeout = get_option( 'news_ticker_benaceur_timeout' );
+$ntb_speed_scrollntb = get_option( 'news_ticker_benaceur_speed_scrollntb' );
+$ntb_disable_title = get_option( 'news_ticker_benaceur_disable_title' );
+
+
 

@@ -165,6 +165,17 @@ foreach($category_ids as $cat_id) {
 					<div class="sm_benaceurlist_caps_input"><input style="font-weight:bold;max-width:250px;" type="text" name="news_ticker_benaceur_title" value="<?php if (!empty($ntb_title)) { echo $ntb_title; } else {echo "Latest news";} ?>" /></div>
                    </td>
                 </tr>
+                <tr>  
+                    <th style="font-size: 13px;font-weight:normal;" scope="row"><div class="dd"><?php _e('Disable Title', 'news-ticker-benaceur'); ?></div></th>
+                    <td> 
+					<label class="switch-nab">				
+
+	                    <input type="checkbox" class="switch-input" name="news_ticker_benaceur_disable_title" value="1" <?php if( $ntb_disable_title) { echo 'checked="checked"'; } ?>/>
+                        <span class="switch-label" data-on="On" data-off="Off"></span>
+                        <span class="switch-handle"></span>
+                   </label>
+				   </td>
+                </tr>
                 <tr valign="top">
                     <th style="font-size: 13px;font-weight:normal;" scope="row"><?php _e('Numbre of posts', 'news-ticker-benaceur'); ?></th>
                     <td>
@@ -180,6 +191,30 @@ foreach($category_ids as $cat_id) {
 				<option value="FadeNTB" <?php selected('FadeNTB', $ntb_st); ?>><?php _e('Fade-NTB', 'news-ticker-benaceur'); ?></option>
 				<option value="SlideNTB" <?php selected('SlideNTB', $ntb_st); ?>><?php _e('Slide-NTB', 'news-ticker-benaceur'); ?></option>
 				<option value="ScrollNTB" <?php selected('ScrollNTB', $ntb_st); ?>><?php _e('Scroll-NTB', 'news-ticker-benaceur'); ?></option></select></div>
+                </tr>
+                <tr valign="top">
+                    <th style="font-size: 13px;font-weight:normal;" scope="row"><?php _e('TimeOut (TickerNTB)', 'news-ticker-benaceur'); ?></th>
+                    <td>
+					<div class="sm_benaceurlist_caps_input"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_timeout_tickerntb" value="<?php if (!empty($ntb_timeout_tickerntb)) { echo $ntb_timeout_tickerntb; } else {echo "5000";} ?>" /></div>
+                   </td>
+                </tr>
+                <tr valign="top">
+                    <th style="font-size: 13px;font-weight:normal;" scope="row"><?php _e('Speed (Fide-NTB,Slide-NTB)', 'news-ticker-benaceur'); ?></th>
+                    <td>
+					<div class="sm_benaceurlist_caps_input"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_anim_speed" value="<?php if (!empty($ntb_anim_speed)) { echo $ntb_anim_speed; } else {echo "500";} ?>" /></div>
+                   </td>
+                </tr>
+                <tr valign="top">
+                    <th style="font-size: 13px;font-weight:normal;" scope="row"><?php _e('TimeOut (Fide-NTB,Slide-NTB)', 'news-ticker-benaceur'); ?></th>
+                    <td>
+					<div class="sm_benaceurlist_caps_input"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_timeout" value="<?php if (!empty($ntb_timeout)) { echo $ntb_timeout; } else {echo "3500";} ?>" /></div>
+                   </td>
+                </tr>
+                <tr valign="top">
+                    <th style="font-size: 13px;font-weight:normal;" scope="row"><?php _e('Speed (Scroll-NTB)', 'news-ticker-benaceur'); ?></th>
+                    <td>
+					<div class="sm_benaceurlist_caps_input"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_speed_scrollntb" value="<?php if (!empty($ntb_speed_scrollntb)) { echo $ntb_speed_scrollntb; } else {echo "17";} ?>" /></div>
+                   </td>
                 </tr>
                 <tr valign="top">
                     <th style="font-size: 13px;font-weight:normal;" scope="row"><?php _e('Direction', 'news-ticker-benaceur'); ?></th>
