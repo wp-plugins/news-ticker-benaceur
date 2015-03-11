@@ -17,16 +17,6 @@
 
 <?php if ($dir == 'ltr' || $dir == '') { ?>					
 		<style>
-<?php if ( !get_option( 'news_ticker_benaceur_disable_this_font' ) )  { ?>
-@font-face {
-    font-family:"DroidKufi_Ben";
-    <?php echo 'src: url(' . plugins_url( '../font/droidkufi-regular.eot', __FILE__ ) . '); '; ?>
-}
-@font-face {
-    font-family:"DroidKufi_Ben";
-    <?php echo 'src: url(' . plugins_url( '../font/droidkufi-regular.ttf', __FILE__ ) . '); '; ?>
-}
-<?php } ?>
 	.n_t_ntb_b2 { padding-right:10px; }
 	.n_t_ntb_b {
 		font-family:<?php if (!empty($ntb_font_family)) { echo $ntb_font_family; } else {echo "DroidKufi_Ben, Arial";} ?>;
@@ -83,16 +73,6 @@
 </style>
 <?php } elseif ($dir == 'rtl') { ?>
 <style>
-<?php if ( !get_option( 'news_ticker_benaceur_disable_this_font' ) )  { ?>
-@font-face {
-    font-family:"DroidKufi_Ben";
-    <?php echo 'src: url(' . plugins_url( '../font/droidkufi-regular.eot', __FILE__ ) . '); '; ?>
-}
-@font-face {
-    font-family:"DroidKufi_Ben";
-    <?php echo 'src: url(' . plugins_url( '../font/droidkufi-regular.ttf', __FILE__ ) . '); '; ?>
-}
-<?php } ?>
 	.n_t_ntb_b2 { padding-left:10px; }
 	.n_t_ntb_b {
 		font-family:<?php if (!empty($ntb_font_family)) { echo $ntb_font_family; } else {echo "DroidKufi_Ben, Arial";} ?>;
