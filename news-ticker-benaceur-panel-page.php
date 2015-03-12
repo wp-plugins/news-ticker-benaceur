@@ -240,6 +240,7 @@ foreach($category_ids as $cat_id) {
 				do_settings_sections( 'news_ticker_benaceur_group_sty' );
 			?>
 	<div class="option-box">
+<label><b><font face="Arial" size="4"><?php _e('Settings of style', 'news-ticker-benaceur');?>:</font></b></label></br></br>
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">

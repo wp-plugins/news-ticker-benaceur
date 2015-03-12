@@ -3,7 +3,7 @@
 Plugin Name: news ticker benaceur
 Plugin URI: http://benaceur-php.com/
 Description: This plugin allow you to display the latest news or latest articles in a bar with four beautiful animations...
-Version: 1.1.4
+Version: 1.1.5
 Author: benaceur
 Author URI: http://benaceur-php.com/
 License: GPL2
@@ -20,7 +20,7 @@ add_filter('plugin_action_links_'.plugin_basename(__FILE__), 'news_ticker_benace
 // Add settings link on plugin page
 
 
-load_plugin_textdomain( 'news-ticker-benaceur', false, basename( dirname( __FILE__ ) ) . '/languages/' );
+load_plugin_textdomain( 'news-ticker-benaceur', false, basename( dirname( __FILE__ ) ) . '/lang/' );
 
 add_action('admin_init', 'news_ticker_benaceur_register_options');
 
