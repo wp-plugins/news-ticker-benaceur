@@ -1,11 +1,28 @@
 
 			<ul id="ntbne" >
-			<?php if ( $lp->have_posts() ) : ?>
+			<?php
+			if($ntb_latest_p_c == 'latest_posts' || $ntb_latest_p_c == '' ){
+			if ( $lp->have_posts() ) : 
+			?>
 			<?php while ( $lp->have_posts() ) : $lp->the_post(); $do_not_duplicate[] = get_the_ID(); ?>
 				<li><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
 			<?php
 			endwhile;
-		 	endif; ?>
+		 	endif; 
+			} elseif ($ntb_latest_p_c == 'latest_comments') {
+if ( count( $comments_list ) > 0 ) {
+$date_format = 'j F Y';
+ foreach ( $comments_list as $comment ) {
+ echo '<li><a href="'.get_permalink( $comment->comment_post_ID ).'">'.wp_html_excerpt( $comment->comment_content, 52 ).' ...</a></li>';
+ }
+} else {
+	echo '<p>';
+   _e("No comments",'news-ticker-benaceur');
+	echo '</p>';
+}
+	
+			}	
+			?>
 </ul>
 			</div>			
 		 <script type="text/javascript">
@@ -26,6 +43,7 @@ function rotateTicker() {
 	#ntbne {
 		float: left;
 		margin-left: 0;
+	    color:<?php if (!empty($ntb_color_text_back)) { echo $ntb_color_text_back; } else {echo "#000000";} ?>;
 		padding:<?php if (!empty($ntb_padding_top)) { echo $ntb_padding_top; } elseif ($ntb_padding_top == '') {echo "1";} elseif ($ntb_padding_top == '0') {echo "0";} ?>px 0 <?php if (!empty($ntb_padding_bottom)) { echo $ntb_padding_bottom; } else {echo "0";} ?>px 0;
 	}
 	#ntbne li {
@@ -85,6 +103,7 @@ function rotateTicker() {
 	#ntbne {
 		float: right;
 		margin-right: 0;
+	    color:<?php if (!empty($ntb_color_text_back)) { echo $ntb_color_text_back; } else {echo "#000000";} ?>;
 		padding:<?php if (!empty($ntb_padding_top)) { echo $ntb_padding_top; } elseif ($ntb_padding_top == '') {echo "1";} elseif ($ntb_padding_top == '0') {echo "0";} ?>px 0 <?php if (!empty($ntb_padding_bottom)) { echo $ntb_padding_bottom; } else {echo "0";} ?>px 0;
 	}
 	#ntbne li {

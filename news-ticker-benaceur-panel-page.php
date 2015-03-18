@@ -45,6 +45,20 @@ function news_ticker_benaceur_page_options() {
 		</td>
 	</tr>
 </table>
+<table class="form-table44">
+	
+					<tr>
+						<td>
+                   <input type="radio" name="news_ticker_benaceur_latest_p_c" value="latest_posts" <?php if( $ntb_latest_p_c == 'latest_posts' || $ntb_latest_p_c == '')echo 'checked';?> >
+                    <div class="colwrap-display">&nbsp;&nbsp;<td><?php _e("Latest posts",'news-ticker-benaceur'); ?></td></div>
+					</tr></br>
+					<tr> 
+						<td>
+                   <input type="radio" name="news_ticker_benaceur_latest_p_c" value="latest_comments" <?php if( $ntb_latest_p_c == 'latest_comments')echo 'checked';?> >
+						</td>
+                    <div class="colwrap-display">&nbsp;&nbsp;<td><?php _e("Latest comments",'news-ticker-benaceur'); ?></td></div>
+					</tr></br>
+</table></br>
 
 <center><div class="to-tr2"></div></center>
 </br>
@@ -126,11 +140,13 @@ function news_ticker_benaceur_page_options() {
                    </label>
 				   </td>
                 </tr>
+				</table>
+<div style="margin-bottom:-45px;" class="to-tr2"></div>
+<table class="form-table">
                 <tr valign="top">
-                    <th style="font-size: 13px;font-weight:normal;" scope="row"><?php _e('Choose the category (Leave blank to activate All Categories)', 'news-ticker-benaceur'); ?></th>
-                    
+                    <th style="font-size: 13px;font-weight:normal;" scope="row"><?php _e('category id (Latest posts)</br>post id (Latest comments)', 'news-ticker-benaceur'); ?></th>
                     <td>
-					<div class="sm_benaceurlist_caps_input"><input style="font-weight:bold;" type="text" name="news_ticker_benaceur_for_cat" placeholder="<?php _e( 'Enter here the cat id', 'news-ticker-benaceur' ); ?>" value="<?php echo get_option('news_ticker_benaceur_for_cat'); ?>" />
+					<div class="sm_benaceurlist_caps_input"><input style="font-weight:bold;" type="text" name="news_ticker_benaceur_for_cat" placeholder="<?php _e( 'Leave blank to activate All', 'news-ticker-benaceur' ); ?>" value="<?php echo get_option('news_ticker_benaceur_for_cat'); ?>" />
 <div id="sub-ntb">		
 <?php
   echo '<div>
@@ -159,10 +175,24 @@ foreach($category_ids as $cat_id) {
                     &nbsp;&nbsp;<em><?php _e( 'Separate between id by commas, for example: 2,16,223', 'news-ticker-benaceur' ); ?></em></td>
                     
                 </tr>
+					<tr>
+						<td>
+                   <input type="radio" name="news_ticker_benaceur_include_exclude_id" value="include_id" <?php if( $ntb_include_exclude_id == 'include_id' || $ntb_include_exclude_id == '') echo 'checked';?> >
+                    <div class="colwrap-display">&nbsp;&nbsp;<td><?php _e("Include cat id/post id",'news-ticker-benaceur'); ?></td></div>
+					</tr></br>
+					<tr> 
+						<td>
+                   <input type="radio" name="news_ticker_benaceur_include_exclude_id" value="exclude_id" <?php if( $ntb_include_exclude_id == 'exclude_id')echo 'checked';?> >
+						</td>
+                    <div class="colwrap-display">&nbsp;&nbsp;<td><?php _e("Exclude cat id/post id",'news-ticker-benaceur'); ?></td></div>
+					</tr></br>
+</table>
+<div class="to-tr2"></div>
+              <table class="form-table">
                 <tr valign="top">
                     <th style="font-size: 13px;font-weight:normal;" scope="row"><?php _e('The title', 'news-ticker-benaceur'); ?></th>
                     <td>
-					<div class="sm_benaceurlist_caps_input"><input style="font-weight:bold;max-width:250px;" type="text" name="news_ticker_benaceur_title" value="<?php if (!empty($ntb_title)) { echo $ntb_title; } else {echo "Latest news";} ?>" /></div>
+					<div class="sm_benaceurlist_caps_input"><input style="font-weight:bold;max-width:250px;" type="text" name="news_ticker_benaceur_title" value="<?php if (!empty($ntb_title)) { echo $ntb_title; } else {_e("Latest news",'news-ticker-benaceur');} ?>" /></div>
                    </td>
                 </tr>
                 <tr>  

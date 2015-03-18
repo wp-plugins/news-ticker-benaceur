@@ -1,15 +1,30 @@
 
 				  <div class="n_t_ntb_b"><div class="n_t_ntb_b2">
 	   <?php if (!$ntb_disable_title) { ?>			  
-       <span class="n_t_ntb_b-name"><?php if (!empty($ntb_title)) { echo $ntb_title; } else {echo "Latest news";} ?></span>
+       <span class="n_t_ntb_b-name"><?php if (!empty($ntb_title)) { echo $ntb_title; } else { _e("Latest news",'news-ticker-benaceur');} ?></span>
 	   <?php } ?>
         <div id="scroll-ntb">
          <div>
-			      	<?php if ( $lp->have_posts() ) : ?>
+			      	<?php
+			if($ntb_latest_p_c == 'latest_posts' || $ntb_latest_p_c == '' ){
+					if ( $lp->have_posts() ) : ?>
 										<?php while ( $lp->have_posts() ) : $lp->the_post(); $do_not_duplicate[] = get_the_ID(); 
 												?>
 <img border="0" src="<?php echo '' . plugins_url( '../img/topics.gif', __FILE__ ) . ''; ?>" width="10" height="11" <?php if ($dir == 'ltr' || $dir == '')  { ?> style="margin:0 5px 0 30px;" <?php } elseif ($dir == 'rtl') { ?> style="margin:0 30px 0 5px;" <?php } ?>><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-		 <?php endwhile; endif; ?>
+		 <?php endwhile; endif; 
+			} elseif ($ntb_latest_p_c == 'latest_comments') {
+if ( count( $comments_list ) > 0 ) {
+$date_format = 'j F Y';
+ foreach ( $comments_list as $comment ) {
+ echo ' التعليق: '.wp_html_excerpt( $comment->comment_content, 52 ).'... في: '.date_i18n( $date_format, strtotime( $comment->comment_date ) ).' على: <a href="'.get_permalink( $comment->comment_post_ID ).'">'.get_the_title( $comment->comment_post_ID ).'</a> / ';
+ }
+} else {
+	echo '<p>';
+   _e("No comments",'news-ticker-benaceur');
+	echo '</p>';
+}
+			}	
+		 ?>
          </div>
         </div>
       </div></div>
@@ -72,7 +87,9 @@
 		color: #444!important;
 		text-decoration: none!important;
 		}
-		
+	#scroll-ntb {
+		color:<?php if (!empty($ntb_color_text_back)) { echo $ntb_color_text_back; } else {echo "#000000";} ?>!important;
+	}
 		
 </style>
 <?php } elseif ($dir == 'rtl') { ?>
@@ -130,5 +147,8 @@
 		color: #444!important;
 		text-decoration: none!important;
 		}
+	#scroll-ntb {
+		color:<?php if (!empty($ntb_color_text_back)) { echo $ntb_color_text_back; } else {echo "#000000";} ?>!important;
+	}
 </style>
 <?php } ?>
