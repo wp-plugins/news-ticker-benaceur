@@ -3,7 +3,7 @@
 Plugin Name: news ticker benaceur
 Plugin URI: http://benaceur-php.com/
 Description: This plugin allow you to display the latest news or latest articles in a bar with four beautiful animations...
-Version: 2.0
+Version: 2.1.0
 Author: benaceur
 Author URI: http://benaceur-php.com/
 License: GPL2
@@ -83,12 +83,17 @@ add_action('admin_init', 'news_ticker_benaceur_register_options');
     register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_default');
     register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_height');
     register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_a_hover');
+    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_styles_options_p');
 	
 	    if ($GLOBALS['pagenow'] == 'options-general.php' && $_GET['page'] == 'news-ticker-benaceur'){
 		wp_enqueue_script ('jquery');
 		wp_enqueue_script('farbtastic');
 		wp_enqueue_script('news-ticker-benaceur-admin',plugins_url('admin/news-ticker-benaceur-admin.js',__FILE__), array('jquery'));
+		if (get_option('news_ticker_benaceur_styles_options_p') == 'theme_one' || get_option('news_ticker_benaceur_styles_options_p') == '' ) {
 		wp_enqueue_style('news-ticker-benaceur-admin',plugins_url('admin/news-ticker-benaceur-admin.css',__FILE__), false, '' );
+		} elseif (get_option('news_ticker_benaceur_styles_options_p') == 'theme_standard' ) {
+		wp_enqueue_style('news-ticker-benaceur-admin',plugins_url('admin/news-ticker-benaceur-admin-stand.css',__FILE__), false, '' );
+		}
 		wp_enqueue_style('farbtastic');	
 	}
 }

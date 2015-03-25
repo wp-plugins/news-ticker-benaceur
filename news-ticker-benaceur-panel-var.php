@@ -39,3 +39,4 @@ $ntb_latest_p_c = get_option( 'news_ticker_benaceur_latest_p_c' );
 $ntb_include_exclude_id = get_option( 'news_ticker_benaceur_include_exclude_id' );
 $ntb_height = get_option( 'news_ticker_benaceur_height' );
 $ntb_a_hover = get_option( 'news_ticker_benaceur_a_hover' );
+$ntb_styles_options_p = get_option( 'news_ticker_benaceur_styles_options_p' );
