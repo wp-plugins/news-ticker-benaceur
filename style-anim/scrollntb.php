@@ -16,7 +16,7 @@
 if ( count( $comments_list ) > 0 ) {
 $date_format = 'j F Y';
  foreach ( $comments_list as $comment ) {
- echo ' التعليق: '.wp_html_excerpt( $comment->comment_content, 52 ).'... في: '.date_i18n( $date_format, strtotime( $comment->comment_date ) ).' على: <a href="'.get_permalink( $comment->comment_post_ID ).'">'.get_the_title( $comment->comment_post_ID ).'</a> / ';
+ echo ' التعليق: '.wp_html_excerpt( $comment->comment_content, 52 ).'... في: '.date_i18n( $date_format, strtotime( $comment->comment_date ) ).' على: <a href="'.get_permalink( $comment->comment_post_ID ).'">'.get_the_title( $comment->comment_post_ID ).'</a>&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;';
  }
 } else {
 	echo '<p>';
@@ -28,9 +28,6 @@ $date_format = 'j F Y';
          </div>
         </div>
       </div></div>
-      <script type="text/javascript">
-						divScrollerNTB("scroll-ntb", "ntb-hor", <?php if (!empty($ntb_speed_scrollntb)) { echo $ntb_speed_scrollntb; } else {echo "17";} ?>, 6000);
-		 			</script>
 
 <?php if ($dir == 'ltr' || $dir == '') { ?>					
 		<style>
@@ -54,12 +51,13 @@ $date_format = 'j F Y';
     	-webkit-box-shadow:<?php echo $ntb_box_shadow; ?> <?php if (!empty($ntb_box_shadow_v)) { echo $ntb_box_shadow_v; } elseif ($ntb_box_shadow_v == '') {echo "1";} elseif ($ntb_box_shadow_v == '0') {echo "0";} ?>px <?php if (!empty($ntb_box_shadow_color)) { echo $ntb_box_shadow_color; } else {echo "#B5B5B5";} ?>;
     	text-shadow:<?php echo $ntb_text_shadow; ?> <?php if ($ntb_text_shadow_color) echo $ntb_text_shadow_color ; else  echo '#000000'; ?>;
 		width:<?php if (!empty($ntb_width)) { echo $ntb_width; } else {echo "100%";} ?>;
-		height:28px;
+		height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
     	margin-top:<?php if (!empty($ntb_margin_top)) { echo $ntb_margin_top; } else {echo "0";} ?>px;
     	margin-bottom:<?php if (!empty($ntb_margin_bottom)) { echo $ntb_margin_bottom; } elseif ($ntb_margin_bottom == '') {echo "25";} elseif ($ntb_margin_bottom == '0') {echo "0";} ?>px;
     	opacity:<?php if (!empty($ntb_opacity)) { echo $ntb_opacity; } else {echo "1";} ?>;
 		overflow:hidden;
 		position:relative;	
+        line-height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
 		}
 	.n_t_ntb_b .n_t_ntb_b-name {
 		color:<?php if (!empty($ntb_color_text_title)) { echo $ntb_color_text_title; } else {echo "#FFFFFF";} ?>;
@@ -69,10 +67,11 @@ $date_format = 'j F Y';
 		margin-right: 10px;
 		-moz-box-shadow: 0px 1px 3px 0 #b5b5b5;
 		-webkit-box-shadow: 0px 1px 3px 0 #B5B5B5;
-		height:28px;
+		height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
+        line-height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
 	}
 	#scroll-ntb {
-		height: 30px;
+		height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
 	}
 	#scroll-ntb div {
 		padding-top:<?php if (!empty($ntb_padding_top)) { echo $ntb_padding_top; } elseif ($ntb_padding_top == '') {echo "1";} elseif ($ntb_padding_top == '0') {echo "0";} ?>px;
@@ -82,10 +81,18 @@ $date_format = 'j F Y';
 	#scroll-ntb a {
 		color:<?php if (!empty($ntb_color_text_back)) { echo $ntb_color_text_back; } else {echo "#000000";} ?>!important;
 		text-decoration: none!important;
+	   -webkit-transition: all 0.5s ease-out;
+	   -moz-transition: all 0.5s ease-out;
+	   -o-transition: all 0.5s ease-out;
+	    transition: all 0.5s ease-out;
 	}
 	#scroll-ntb a:hover {
-		color: #444!important;
+		color:<?php if (!empty($ntb_a_hover)) { echo $ntb_a_hover; } else {echo "#B0284E";} ?>!important;
 		text-decoration: none!important;
+	   -webkit-transition: all 0.5s ease-out;
+	   -moz-transition: all 0.5s ease-out;
+	   -o-transition: all 0.5s ease-out;
+	    transition: all 0.5s ease-out;
 		}
 	#scroll-ntb {
 		color:<?php if (!empty($ntb_color_text_back)) { echo $ntb_color_text_back; } else {echo "#000000";} ?>!important;
@@ -114,12 +121,13 @@ $date_format = 'j F Y';
     	-webkit-box-shadow:<?php echo $ntb_box_shadow; ?> <?php if (!empty($ntb_box_shadow_v)) { echo $ntb_box_shadow_v; } elseif ($ntb_box_shadow_v == '') {echo "1";} elseif ($ntb_box_shadow_v == '0') {echo "0";} ?>px <?php if (!empty($ntb_box_shadow_color)) { echo $ntb_box_shadow_color; } else {echo "#B5B5B5";} ?>;
     	text-shadow:<?php echo $ntb_text_shadow; ?> <?php if ($ntb_text_shadow_color) echo $ntb_text_shadow_color ; else  echo '#000000'; ?>;
 		width:<?php if (!empty($ntb_width)) { echo $ntb_width; } else {echo "100%";} ?>;
-		height:28px;
+		height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
     	margin-top:<?php if (!empty($ntb_margin_top)) { echo $ntb_margin_top; } else {echo "0";} ?>px;
     	margin-bottom:<?php if (!empty($ntb_margin_bottom)) { echo $ntb_margin_bottom; } elseif ($ntb_margin_bottom == '') {echo "25";} elseif ($ntb_margin_bottom == '0') {echo "0";} ?>px;
     	opacity:<?php if (!empty($ntb_opacity)) { echo $ntb_opacity; } else {echo "1";} ?>;
 		overflow:hidden;
 		position:relative;	
+        line-height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
 		}
 	.n_t_ntb_b .n_t_ntb_b-name {
 		color:<?php if (!empty($ntb_color_text_title)) { echo $ntb_color_text_title; } else {echo "#FFFFFF";} ?>;
@@ -129,10 +137,11 @@ $date_format = 'j F Y';
 		margin-left: 10px;
 		-moz-box-shadow: 0px 1px 3px 0 #b5b5b5;
 		-webkit-box-shadow: 0px 1px 3px 0 #B5B5B5;
-		height:28px;
+		height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
+        line-height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
 	}
 	#scroll-ntb {
-		height: 30px;
+		height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
 	}
 	#scroll-ntb div {
 		padding-top:<?php if (!empty($ntb_padding_top)) { echo $ntb_padding_top; } elseif ($ntb_padding_top == '') {echo "1";} elseif ($ntb_padding_top == '0') {echo "0";} ?>px;
@@ -142,13 +151,25 @@ $date_format = 'j F Y';
 	#scroll-ntb a {
 		color:<?php if (!empty($ntb_color_text_back)) { echo $ntb_color_text_back; } else {echo "#000000";} ?>!important;
 		text-decoration: none!important;
+	   -webkit-transition: all 0.5s ease-out;
+	   -moz-transition: all 0.5s ease-out;
+	   -o-transition: all 0.5s ease-out;
+	    transition: all 0.5s ease-out;
 	}
 	#scroll-ntb a:hover {
-		color: #444!important;
+		color:<?php if (!empty($ntb_a_hover)) { echo $ntb_a_hover; } else {echo "#B0284E";} ?>!important;
 		text-decoration: none!important;
+	   -webkit-transition: all 0.5s ease-out;
+	   -moz-transition: all 0.5s ease-out;
+	   -o-transition: all 0.5s ease-out;
+	    transition: all 0.5s ease-out;
 		}
 	#scroll-ntb {
 		color:<?php if (!empty($ntb_color_text_back)) { echo $ntb_color_text_back; } else {echo "#000000";} ?>!important;
 	}
 </style>
 <?php } ?>
+
+<script type="text/javascript">
+	divScrollerNTB("scroll-ntb", "ntb-hor", <?php if (!empty($ntb_speed_scrollntb)) { echo $ntb_speed_scrollntb; } else {echo "17";} ?>, 6000);
+</script>

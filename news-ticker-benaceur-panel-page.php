@@ -319,6 +319,15 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
+								<input type="text" id="news-ticker-benaceur-hoverclr_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_a_hover)) { echo $ntb_a_hover; } else {echo "#B0284E";} ?>" name="news_ticker_benaceur_a_hover" />
+								<div class="news-ticker-benaceur-colsel news-ticker-benaceur-hoverclr_a"></div>
+							</div></div>
+						</td>
+						<div class="colwrap-display"><td><?php _e("Hover color",'news-ticker-benaceur'); ?> </td></div></br>
+					</tr>
+					<tr>
+						<td>
+							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
 								<input type="text" id="news-ticker-benaceur-txtclr_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_border_top)) { echo $ntb_border_top; } else {echo "0";} ?>" name="news_ticker_benaceur_border_top" />
 							</div></div>
 						</td>
@@ -371,6 +380,14 @@ foreach($category_ids as $cat_id) {
 							</div></div>
 						</td>
 						<div class="colwrap-display"><td><?php _e("Width by adding: px or %",'news-ticker-benaceur'); ?> </td></div></br>
+					</tr>
+					<tr>
+						<td>
+							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
+								<input type="text" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>" name="news_ticker_benaceur_height" />
+							</div></div>
+						</td>
+						<div class="colwrap-display"><td><?php _e("Height",'news-ticker-benaceur'); ?> </td></div></br>
 					</tr>
 					<tr>
 						<td>

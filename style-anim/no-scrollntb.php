@@ -25,18 +25,6 @@ $date_format = 'j F Y';
 			?>
 </ul>
 			</div>			
-		 <script type="text/javascript">
-			jQuery(document).ready(function(){
-<?php  if($ntb_st == 'TickerNTB' || $ntb_st == '' ){ ?>
-createTickerNTB();
-<?php } else { ?>
-jQuery('.news-ticker-ntb ul').innerfade({animationtype: "<?php echo $ntb_st ?>" , speed: <?php if (!empty($ntb_anim_speed)) { echo $ntb_anim_speed; } else {echo "500";} ?> , timeout: <?php if (!empty($ntb_timeout)) { echo $ntb_timeout; } else {echo "3500";} ?>});
-<?php } ?>
-});
-function rotateTicker() {
-    i == tickerItems.length && (i = 0), tickerText = tickerItems[i], c = 0, typetext(), setTimeout("rotateTicker()", <?php if (!empty($ntb_timeout_tickerntb)) { echo $ntb_timeout_tickerntb; } else {echo "5000";} ?>), i++
-}
-		</script>
 
 <?php if ($dir == 'ltr' || $dir == '') { ?>	
 <style>
@@ -57,10 +45,18 @@ function rotateTicker() {
 	    color:<?php if (!empty($ntb_color_text_back)) { echo $ntb_color_text_back; } else {echo "#000000";} ?>;
 		text-decoration: none!important;
 		<?php if ($ntb_disable_title) {echo "padding-left: 10px;";} ?>
+	   -webkit-transition: all 0.5s ease-out;
+	   -moz-transition: all 0.5s ease-out;
+	   -o-transition: all 0.5s ease-out;
+	    transition: all 0.5s ease-out;
 	}
 	.news-ticker-ntb ul a:hover {
-		color: #333;
+		color:<?php if (!empty($ntb_a_hover)) { echo $ntb_a_hover; } else {echo "#B0284E";} ?>;
 		text-decoration: none!important;
+	   -webkit-transition: all 0.5s ease-out;
+	   -moz-transition: all 0.5s ease-out;
+	   -o-transition: all 0.5s ease-out;
+	    transition: all 0.5s ease-out;
 	}
 	.news-ticker-ntb span {
 		color:<?php if (!empty($ntb_color_text_title)) { echo $ntb_color_text_title; } else {echo "#FFFFFF";} ?>;
@@ -71,7 +67,8 @@ function rotateTicker() {
 		margin-right: 10px;
 		-moz-box-shadow: 0px 1px 3px 0 #b5b5b5;
 		-webkit-box-shadow: 0px 1px 3px 0 #B5B5B5;
-		height:28px;
+		height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
+    	line-height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
 	}
 	.news-ticker-ntb {
 	font-family:<?php if (!empty($ntb_font_family)) { echo $ntb_font_family; } else {echo "DroidKufi_Ben, Arial";} ?>;
@@ -90,12 +87,13 @@ function rotateTicker() {
 	-webkit-box-shadow:<?php echo $ntb_box_shadow; ?> <?php if (!empty($ntb_box_shadow_v)) { echo $ntb_box_shadow_v; } elseif ($ntb_box_shadow_v == '') {echo "1";} elseif ($ntb_box_shadow_v == '0') {echo "0";} ?>px <?php if (!empty($ntb_box_shadow_color)) { echo $ntb_box_shadow_color; } else {echo "#B5B5B5";} ?>;
 	text-shadow:<?php echo $ntb_text_shadow; ?> <?php if ($ntb_text_shadow_color) echo $ntb_text_shadow_color ; else  echo '#000000'; ?>;
 	width:<?php if (!empty($ntb_width)) { echo $ntb_width; } else {echo "100%";} ?>;
-	height:28px;
+	height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
 	margin-top:<?php if (!empty($ntb_margin_top)) { echo $ntb_margin_top; } else {echo "0";} ?>px;
 	margin-bottom:<?php if (!empty($ntb_margin_bottom)) { echo $ntb_margin_bottom; } elseif ($ntb_margin_bottom == '') {echo "25";} elseif ($ntb_margin_bottom == '0') {echo "0";} ?>px;
 	opacity:<?php if (!empty($ntb_opacity)) { echo $ntb_opacity; } else {echo "1";} ?>;
 	overflow:hidden;
 	position:relative;	
+	line-height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
 	}
 </style>
 <?php } elseif ($dir == 'rtl') { ?>
@@ -117,10 +115,18 @@ function rotateTicker() {
 	    color:<?php if (!empty($ntb_color_text_back)) { echo $ntb_color_text_back; } else {echo "#000000";} ?>;
 		text-decoration: none!important;
 		<?php if ($ntb_disable_title) {echo "padding-right: 10px;";} ?>
+	   -webkit-transition: all 0.5s ease-out;
+	   -moz-transition: all 0.5s ease-out;
+	   -o-transition: all 0.5s ease-out;
+	    transition: all 0.5s ease-out;
 	}
 	.news-ticker-ntb ul a:hover {
-		color: #333;
+		color:<?php if (!empty($ntb_a_hover)) { echo $ntb_a_hover; } else {echo "#B0284E";} ?>;
 		text-decoration: none!important;
+	   -webkit-transition: all 0.5s ease-out;
+	   -moz-transition: all 0.5s ease-out;
+	   -o-transition: all 0.5s ease-out;
+	    transition: all 0.5s ease-out;
 	}
 	.news-ticker-ntb span {
 		color:<?php if (!empty($ntb_color_text_title)) { echo $ntb_color_text_title; } else {echo "#FFFFFF";} ?>;
@@ -131,7 +137,8 @@ function rotateTicker() {
 		margin-left: 10px;
 		-moz-box-shadow: 0px 1px 3px 0 #b5b5b5;
 		-webkit-box-shadow: 0px 1px 3px 0 #B5B5B5;
-		height:28px;
+		height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
+    	line-height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
 	}
 	.news-ticker-ntb {
 	font-family:<?php if (!empty($ntb_font_family)) { echo $ntb_font_family; } else {echo "DroidKufi_Ben, Arial";} ?>;
@@ -150,12 +157,26 @@ function rotateTicker() {
 	-webkit-box-shadow:<?php echo $ntb_box_shadow; ?> <?php if (!empty($ntb_box_shadow_v)) { echo $ntb_box_shadow_v; } elseif ($ntb_box_shadow_v == '') {echo "1";} elseif ($ntb_box_shadow_v == '0') {echo "0";} ?>px <?php if (!empty($ntb_box_shadow_color)) { echo $ntb_box_shadow_color; } else {echo "#B5B5B5";} ?>;
 	text-shadow:<?php echo $ntb_text_shadow; ?> <?php if ($ntb_text_shadow_color) echo $ntb_text_shadow_color ; else  echo '#000000'; ?>;
 	width:<?php if (!empty($ntb_width)) { echo $ntb_width; } else {echo "100%";} ?>;
-	height:28px;
+	height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
 	margin-top:<?php if (!empty($ntb_margin_top)) { echo $ntb_margin_top; } else {echo "0";} ?>px;
 	margin-bottom:<?php if (!empty($ntb_margin_bottom)) { echo $ntb_margin_bottom; } elseif ($ntb_margin_bottom == '') {echo "25";} elseif ($ntb_margin_bottom == '0') {echo "0";} ?>px;
 	opacity:<?php if (!empty($ntb_opacity)) { echo $ntb_opacity; } else {echo "1";} ?>;
 	overflow:hidden;
 	position:relative;	
+	line-height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
 	}
 </style>
 <?php } ?>
+
+<script type="text/javascript">
+			jQuery(document).ready(function(){
+<?php  if($ntb_st == 'TickerNTB' || $ntb_st == '' ){ ?>
+createTickerNTB();
+<?php } else { ?>
+jQuery('.news-ticker-ntb ul').innerfade({animationtype: "<?php echo $ntb_st ?>" , speed: <?php if (!empty($ntb_anim_speed)) { echo $ntb_anim_speed; } else {echo "500";} ?> , timeout: <?php if (!empty($ntb_timeout)) { echo $ntb_timeout; } else {echo "3500";} ?>});
+<?php } ?>
+});
+function rotateTicker() {
+    i == tickerItems.length && (i = 0), tickerText = tickerItems[i], c = 0, typetext(), setTimeout("rotateTicker()", <?php if (!empty($ntb_timeout_tickerntb)) { echo $ntb_timeout_tickerntb; } else {echo "5000";} ?>), i++
+}
+</script>

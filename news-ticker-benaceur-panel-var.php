@@ -37,3 +37,5 @@ $ntb_speed_scrollntb = get_option( 'news_ticker_benaceur_speed_scrollntb' );
 $ntb_disable_title = get_option( 'news_ticker_benaceur_disable_title' );
 $ntb_latest_p_c = get_option( 'news_ticker_benaceur_latest_p_c' );
 $ntb_include_exclude_id = get_option( 'news_ticker_benaceur_include_exclude_id' );
+$ntb_height = get_option( 'news_ticker_benaceur_height' );
+$ntb_a_hover = get_option( 'news_ticker_benaceur_a_hover' );
