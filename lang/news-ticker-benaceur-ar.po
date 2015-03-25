@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: news ticker benaceur v1.1.8\n"
+"Project-Id-Version: news ticker benaceur v2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2015-03-24 17:16:34+0000\n"
+"PO-Revision-Date: 2015-03-25 12:01:27+0000\n"
 "Last-Translator: BENACEUR <mohamedcompte@hotmail.fr>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -426,4 +426,14 @@ msgstr "لون الروابط عند تمرير الفأرة"
 #@ news-ticker-benaceur
 msgid "Height"
 msgstr "الإرتفاع"
+
+#: notices-ntb.php:17
+#@ news-ticker-benaceur
+msgid "Hide"
+msgstr "إخفاء"
+
+#: notices-ntb.php:18
+#@ news-ticker-benaceur
+msgid "After this update Click on F5 to purge the browser cache ( For those who have installed the previous version(s) only )"
+msgstr "بعد هذا التحديث اضغط على F5 لتفريغ كاش المتصفح ( بالنسبة للذين قاموا بتنصيب الإصدار أو الإصدارات السابقة فقط )"
 
