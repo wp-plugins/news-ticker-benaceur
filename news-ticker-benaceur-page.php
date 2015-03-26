@@ -61,9 +61,9 @@ add_action( 'wp_news_ticker_benaceur', 'news_ticker_benaceur_post' );
 if ( !get_option( 'news_ticker_benaceur_disable_this_font' ) )  { ?>
 <style>
 @font-face {
-  font-family: "DroidKufi_Ben";
-  src: url(<?php echo '' . plugins_url( 'font/droidkufi-regular.eot' , __FILE__ ) . ''; ?>);
-  src: url(<?php echo '' . plugins_url( 'font/droidkufi-regular.eot' , __FILE__ ) . ''; ?>?#iefix) format("embedded-opentype"),
+  font-family: 'DroidKufi_Ben';
+  src: url(<?php echo '' . plugins_url( 'font/DroidKufi-Regular.eot' , __FILE__ ) . ''; ?>);
+  src: url(<?php echo '' . plugins_url( 'font/DroidKufi-Regular.eot' , __FILE__ ) . ''; ?>?#iefix) format("embedded-opentype"),
        url(<?php echo '' . plugins_url( 'font/droidkufi-regular.ttf' , __FILE__ ) . ''; ?>) format("truetype");
 }
 </style>
