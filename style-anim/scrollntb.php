@@ -16,7 +16,7 @@
 if ( count( $comments_list ) > 0 ) {
 $date_format = 'j F Y';
  foreach ( $comments_list as $comment ) {
- echo ' التعليق: '.wp_html_excerpt( $comment->comment_content, 52 ).'... في: '.date_i18n( $date_format, strtotime( $comment->comment_date ) ).' على: <a href="'.get_permalink( $comment->comment_post_ID ).'">'.get_the_title( $comment->comment_post_ID ).'</a>&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;';
+ echo ' التعليق: <a href="'.get_permalink($comment->comment_post_ID).'#comment-'.$comment->comment_ID.'">'.wp_html_excerpt( $comment->comment_content, 52 ).'</a>... في: '.date_i18n( $date_format, strtotime( $comment->comment_date ) ).' على: <a href="'.get_permalink( $comment->comment_post_ID ).'">'.get_the_title( $comment->comment_post_ID ).'</a>&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;';
  }
 } else {
 	echo '<p>';

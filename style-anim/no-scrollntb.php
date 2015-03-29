@@ -13,7 +13,7 @@
 if ( count( $comments_list ) > 0 ) {
 $date_format = 'j F Y';
  foreach ( $comments_list as $comment ) {
- echo '<li><a href="'.get_permalink( $comment->comment_post_ID ).'">'.wp_html_excerpt( $comment->comment_content, 52 ).' ...</a></li>';
+ echo '<li><a href="'.get_permalink($comment->comment_post_ID).'#comment-'.$comment->comment_ID.'">'.wp_html_excerpt( $comment->comment_content, 52 ).' ...</a></li>';
  }
 } else {
 	echo '<p>';
