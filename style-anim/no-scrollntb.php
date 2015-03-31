@@ -5,7 +5,15 @@
 			if ( $lp->have_posts() ) : 
 			?>
 			<?php while ( $lp->have_posts() ) : $lp->the_post(); $do_not_duplicate[] = get_the_ID(); ?>
-				<li><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
+				<li><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+				<?php
+                if (!empty($ntb_expt_txt_title)) { 	 
+				echo expt_title_text_NTB(get_the_title(), $ntb_expt_txt_title); 
+                } else {
+				echo expt_title_text_NTB(get_the_title(), 70); 
+                }
+				?>
+				</a></li>
 			<?php
 			endwhile;
 		 	endif; 
@@ -13,7 +21,11 @@
 if ( count( $comments_list ) > 0 ) {
 $date_format = 'j F Y';
  foreach ( $comments_list as $comment ) {
- echo '<li><a href="'.get_permalink($comment->comment_post_ID).'#comment-'.$comment->comment_ID.'">'.wp_html_excerpt( $comment->comment_content, 52 ).' ...</a></li>';
+if (!empty($ntb_expt_txt_comm)) { 	 
+ echo '<li><a href="'.get_permalink($comment->comment_post_ID).'#comment-'.$comment->comment_ID.'">'.wp_html_excerpt( $comment->comment_content, $ntb_expt_txt_comm ).' ...</a></li>';
+} else {
+ echo '<li><a href="'.get_permalink($comment->comment_post_ID).'#comment-'.$comment->comment_ID.'">'.wp_html_excerpt( $comment->comment_content, 62 ).' ...</a></li>';
+}
  }
 } else {
 	echo '<p>';

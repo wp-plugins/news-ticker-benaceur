@@ -3,7 +3,7 @@ Contributors: Benaceur
 Tags: news ticker, latest post, latest posts, news post, latest comments, Last posts bar, Last news ticker, Latest news, bar
 Requires at least: 3.0
 Tested up to: 4.1.1
-Stable tag: 2.1.2
+Stable tag: 2.1.3
 License: GPLv2 or later
 
 This plugin allow you to display the latest posts or latest comments or news in a bar with four beautiful animations...
@@ -37,6 +37,11 @@ Link to preview <a href="http://benaceur-php.com/" target="_blank">Demo</a>
 
 == Changelog ==
 
+= 2.1.3 =
+* Adding the possibility to control the number of letters of the title of the article.
+* Adding the possibility to control the number of letters of the comments.
+* Adding a new style in Backend.
+* Some adjustment in Translation.
 = 2.1.2 =
 * Adding a link to the comments.
 = 2.1.1 =

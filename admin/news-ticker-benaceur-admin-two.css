@@ -17,7 +17,7 @@ input[type="text"] {
 	margin-bottom: 8px;
 	padding: .35em 1em;
 }
-.styled-select select {
+.styled-select-ntb select {
     color:#fff;
     border:1px solid #999999; 
     border-radius:5px;
@@ -27,7 +27,7 @@ input[type="text"] {
 	line-height: 1;
 	font-weight:bold;
 	width: auto;
-	height: auto;
+	max-height: 200px;
 	margin-bottom: 8px;
 	padding: .35em 1em;
 }
@@ -76,7 +76,7 @@ input[type="text"] {
     -webkit-box-shadow: 5px 5px 10px #cfcfcf;
 }
 .bold-3 {margin-bottom:6px;}
-.code-insert-ntb {background:#9B005E;}
+.code-insert-ntb {background:#9B005E;padding:4px;}
 #col-nontb{color:#fff;}
 
 th {min-width:150px;}

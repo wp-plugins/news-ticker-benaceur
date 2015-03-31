@@ -18,6 +18,8 @@ function news_ticker_benaceur_page_options() {
 <?php if (isset($_GET['settings-updated']) && $GLOBALS['pagenow'] == 'options-general.php' && $_GET['page'] == 'news-ticker-benaceur'){ ?>
 <style>#setting-error-settings_updated {display:none;}</style>
 		<?php if ($ntb_styles_options_p == 'theme_one' || $ntb_styles_options_p == '' ) { ?>
+		<div  id="message" class="updated" style="background:#AC302D;color:white;margin:20px 0 20px 0;">
+		<?php } elseif ($ntb_styles_options_p == 'theme_two' ) { ?>
 		<div  id="message" class="updated" style="background:#B3006B;color:white;margin:20px 0 20px 0;">
 		<?php } elseif ($ntb_styles_options_p == 'theme_standard' ) { ?>
 		<div  id="message" class="updated" style="background:;color:;margin:20px;">
@@ -27,10 +29,10 @@ function news_ticker_benaceur_page_options() {
 <?php } ?>	
 <div id="col-nontb">
 <p><?php _e('Note: After activating the plugin Put the following line in the place (in template) where you bar to appear:', 'news-ticker-benaceur'); ?></p>
-<div class="code-insert-ntb">&lt;?php if (has_action('wp_news_ticker_benaceur')) wp_news_ticker_benaceur_(); ?></div>
+<span class="code-insert-ntb">&lt;?php if (has_action('wp_news_ticker_benaceur')) wp_news_ticker_benaceur_(); ?></span>
 <p><?php _e('or put this short code (in post or page):', 'news-ticker-benaceur'); ?></p>
-<div class="code-insert-ntb">[wp_news_ticker_benaceur_short_code]</div>
-</br><hr>
+<span class="code-insert-ntb">[wp_news_ticker_benaceur_short_code]</span>
+</br></br><hr>
 </div>
         <h3><?php _e('Settings', 'news-ticker-benaceur'); ?></h3>
         <form id="myOptionsForm_ntb" method="post" action="options.php"  >
@@ -259,6 +261,23 @@ foreach($category_ids as $cat_id) {
 				<option value="rtl" <?php selected('rtl', $ntb_dir); ?>><?php _e('RTL', 'news-ticker-benaceur'); ?></option>
                 </tr>
             </table>
+<div style="margin-bottom:5px;" class="to-tr2"></div>
+<table class="form-table">
+                <tr valign="top">
+                    <th style="font-size: 13px;font-weight:normal;" scope="row"><?php _e('Number of letters of Title', 'news-ticker-benaceur'); ?></th>
+                    <td>
+					<div class="sm_benaceurlist_caps_input-ntb"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_expt_txt_title" value="<?php if (!empty($ntb_expt_txt_title)) { echo $ntb_expt_txt_title; } else {echo "70";} ?>" /></div>
+                   </td>
+                </tr>
+                <tr valign="top">
+                    <th style="font-size: 13px;font-weight:normal;" scope="row"><?php _e('Number of letters of Comments', 'news-ticker-benaceur'); ?></th>
+                    <td>
+					<div class="sm_benaceurlist_caps_input-ntb"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_expt_txt_comm" value="<?php if (!empty($ntb_expt_txt_comm)) { echo $ntb_expt_txt_comm; } else {echo "62";} ?>" /></div>
+                   </td>
+                </tr>
+</table>
+<div class="to-tr2"></div>
+
 <p><?php submit_button(); ?></p>
         </form>
     <form action="options.php" method="post">
@@ -505,7 +524,12 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 						<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-						<div class="bold-3"><select style="min-width:137px;text-align:center;"  name="news_ticker_benaceur_styles_options_p" class="news-ticker-benaceur-color-inp"><option value="theme_one" <?php selected('theme_one', $ntb_styles_options_p); ?>><?php _e('Themes one', 'news-ticker-benaceur'); ?></option><option value="theme_standard" <?php selected('theme_standard', $ntb_styles_options_p); ?>><?php _e('Standard theme', 'news-ticker-benaceur'); ?></option></select></div>
+						<div class="bold-3">
+						<select style="min-width:137px;text-align:center;"  name="news_ticker_benaceur_styles_options_p" class="news-ticker-benaceur-color-inp">
+						<option value="theme_one" <?php selected('theme_one', $ntb_styles_options_p); ?>><?php _e('Themes one', 'news-ticker-benaceur'); ?></option>
+						<option value="theme_two" <?php selected('theme_two', $ntb_styles_options_p); ?>><?php _e('Themes two', 'news-ticker-benaceur'); ?></option>
+						<option value="theme_standard" <?php selected('theme_standard', $ntb_styles_options_p); ?>><?php _e('Standard theme', 'news-ticker-benaceur'); ?></option>
+						</select></div>
 						</div></div>
 						</td>
 						<div class="colwrap-display">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td><?php _e("Styles options page",'news-ticker-benaceur'); ?> </td></div></br>

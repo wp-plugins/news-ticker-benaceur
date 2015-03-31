@@ -3,7 +3,7 @@
 Plugin Name: news ticker benaceur
 Plugin URI: http://benaceur-php.com/
 Description: This plugin allow you to display the latest news or latest articles in a bar with four beautiful animations...
-Version: 2.1.2
+Version: 2.1.3
 Author: benaceur
 Author URI: http://benaceur-php.com/
 License: GPL2
@@ -53,6 +53,8 @@ add_action('admin_init', 'news_ticker_benaceur_register_options');
     register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_disable_title');
     register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_latest_p_c');
     register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_include_exclude_id');
+    register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_expt_txt_title');
+    register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_expt_txt_comm');
 	
     register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_color_back_');
     register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_color_back_title');
@@ -90,7 +92,9 @@ add_action('admin_init', 'news_ticker_benaceur_register_options');
 		wp_enqueue_script('farbtastic');
 		wp_enqueue_script('news-ticker-benaceur-admin',plugins_url('admin/news-ticker-benaceur-admin.js',__FILE__), array('jquery'));
 		if (get_option('news_ticker_benaceur_styles_options_p') == 'theme_one' || get_option('news_ticker_benaceur_styles_options_p') == '' ) {
-		wp_enqueue_style('news-ticker-benaceur-admin',plugins_url('admin/news-ticker-benaceur-admin.css',__FILE__), false, '' );
+		wp_enqueue_style('news-ticker-benaceur-admin',plugins_url('admin/news-ticker-benaceur-admin-one.css',__FILE__), false, '' );
+		} elseif (get_option('news_ticker_benaceur_styles_options_p') == 'theme_two' ) {
+		wp_enqueue_style('news-ticker-benaceur-admin',plugins_url('admin/news-ticker-benaceur-admin-two.css',__FILE__), false, '' );
 		} elseif (get_option('news_ticker_benaceur_styles_options_p') == 'theme_standard' ) {
 		wp_enqueue_style('news-ticker-benaceur-admin',plugins_url('admin/news-ticker-benaceur-admin-stand.css',__FILE__), false, '' );
 		}
@@ -103,6 +107,26 @@ if (get_option('news_ticker_benaceur_enable_plug')):
     function wp_news_ticker_benaceur_() {  
         do_action('wp_news_ticker_benaceur');
        }
+
+if(!function_exists('expt_title_text_NTB')) {
+	function expt_title_text_NTB($text, $length = 0) {
+		if (defined('MB_OVERLOAD_STRING')) {
+		  $text = @html_entity_decode($text, ENT_QUOTES, get_option('blog_charset'));
+		 	if (mb_strlen($text) > $length) {
+				return htmlentities(mb_substr($text,0,$length), ENT_COMPAT, get_option('blog_charset')).'...';
+		 	} else {
+				return htmlentities($text, ENT_COMPAT, get_option('blog_charset'));
+		 	}
+		} else {
+			$text = @html_entity_decode($text, ENT_QUOTES, get_option('blog_charset'));
+		 	if (strlen($text) > $length) {
+				return htmlentities(substr($text,0,$length), ENT_COMPAT, get_option('blog_charset')).'...';
+		 	} else {
+				return htmlentities($text, ENT_COMPAT, get_option('blog_charset'));
+		 	}
+		}
+	}
+}
 	   
 //[wp_news_ticker_benaceur_short_code]
     function shortcode_ntb_func( $atts ){
@@ -244,14 +268,15 @@ $wp_admin_bar->add_menu( array( 'parent' => 'site-name', 'id' => 'PLB_ntb8', 'ti
 }
 // admin_bar
 
-// ADMIN NOTICES
     add_action( 'admin_init', 'news_ticker_benaceur_admin_notices' );
     function news_ticker_benaceur_admin_notices() {
-
-    if ( $GLOBALS['pagenow'] == 'options-general.php' && $_GET['page'] == 'news-ticker-benaceur-no_notice' ) {
+    $add_notice_admin = true;
+	
+	if ( true === $add_notice_admin ) { 
+    if ( $GLOBALS['pagenow'] == 'options-general.php' && $_GET['page'] == 'news-ticker-benaceur' ) {
     include ('notices-ntb.php');
     }
+	                                  }
 	}
-// ADMIN NOTICES
 
         require_once ('news-ticker-benaceur-panel-page.php');
