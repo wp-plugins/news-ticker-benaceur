@@ -40,7 +40,13 @@ $ntb_include_exclude_id = get_option( 'news_ticker_benaceur_include_exclude_id' 
 $ntb_height = get_option( 'news_ticker_benaceur_height' );
 $ntb_a_hover = get_option( 'news_ticker_benaceur_a_hover' );
 $ntb_styles_options_p = get_option( 'news_ticker_benaceur_styles_options_p' );
-
 $ntb_expt_txt_title = get_option( 'news_ticker_benaceur_expt_txt_title' );
 $ntb_expt_txt_comm = get_option( 'news_ticker_benaceur_expt_txt_comm' );
+$ntb_delete_all_options = get_option( 'news_ticker_benaceur_delete_all_options' );
+$ntb_cust_color_back = get_option( 'news_ticker_benaceur_cust_color_back' );
+$ntb_cust_color_font = get_option( 'news_ticker_benaceur_cust_color_font' );
+$ntb_cust_color_back_input = get_option( 'news_ticker_benaceur_cust_color_back_input' );
+$ntb_cust_color_back_msg = get_option( 'news_ticker_benaceur_cust_color_back_msg' );
+$ntb_cust_color_switch_input = get_option( 'news_ticker_benaceur_cust_color_switch_input' );
+$ntb_hide_icon_evol_plug = get_option( 'news_ticker_benaceur_hide_icon_evol_plug' );
 

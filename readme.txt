@@ -3,7 +3,7 @@ Contributors: Benaceur
 Tags: news ticker, latest post, latest posts, news post, latest comments, Last posts bar, Last news ticker, Latest news, bar
 Requires at least: 3.0
 Tested up to: 4.1.1
-Stable tag: 2.1.3
+Stable tag: 2.1.4
 License: GPLv2 or later
 
 This plugin allow you to display the latest posts or latest comments or news in a bar with four beautiful animations...
@@ -13,6 +13,22 @@ This plugin allow you to display the latest posts or latest comments or news in 
 This plugin allows you to view the latest posts or latest comments or latest news generally speaking in a bar with four beautiful animations, 
 you can control and adjust the style of the bar from the admin panel, 
 you also the possibility to appear the bar to the particular group or member ...
+
+and here is all plugin characteristics:
+
+1- Four styles with beautiful animations
+2- Complete control over the plugin, color properties, font, height, width, etc ... through the Control Panel
+3- enable/disable the plugin from the control panel
+4- Control the direction of the news ticker RTL / LTR
+5- Adding a link a sub or a major to the plugin settings page in admin bar
+6- The possibility to appear the bar to the particular group or member ...
+7- Include the posts from certain categories only, or conversely, exclude a category or categories
+8- Include the comments from certain posts only, or conversely, exclude a post or posts
+9- The possibility to control the maximum number of letters of the title of the article or comment
+10- The possibility to control speed,timeout ... of animation
+11- The ability to remove all settings and data from the database when the plugin is disabled or not to remove, is optional
+12- The ability to customize an appropriate style for the control panel, what you can set and adjust the colors of the options page.
+The plugin, God willing, is open to development
 
 TRANSLATED IN FOLLOWING LANGUAGES:
 - Arabic
@@ -37,6 +53,10 @@ Link to preview <a href="http://benaceur-php.com/" target="_blank">Demo</a>
 
 == Changelog ==
 
+= 2.1.4 =
+* Adding custom theme for settings page in Backend.
+* Adding the possibility to Remove all settings and data of the plugin from database when the plugin is disabled.
+* Adding the possibility to Hide the plugin rating icon.
 = 2.1.3 =
 * Adding the possibility to control the number of letters of the title of the article.
 * Adding the possibility to control the number of letters of the comments.

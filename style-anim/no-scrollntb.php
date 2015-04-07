@@ -63,7 +63,7 @@ if (!empty($ntb_expt_txt_comm)) {
 	    transition: all 0.5s ease-out;
 	}
 	.news-ticker-ntb ul a:hover {
-		color:<?php if (!empty($ntb_a_hover)) { echo $ntb_a_hover; } else {echo "#B0284E";} ?>;
+		color:<?php if (!empty($ntb_a_hover)) { echo $ntb_a_hover; } else {echo "#847c7c";} ?>;
 		text-decoration: none!important;
 	   -webkit-transition: all 0.5s ease-out;
 	   -moz-transition: all 0.5s ease-out;
@@ -133,7 +133,7 @@ if (!empty($ntb_expt_txt_comm)) {
 	    transition: all 0.5s ease-out;
 	}
 	.news-ticker-ntb ul a:hover {
-		color:<?php if (!empty($ntb_a_hover)) { echo $ntb_a_hover; } else {echo "#B0284E";} ?>;
+		color:<?php if (!empty($ntb_a_hover)) { echo $ntb_a_hover; } else {echo "#847c7c";} ?>;
 		text-decoration: none!important;
 	   -webkit-transition: all 0.5s ease-out;
 	   -moz-transition: all 0.5s ease-out;

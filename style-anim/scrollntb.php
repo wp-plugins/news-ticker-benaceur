@@ -87,7 +87,7 @@ $date_format = 'j F Y';
 	    transition: all 0.5s ease-out;
 	}
 	#scroll-ntb a:hover {
-		color:<?php if (!empty($ntb_a_hover)) { echo $ntb_a_hover; } else {echo "#B0284E";} ?>!important;
+		color:<?php if (!empty($ntb_a_hover)) { echo $ntb_a_hover; } else {echo "#847c7c";} ?>!important;
 		text-decoration: none!important;
 	   -webkit-transition: all 0.5s ease-out;
 	   -moz-transition: all 0.5s ease-out;
@@ -157,7 +157,7 @@ $date_format = 'j F Y';
 	    transition: all 0.5s ease-out;
 	}
 	#scroll-ntb a:hover {
-		color:<?php if (!empty($ntb_a_hover)) { echo $ntb_a_hover; } else {echo "#B0284E";} ?>!important;
+		color:<?php if (!empty($ntb_a_hover)) { echo $ntb_a_hover; } else {echo "#847c7c";} ?>!important;
 		text-decoration: none!important;
 	   -webkit-transition: all 0.5s ease-out;
 	   -moz-transition: all 0.5s ease-out;

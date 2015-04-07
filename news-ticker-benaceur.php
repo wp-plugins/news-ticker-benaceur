@@ -3,7 +3,7 @@
 Plugin Name: news ticker benaceur
 Plugin URI: http://benaceur-php.com/
 Description: This plugin allow you to display the latest news or latest articles in a bar with four beautiful animations...
-Version: 2.1.3
+Version: 2.1.4
 Author: benaceur
 Author URI: http://benaceur-php.com/
 License: GPL2
@@ -32,60 +32,81 @@ add_action('admin_init', 'news_ticker_benaceur_register_options');
 }
 
   function news_ticker_benaceur_register_options() { 
-    register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_enable_plug');
-    register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_for_users');
-    register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_for_visitors');
-    register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_for_role_x');
-    register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_for_user_id');
-    register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_links_admin_bar_menu');
-    register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_links_admin_bar_front');
-    register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_links_admin_bar_admin');
-    register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_dir');
-    register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_style');
-    register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_for_cat');
-    register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_for_all_expt_admin');
-    register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_title');
-    register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_num_posts');
-    register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_timeout_tickerntb');
-    register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_anim_speed');
-    register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_timeout');
-    register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_speed_scrollntb');
-    register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_disable_title');
-    register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_latest_p_c');
-    register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_include_exclude_id');
-    register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_expt_txt_title');
-    register_setting('news_ticker_benaceur_group', 'news_ticker_benaceur_expt_txt_comm');
 	
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_color_back_');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_color_back_title');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_color_text_back');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_color_text_title');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_color_border');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_border_top');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_border_bottom');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_border_right');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_border_left');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_border_radius');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_opacity');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_font_family');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_font_size');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_width');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_padding_top');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_padding_bottom');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_margin_top');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_margin_bottom');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_font_weight');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_text_shadow');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_text_shadow_color');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_box_shadow');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_box_shadow_color');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_box_shadow_v');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_disable_this_font');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_padding_top_title');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_default');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_height');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_a_hover');
-    register_setting('news_ticker_benaceur_group_sty', 'news_ticker_benaceur_styles_options_p');
+  register_setting('news_ticker_benaceur_group_op', 'news_ticker_benaceur_delete_all_options');
+
+  global $AllOptionsNTB;	
+  $AllOptionsNTB = array(
+  'news_ticker_benaceur_for_visitors',
+  'news_ticker_benaceur_links_admin_bar_front',
+  'news_ticker_benaceur_links_admin_bar_admin',  
+  'news_ticker_benaceur_enable_plug',
+  'news_ticker_benaceur_for_users',
+  'news_ticker_benaceur_for_role_x',
+  'news_ticker_benaceur_for_user_id',
+  'news_ticker_benaceur_links_admin_bar_menu',
+  'news_ticker_benaceur_dir',
+  'news_ticker_benaceur_style',
+  'news_ticker_benaceur_for_cat',
+  'news_ticker_benaceur_for_all_expt_admin',
+  'news_ticker_benaceur_title',
+  'news_ticker_benaceur_num_posts',
+  'news_ticker_benaceur_timeout_tickerntb',
+  'news_ticker_benaceur_anim_speed',
+  'news_ticker_benaceur_timeout',
+  'news_ticker_benaceur_speed_scrollntb',
+  'news_ticker_benaceur_disable_title',
+  'news_ticker_benaceur_latest_p_c',
+  'news_ticker_benaceur_include_exclude_id',
+  'news_ticker_benaceur_expt_txt_title',
+  'news_ticker_benaceur_expt_txt_comm'
+   );
+  foreach($AllOptionsNTB as $optionN_NTB) {
+    register_setting('news_ticker_benaceur_group', $optionN_NTB);
+}	
+
+  global $AllOptionssNTB;	
+  $AllOptionssNTB = array(
+  'news_ticker_benaceur_color_back_',
+  'news_ticker_benaceur_color_back_title',
+  'news_ticker_benaceur_color_text_back',
+  'news_ticker_benaceur_color_text_title',
+  'news_ticker_benaceur_color_border',
+  'news_ticker_benaceur_border_top',
+  'news_ticker_benaceur_border_bottom',
+  'news_ticker_benaceur_border_right',
+  'news_ticker_benaceur_border_left',
+  'news_ticker_benaceur_border_radius',
+  'news_ticker_benaceur_opacity',
+  'news_ticker_benaceur_font_family',
+  'news_ticker_benaceur_font_size',
+  'news_ticker_benaceur_width',
+  'news_ticker_benaceur_padding_top',
+  'news_ticker_benaceur_padding_bottom',
+  'news_ticker_benaceur_margin_top',
+  'news_ticker_benaceur_margin_bottom',
+  'news_ticker_benaceur_font_weight',
+  'news_ticker_benaceur_text_shadow',
+  'news_ticker_benaceur_text_shadow_color',
+  'news_ticker_benaceur_box_shadow',
+  'news_ticker_benaceur_box_shadow_color',
+  'news_ticker_benaceur_box_shadow_v',
+  'news_ticker_benaceur_disable_this_font',
+  'news_ticker_benaceur_padding_top_title',
+  'news_ticker_benaceur_default',
+  'news_ticker_benaceur_height',
+  'news_ticker_benaceur_a_hover',
+  'news_ticker_benaceur_styles_options_p',
+  'news_ticker_benaceur_cust_color_back',
+  'news_ticker_benaceur_cust_color_font',
+  'news_ticker_benaceur_cust_color_back_input',
+  'news_ticker_benaceur_cust_color_back_msg',
+  'news_ticker_benaceur_cust_color_switch_input',
+  'news_ticker_benaceur_hide_icon_evol_plug'
+   );
+  foreach($AllOptionssNTB as $optionS_NTB ) {
+    register_setting('news_ticker_benaceur_group_sty', $optionS_NTB);
+}	
 	
 	    if ($GLOBALS['pagenow'] == 'options-general.php' && $_GET['page'] == 'news-ticker-benaceur'){
 		wp_enqueue_script ('jquery');
@@ -93,8 +114,6 @@ add_action('admin_init', 'news_ticker_benaceur_register_options');
 		wp_enqueue_script('news-ticker-benaceur-admin',plugins_url('admin/news-ticker-benaceur-admin.js',__FILE__), array('jquery'));
 		if (get_option('news_ticker_benaceur_styles_options_p') == 'theme_one' || get_option('news_ticker_benaceur_styles_options_p') == '' ) {
 		wp_enqueue_style('news-ticker-benaceur-admin',plugins_url('admin/news-ticker-benaceur-admin-one.css',__FILE__), false, '' );
-		} elseif (get_option('news_ticker_benaceur_styles_options_p') == 'theme_two' ) {
-		wp_enqueue_style('news-ticker-benaceur-admin',plugins_url('admin/news-ticker-benaceur-admin-two.css',__FILE__), false, '' );
 		} elseif (get_option('news_ticker_benaceur_styles_options_p') == 'theme_standard' ) {
 		wp_enqueue_style('news-ticker-benaceur-admin',plugins_url('admin/news-ticker-benaceur-admin-stand.css',__FILE__), false, '' );
 		}
@@ -274,9 +293,26 @@ $wp_admin_bar->add_menu( array( 'parent' => 'site-name', 'id' => 'PLB_ntb8', 'ti
 	
 	if ( true === $add_notice_admin ) { 
     if ( $GLOBALS['pagenow'] == 'options-general.php' && $_GET['page'] == 'news-ticker-benaceur' ) {
-    include ('notices-ntb.php');
+    include ('includes/notices-ntb.php');
     }
 	                                  }
 	}
 
         require_once ('news-ticker-benaceur-panel-page.php');
+
+  if ( get_option( 'news_ticker_benaceur_delete_all_options') == 'delete_opt') :
+  register_deactivation_hook( __FILE__, 'NTB_plugin_deactivation' );
+  function NTB_plugin_deactivation() {
+	
+  global $AllOptionsNTB;	
+  foreach($AllOptionsNTB as $optionN_NTB) {
+     delete_option($optionN_NTB);
+}
+
+  global $AllOptionssNTB;	
+  foreach($AllOptionssNTB as $optionS_NTB ) {
+     delete_option($optionS_NTB);
+}
+     delete_option('news_ticker_benaceur_delete_all_options');
+}
+  endif; // endif news_ticker_benaceur_delete_all_options

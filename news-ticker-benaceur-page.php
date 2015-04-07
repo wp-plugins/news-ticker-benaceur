@@ -3,7 +3,7 @@
 function news_ticker_benaceur_post() {
 	$ntb_st = get_option('news_ticker_benaceur_style');
 	$dir = get_option( 'news_ticker_benaceur_dir' );
-	include ('news-ticker-benaceur-panel-var.php');
+	include ('includes/news-ticker-benaceur-panel-var.php');
 // L comments	
  global $wpdb;  
 $n_p_c = $ntb_num_posts; 

@@ -1,8 +1,10 @@
+
+<style type="text/css">
 #news-ticker-benaceur-font .news-ticker-benaceur-colwrap{position:relative;width:120px;}	
 #news-ticker-benaceur-font .news-ticker-benaceur-colwrap .news-ticker-benaceur-color-inp{ border: 1px solid #EA2F22;  width: 103px; text-align:center;} 	
 #news-ticker-benaceur-font .news-ticker-benaceur-colwrap2{position:relative;}	
 #news-ticker-benaceur-font .news-ticker-benaceur-colwrap2 .news-ticker-benaceur-color-inp{ border: 1px solid #EA2F22;  width: 103px; text-align:center;} 	
-#news-ticker-benaceur-font .news-ticker-benaceur-colsel{background: url("color_picker.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0); background-size: 26px 23px; cursor: pointer; height: 26px;  position: absolute;  top: 1px; width: 23px; } 
+#news-ticker-benaceur-font .news-ticker-benaceur-colsel{background: url(<?php echo '' . plugins_url( '../admin/color_picker.png', __FILE__ ) . ''; ?>) no-repeat scroll 0 0 rgba(0, 0, 0, 0); background-size: 26px 23px; cursor: pointer; height: 26px;  position: absolute;  top: 1px; width: 23px; } 
 #news-ticker-benaceur-font .news-ticker-benaceur-colsel .farbtastic{display:none;position:absolute;top:8px;z-index:1;}
 
 input[type="text"] {
@@ -76,12 +78,11 @@ input[type="text"] {
     -webkit-box-shadow: 5px 5px 10px #cfcfcf;
 }
 .bold-3 {margin-bottom:6px;}
-.code-insert-ntb {background:#9B005E;padding:4px;}
-#col-nontb{color:#fff;}
+.code-insert-ntb {background:<?php if (!empty($ntb_cust_color_back_input)) { echo $ntb_cust_color_back_input; } else {echo "#9B005E";} ?>;padding:4px;}
+#col-nontb{color:<?php if (!empty($ntb_cust_color_font)) { echo $ntb_cust_color_font; } else {echo "#FFFFFF";} ?>;}
 
 th {min-width:150px;}
 .switch-handle-w  {min-width:200px;margin-top:7px;}
-/* checked on / off ------- */
 .switch-nab {
   position: relative;
   display: inline-block;
@@ -149,7 +150,7 @@ th {min-width:150px;}
   opacity: 0;
 }
 .switch-input:checked ~ .switch-label {
-  background:#9B005E;
+  background:<?php if (!empty($ntb_cust_color_switch_input)) { echo $ntb_cust_color_switch_input; } else {echo "#9B005E";} ?>;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
 }
 .switch-input:checked ~ .switch-label:before {
@@ -300,9 +301,7 @@ th {min-width:150px;}
   border:solid 0px #000000;
   border-radius:5px;
   box-shadow: 6px 5px 8px #000000;
-  background-color: rgba(122, 0, 73, 1);
-  background: rgba(122, 0, 73, 1);
-  color: rgba(122, 0, 73, 1);
+  background-color:<?php if (!empty($ntb_cust_color_back)) { echo $ntb_cust_color_back; } else {echo "#7A0049";} ?>;
 }
 #wpcontent-benaceur-nab-top {
   background: url(https://ps.w.org/news-ticker-benaceur/assets/banner-772x250.png) no-repeat top;
@@ -312,13 +311,13 @@ th {min-width:150px;}
   width:100%;
 }
 #wpcontent-benaceur-ntb form ,#wpcontent-benaceur-ntb form  th,#wpcontent-benaceur-ntb h2,#wpcontent-benaceur-ntb h3   {
-  color:#fff;
+  color:<?php if (!empty($ntb_cust_color_font)) { echo $ntb_cust_color_font; } else {echo "#FFFFFF";} ?>;
 }
 #wpcontent-benaceur-ntb textarea,#wpcontent-benaceur-ntb input ,#wpcontent-benaceur-ntb select{
-  color:#fff;
+  color:<?php if (!empty($ntb_cust_color_font)) { echo $ntb_cust_color_font; } else {echo "#FFFFFF";} ?>;
   border:1px solid #999999; 
   border-radius:5px;
-  background-color:#9B005E;
+  background-color:<?php if (!empty($ntb_cust_color_back_input)) { echo $ntb_cust_color_back_input; } else {echo "#9B005E";} ?>;
 }
 #wpcontent-benaceur-ntb textarea {
   -moz-transition: all 0.4s ease-in-out;
@@ -347,3 +346,5 @@ th {min-width:150px;}
 .colwrap-display {display:inline-block;}
 .bold-3 {margin-bottom:6px;}
 .bold-4 {margin-top:8px;}
+.hov-button-primary-sub a:link {color:white;text-decoration: none;} .hov-button-primary-sub a:visited {color:white;} .hov-button-primary-sub a:active,.hov-button-primary-sub a:hover {olor:white;}
+</style>

@@ -11,16 +11,16 @@ function news_ticker_benaceur_page_options() {
 		$roles = $wp_roles->get_names();
         $roles = array_map( 'translate_user_role', $roles );
 		
-        include ('news-ticker-benaceur-panel-var.php');
+        include ('includes/news-ticker-benaceur-panel-var.php');
 		?>
     <div id="wpcontent-benaceur-ntb"><div id="wpcontent-benaceur-nab-top"></div>
             <h2><?php _e('News-Ticker-Benaceur', 'news-ticker-benaceur'); ?></h2>
 <?php if (isset($_GET['settings-updated']) && $GLOBALS['pagenow'] == 'options-general.php' && $_GET['page'] == 'news-ticker-benaceur'){ ?>
 <style>#setting-error-settings_updated {display:none;}</style>
 		<?php if ($ntb_styles_options_p == 'theme_one' || $ntb_styles_options_p == '' ) { ?>
-		<div  id="message" class="updated" style="background:#AC302D;color:white;margin:20px 0 20px 0;">
-		<?php } elseif ($ntb_styles_options_p == 'theme_two' ) { ?>
-		<div  id="message" class="updated" style="background:#B3006B;color:white;margin:20px 0 20px 0;">
+		<div  id="message" class="updated" style="background:#AC302D;color:<?php if (!empty($ntb_cust_color_font)) { echo $ntb_cust_color_font; } else {echo "#FFFFFF";} ?>;margin:20px 0 20px 0;">
+		<?php } elseif ($ntb_styles_options_p == 'theme_custom' ) { ?>
+		<div  id="message" class="updated" style="background:<?php if (!empty($ntb_cust_color_back_msg)) { echo $ntb_cust_color_back_msg; } else {echo "#B3006B";} ?>;color:<?php if (!empty($ntb_cust_color_font)) { echo $ntb_cust_color_font; } else {echo "#FFFFFF";} ?>;margin:20px 0 20px 0;">
 		<?php } elseif ($ntb_styles_options_p == 'theme_standard' ) { ?>
 		<div  id="message" class="updated" style="background:;color:;margin:20px;">
 		<?php } ?>
@@ -156,7 +156,7 @@ function news_ticker_benaceur_page_options() {
 <div id="sub-ntb">		
 <?php
   echo '<div>
-<table width="80%" cellspacing="1" style="border:1px solid #999999;background:#D70081;">
+<table width="80%" cellspacing="1" style="border:1px solid #999999;background:#A4A4A4;">
 	<tr>
 		<td align="center" width="80%" style="border-left:1px solid #999999;"><b>name cat</b></td>
 		<td align="center" width="20%"><b>id cat</b></td>
@@ -342,7 +342,7 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" id="news-ticker-benaceur-hoverclr_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_a_hover)) { echo $ntb_a_hover; } else {echo "#B0284E";} ?>" name="news_ticker_benaceur_a_hover" />
+								<input type="text" id="news-ticker-benaceur-hoverclr_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_a_hover)) { echo $ntb_a_hover; } else {echo "#847c7c";} ?>" name="news_ticker_benaceur_a_hover" />
 								<div class="news-ticker-benaceur-colsel news-ticker-benaceur-hoverclr_a"></div>
 							</div></div>
 						</td>
@@ -520,21 +520,37 @@ foreach($category_ids as $cat_id) {
 						</td>
 						<div class="colwrap-display"><td><?php _e("box shadow v",'news-ticker-benaceur'); ?> </td></div></br>
 					</tr>
-                    <div class="to-tr"></div>
+</br><div class="to-tr2"></div></br>
 					<tr>
 						<td>
 						<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
 						<div class="bold-3">
-						<select style="min-width:137px;text-align:center;"  name="news_ticker_benaceur_styles_options_p" class="news-ticker-benaceur-color-inp">
-						<option value="theme_one" <?php selected('theme_one', $ntb_styles_options_p); ?>><?php _e('Themes one', 'news-ticker-benaceur'); ?></option>
-						<option value="theme_two" <?php selected('theme_two', $ntb_styles_options_p); ?>><?php _e('Themes two', 'news-ticker-benaceur'); ?></option>
+						<select id="NTBshowelemselect" style="min-width:137px;text-align:center;"  name="news_ticker_benaceur_styles_options_p" class="news-ticker-benaceur-color-inp">
+						<option value="theme_one" <?php selected('theme_one', $ntb_styles_options_p); ?>><?php _e('Orange Theme', 'news-ticker-benaceur'); ?></option>
+						<option value="theme_custom" <?php selected('theme_custom', $ntb_styles_options_p); ?>><?php _e('Custom Theme', 'news-ticker-benaceur'); ?></option>
 						<option value="theme_standard" <?php selected('theme_standard', $ntb_styles_options_p); ?>><?php _e('Standard theme', 'news-ticker-benaceur'); ?></option>
 						</select></div>
 						</div></div>
 						</td>
 						<div class="colwrap-display">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td><?php _e("Styles options page",'news-ticker-benaceur'); ?> </td></div></br>
+						
+      <?php  include ('includes/news-ticker-benaceur-styles-p-options.php'); ?>
+
 					</tr>
-					</br></br><p><?php submit_button(); ?></p>
+</br><div class="to-tr2"></div></br>
+                <tr>  
+                    <td> 
+					<label class="switch-nab">				
+
+	                    <input type="checkbox" class="switch-input" name="news_ticker_benaceur_hide_icon_evol_plug" value="1" <?php if( $ntb_hide_icon_evol_plug) { echo 'checked="checked"'; } ?>/>
+                        <span class="switch-label" data-on="On" data-off="Off"></span>
+                        <span class="switch-handle"></span>
+                   </label>
+       &nbsp;&nbsp;&nbsp; <td style="font-size: 13px;font-weight:normal;"><?php _e('Hide the plugin rating icon', 'news-ticker-benaceur'); ?></td>
+				   </td>
+                </tr>
+
+					</br><p><?php submit_button(); ?></p>
 				</div>	
 			</form>
     <form action="options.php" method="post">
@@ -545,7 +561,34 @@ foreach($category_ids as $cat_id) {
       <input type="submit" value="<?php _e('Click to reset style properties plugin', 'news-ticker-benaceur');?>" class="button-secondary" />
       <input type="hidden" name="news_ticker_benaceur_style" value="style1" <?php echo get_option( 'news_ticker_benaceur_style' ) == 'style1'; ?> >
     </form>
+</br><div class="to-tr"></div>
+    <form action="options.php" method="post">
+            <?php
+			settings_fields( 'news_ticker_benaceur_group_op' ); 
+			do_settings_sections( 'news_ticker_benaceur_group_op' );
+			?>
+<table style="margin-top:20px;" >
+	
+					<tr>
+						<td>
+                   <input type="radio" name="news_ticker_benaceur_delete_all_options" value="delete_opt" <?php if( $ntb_delete_all_options== 'delete_opt')echo 'checked';?> >
+                    <td><?php _e("Remove all settings and data of the plugin from database when the plugin is disabled",'news-ticker-benaceur'); ?></td>
+						</td>
+					</tr>
+					<tr> 
+						<td>
+                   <input type="radio" name="news_ticker_benaceur_delete_all_options" value="no_delete_opt" <?php if( $ntb_delete_all_options == 'no_delete_opt' || $ntb_delete_all_options == '')echo 'checked';?> >
+						</td>
+                   <td><?php _e("Do not delete",'news-ticker-benaceur'); ?></td>
+					</tr>
+</table>
+					<p><?php submit_button(); ?></p>
+    </form>
+</br>
     </div></div>
+<?php if(empty($ntb_hide_icon_evol_plug)) {?>
+<div class="hov-button-primary-sub"><div class="button button-primary"><a target="_blank" href="https://wordpress.org/support/view/plugin-reviews/news-ticker-benaceur?filter=5"><?php _e('Do not forget to rate the plugin', 'news-ticker-benaceur');?></a></div></div>
+<?php } ?>
 	<a href="#top"><div id="to-top"></div></a>
 	
 <style type="text/css">
@@ -562,7 +605,12 @@ foreach($category_ids as $cat_id) {
   margin-right:60px;
   <?php } ?>
   }
+#NTBshowdiv{display:none;}
 </style>
+
+<?php if (get_option('news_ticker_benaceur_styles_options_p') == 'theme_custom'  ) { 
+ include ('admin/news-ticker-benaceur-admin-custom.php');
+} ?>
 
 <script language="JavaScript">
 function setVisibility_ntb(id) {
@@ -574,6 +622,15 @@ document.getElementById('bt-ntb').value = '<?php _e('Hide this list', 'news-tick
 document.getElementById(id).style.display = 'inline';
 }
 }
+</script>
+
+<script>
+var elem = document.getElementById("NTBshowelemselect");
+elem.onchange = function(){
+    var hiddenDiv = document.getElementById("NTBshowdiv");
+    hiddenDiv.style.display = (this.value != "theme_custom") ? "none":"block";
+};
+
 </script>
 
 <?php

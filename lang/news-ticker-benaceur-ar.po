@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: news ticker benaceur v2.1.3\n"
+"Project-Id-Version: news ticker benaceur v2.1.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2015-03-31 17:36:55+0000\n"
+"PO-Revision-Date: 2015-04-07 09:51:50+0000\n"
 "Last-Translator: BENACEUR <mohamedcompte@hotmail.fr>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -113,7 +113,7 @@ msgid "Hide for all except administrator"
 msgstr "إخفاء عن الجميع ماعدا المدير"
 
 #: news-ticker-benaceur-panel-page.php:179
-#: news-ticker-benaceur-panel-page.php:570
+#: news-ticker-benaceur-panel-page.php:618
 #@ news-ticker-benaceur
 msgid "Display all cat"
 msgstr "إظهار كل التصنيفات"
@@ -198,11 +198,15 @@ msgstr ""
 msgid "Click to reset properties plugin"
 msgstr "انقر هنا لإعادة تعيين إعدادات الإضافة"
 
+#: includes/news-ticker-benaceur-styles-p-options.php:9
+#: includes/news-ticker-benaceur-styles-p-options.php:56
 #: news-ticker-benaceur-panel-page.php:304
 #@ news-ticker-benaceur
 msgid "Background color"
 msgstr "لون الخلفية"
 
+#: includes/news-ticker-benaceur-styles-p-options.php:18
+#: includes/news-ticker-benaceur-styles-p-options.php:65
 #: news-ticker-benaceur-panel-page.php:313
 #@ news-ticker-benaceur
 msgid "Text color"
@@ -350,21 +354,21 @@ msgstr ""
 msgid "box shadow v"
 msgstr ""
 
-#: news-ticker-benaceur-panel-page.php:545
+#: news-ticker-benaceur-panel-page.php:561
 #@ news-ticker-benaceur
 msgid "Click to reset style properties plugin"
 msgstr "انقر هنا لإعادة تعيين إعدادات ستايل الإضافة"
 
-#: news-ticker-benaceur-panel-page.php:569
-#: news-ticker-benaceur-panel-page.php:573
+#: news-ticker-benaceur-panel-page.php:617
+#: news-ticker-benaceur-panel-page.php:621
 #@ news-ticker-benaceur
 msgid "Hide this list"
 msgstr "إخفاء القائمة"
 
-#: news-ticker-benaceur.php:257
-#: news-ticker-benaceur.php:259
-#: news-ticker-benaceur.php:263
-#: news-ticker-benaceur.php:265
+#: news-ticker-benaceur.php:276
+#: news-ticker-benaceur.php:278
+#: news-ticker-benaceur.php:282
+#: news-ticker-benaceur.php:284
 #@ default
 msgid "News Ticker Benaceur"
 msgstr ""
@@ -427,20 +431,15 @@ msgstr "لون الروابط عند تمرير الفأرة"
 msgid "Height"
 msgstr "الإرتفاع"
 
-#: notices-ntb.php:17
+#: includes/notices-ntb.php:17
 #@ news-ticker-benaceur
 msgid "Hide"
 msgstr "إخفاء"
 
-#: notices-ntb.php:18
+#: includes/notices-ntb.php:18
 #@ news-ticker-benaceur
 msgid "After this update Click on F5 to purge the browser cache ( For those who have installed the previous version(s) only )"
 msgstr "بعد هذا التحديث اضغط على F5 لتفريغ كاش المتصفح ( بالنسبة للذين قاموا بتنصيب الإصدار أو الإصدارات السابقة فقط )"
-
-#: news-ticker-benaceur-panel-page.php:529
-#@ news-ticker-benaceur
-msgid "Themes one"
-msgstr "ثيم أول"
 
 #: news-ticker-benaceur-panel-page.php:531
 #@ news-ticker-benaceur
@@ -462,8 +461,55 @@ msgstr "عدد حروف العنوان"
 msgid "Number of letters of Comments"
 msgstr "عدد حروف التعليق"
 
+#: includes/news-ticker-benaceur-styles-p-options.php:27
+#: includes/news-ticker-benaceur-styles-p-options.php:74
+#@ news-ticker-benaceur
+msgid "Background color of the input boxes"
+msgstr "لون خلفية صندوق الإدخال "
+
+#: includes/news-ticker-benaceur-styles-p-options.php:36
+#@ news-ticker-benaceur
+msgid "Background color \"settings saved\" message"
+msgstr "لون خلفية رسالة \\\"تم حفظ الإعدادات\\\" "
+
+#: includes/news-ticker-benaceur-styles-p-options.php:45
+#: includes/news-ticker-benaceur-styles-p-options.php:92
+#@ news-ticker-benaceur
+msgid "Background on/off color"
+msgstr "لون خلفية on/off"
+
+#: news-ticker-benaceur-panel-page.php:529
+#@ news-ticker-benaceur
+msgid "Orange Theme"
+msgstr "ثيم برتقالي"
+
 #: news-ticker-benaceur-panel-page.php:530
 #@ news-ticker-benaceur
-msgid "Themes two"
-msgstr "ثيم ثاني"
+msgid "Custom Theme"
+msgstr "ثيم مخصص"
+
+#: news-ticker-benaceur-panel-page.php:549
+#@ news-ticker-benaceur
+msgid "Hide the plugin rating icon"
+msgstr "إخفاء أيقونة تقييم الإضافة"
+
+#: news-ticker-benaceur-panel-page.php:575
+#@ news-ticker-benaceur
+msgid "Remove all settings and data of the plugin from database when the plugin is disabled"
+msgstr "حذف جميع إعدادات وبيانات الإضافة من قاعدة البيانات عند تعطيلها"
+
+#: news-ticker-benaceur-panel-page.php:582
+#@ news-ticker-benaceur
+msgid "Do not delete"
+msgstr "لا تحذف"
+
+#: news-ticker-benaceur-panel-page.php:590
+#@ news-ticker-benaceur
+msgid "Do not forget to rate the plugin"
+msgstr "لا تنس تقييم الإضافة"
+
+#: includes/news-ticker-benaceur-styles-p-options.php:83
+#@ news-ticker-benaceur
+msgid "Background color settings saved message"
+msgstr "لون خلفية رسالة تم حفظ الإعدادات"
 
