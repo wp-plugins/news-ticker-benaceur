@@ -16,19 +16,19 @@ you also the possibility to appear the bar to the particular group or member ...
 
 and here is all plugin characteristics:
 
-1- Four styles with beautiful animations
-2- Complete control over the plugin, color properties, font, height, width, etc ... through the Control Panel
-3- enable/disable the plugin from the control panel
-4- Control the direction of the news ticker RTL / LTR
-5- Adding a link a sub or a major to the plugin settings page in admin bar
-6- The possibility to appear the bar to the particular group or member ...
-7- Include the posts from certain categories only, or conversely, exclude a category or categories
-8- Include the comments from certain posts only, or conversely, exclude a post or posts
-9- The possibility to control the maximum number of letters of the title of the article or comment
-10- The possibility to control speed,timeout ... of animation
-11- The ability to remove all settings and data from the database when the plugin is disabled or not to remove, is optional
-12- The ability to customize an appropriate style for the control panel, what you can set and adjust the colors of the options page.
-The plugin, God willing, is open to development
+*1- Four styles with beautiful animations
+*2- Complete control over the plugin, color properties, font, height, width, etc ... through the Control Panel
+*3- enable/disable the plugin from the control panel
+*4- Control the direction of the news ticker RTL / LTR
+*5- Adding a link a sub or a major to the plugin settings page in admin bar
+*6- The possibility to appear the bar to the particular group or member ...
+*7- Include the posts from certain categories only, or conversely, exclude a category or categories
+*8- Include the comments from certain posts only, or conversely, exclude a post or posts
+*9- The possibility to control the maximum number of letters of the title of the article or comment
+*10- The possibility to control speed,timeout ... of animation
+*11- The ability to remove all settings and data from the database when the plugin is disabled or not to remove, is optional
+*12- The ability to customize an appropriate style for the control panel, what you can set and adjust the colors of the options page.
+*The plugin, God willing, is open to development
 
 TRANSLATED IN FOLLOWING LANGUAGES:
 - Arabic
@@ -41,7 +41,11 @@ Link to preview <a href="http://benaceur-php.com/" target="_blank">Demo</a>
 1. Upload news ticker benaceur to the "/wp-content/plugins/"
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Activate the plugin again in the control panel (the plugin page)
-4. read the note at the top of the options page in the control panel
+4. Put the following line in the place (in template) where you bar to appear:
+   &lt;?php if (has_action('wp_news_ticker_benaceur')) wp_news_ticker_benaceur_(); ?>
+   or put this short code (in post or page):
+   [wp_news_ticker_benaceur_short_code]
+   or read the note at the top of the options page in the control panel
 5. Adjust your settings in Admin Panel.
 
 == Screenshots ==
