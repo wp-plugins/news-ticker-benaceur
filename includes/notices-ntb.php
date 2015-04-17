@@ -8,13 +8,13 @@ if ( current_user_can( 'administrator' ) )
 
 	global $current_user;
 	$user_id = $current_user->ID;
-    $nden_n = ntb_07_04_15_en_ntb;
+    $nden_n = ntb_17_04_15_en_ntb;
 	
 	if ( ! get_user_meta($user_id, 'NTB_notice_ignore_n') ) {
 		    ?>
 			<div class="updated" id="<?php echo $nden_n;  ?>" style="margin-top:40px;"><p>
 			<span class="hov-mib-en" onmouseup="setcookie('<?php echo $nden_n;  ?>',1)" style="color:#009999;"><strong><?php _e('Hide', 'news-ticker-benaceur'); ?> &nbsp;</strong></span>
-			<?php _e('After this update Click on F5 to purge the browser cache ( For those who have installed the previous version(s) only )', 'news-ticker-benaceur'); ?>
+			<?php _e('After this update Click on ctl+F5 to purge the browser cache ( For those who have installed the previous version(s) only )', 'news-ticker-benaceur'); ?>
 			</p></div>
 			
 <style>.hov-mib-en:hover {cursor:pointer;}</style>			

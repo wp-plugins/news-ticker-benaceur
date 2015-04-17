@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: news ticker benaceur v2.1.4\n"
+"Project-Id-Version: news ticker benaceur v2.1.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2015-04-07 09:51:50+0000\n"
+"PO-Revision-Date: 2015-04-16 22:55:05+0000\n"
 "Last-Translator: BENACEUR <mohamedcompte@hotmail.fr>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -113,7 +113,7 @@ msgid "Hide for all except administrator"
 msgstr "إخفاء عن الجميع ماعدا المدير"
 
 #: news-ticker-benaceur-panel-page.php:179
-#: news-ticker-benaceur-panel-page.php:618
+#: news-ticker-benaceur-panel-page.php:635
 #@ news-ticker-benaceur
 msgid "Display all cat"
 msgstr "إظهار كل التصنيفات"
@@ -128,252 +128,212 @@ msgstr "العنوان"
 msgid "Disable Title"
 msgstr "تعطيل العنوان"
 
-#: news-ticker-benaceur-panel-page.php:216
+#: news-ticker-benaceur-panel-page.php:227
 #@ news-ticker-benaceur
 msgid "Numbre of posts"
 msgstr "عدد المقالات أو الأخبار"
 
-#: news-ticker-benaceur-panel-page.php:222
+#: news-ticker-benaceur-panel-page.php:276
 #@ news-ticker-benaceur
 msgid "Animation"
 msgstr "المؤثرات (Animation)"
 
-#: news-ticker-benaceur-panel-page.php:226
-#@ news-ticker-benaceur
-msgid "Ticker-NTB"
-msgstr ""
-
-#: news-ticker-benaceur-panel-page.php:227
-#@ news-ticker-benaceur
-msgid "Fade-NTB"
-msgstr ""
-
-#: news-ticker-benaceur-panel-page.php:228
-#@ news-ticker-benaceur
-msgid "Slide-NTB"
-msgstr ""
-
-#: news-ticker-benaceur-panel-page.php:229
-#@ news-ticker-benaceur
-msgid "Scroll-NTB"
-msgstr ""
-
-#: news-ticker-benaceur-panel-page.php:232
-#@ news-ticker-benaceur
-msgid "TimeOut (TickerNTB)"
-msgstr "TickerNTB) TimeOut)"
-
-#: news-ticker-benaceur-panel-page.php:238
-#@ news-ticker-benaceur
-msgid "Speed (Fide-NTB,Slide-NTB)"
-msgstr "Fide-NTB,Slide-NTB) Speed)"
-
-#: news-ticker-benaceur-panel-page.php:244
-#@ news-ticker-benaceur
-msgid "TimeOut (Fide-NTB,Slide-NTB)"
-msgstr "Fide-NTB,Slide-NTB) TimeOut)"
-
-#: news-ticker-benaceur-panel-page.php:250
-#@ news-ticker-benaceur
-msgid "Speed (Scroll-NTB)"
-msgstr "Scroll-NTB) Speed)"
-
-#: news-ticker-benaceur-panel-page.php:256
+#: news-ticker-benaceur-panel-page.php:235
 #@ news-ticker-benaceur
 msgid "Direction"
 msgstr "الاتجاه"
 
-#: news-ticker-benaceur-panel-page.php:260
+#: news-ticker-benaceur-panel-page.php:239
 #@ news-ticker-benaceur
 msgid "LTR"
 msgstr ""
 
-#: news-ticker-benaceur-panel-page.php:261
+#: news-ticker-benaceur-panel-page.php:240
 #@ news-ticker-benaceur
 msgid "RTL"
 msgstr ""
 
-#: news-ticker-benaceur-panel-page.php:287
+#: news-ticker-benaceur-panel-page.php:265
 #@ news-ticker-benaceur
 msgid "Click to reset properties plugin"
 msgstr "انقر هنا لإعادة تعيين إعدادات الإضافة"
 
 #: includes/news-ticker-benaceur-styles-p-options.php:9
 #: includes/news-ticker-benaceur-styles-p-options.php:56
-#: news-ticker-benaceur-panel-page.php:304
+#: news-ticker-benaceur-panel-page.php:313
 #@ news-ticker-benaceur
 msgid "Background color"
 msgstr "لون الخلفية"
 
 #: includes/news-ticker-benaceur-styles-p-options.php:18
 #: includes/news-ticker-benaceur-styles-p-options.php:65
-#: news-ticker-benaceur-panel-page.php:313
+#: news-ticker-benaceur-panel-page.php:322
 #@ news-ticker-benaceur
 msgid "Text color"
 msgstr "لون النص"
 
-#: news-ticker-benaceur-panel-page.php:322
+#: news-ticker-benaceur-panel-page.php:331
 #@ news-ticker-benaceur
 msgid "Background color of title"
 msgstr "لون خلفية العنوان"
 
-#: news-ticker-benaceur-panel-page.php:331
+#: news-ticker-benaceur-panel-page.php:340
 #@ news-ticker-benaceur
 msgid "Text color of title"
 msgstr "لون نص العنوان"
 
-#: news-ticker-benaceur-panel-page.php:340
+#: news-ticker-benaceur-panel-page.php:349
 #@ news-ticker-benaceur
 msgid "Border color"
 msgstr "لون الإطار"
 
-#: news-ticker-benaceur-panel-page.php:357
+#: news-ticker-benaceur-panel-page.php:366
 #@ news-ticker-benaceur
 msgid "border top"
 msgstr "الإطار العلوي"
 
-#: news-ticker-benaceur-panel-page.php:365
+#: news-ticker-benaceur-panel-page.php:374
 #@ news-ticker-benaceur
 msgid "border bottom"
 msgstr "الإطار السفلي"
 
-#: news-ticker-benaceur-panel-page.php:373
+#: news-ticker-benaceur-panel-page.php:382
 #@ news-ticker-benaceur
 msgid "border right"
 msgstr "الإطار الأيمن"
 
-#: news-ticker-benaceur-panel-page.php:381
+#: news-ticker-benaceur-panel-page.php:390
 #@ news-ticker-benaceur
 msgid "border left"
 msgstr "الإطار الأيسر"
 
-#: news-ticker-benaceur-panel-page.php:389
+#: news-ticker-benaceur-panel-page.php:398
 #@ news-ticker-benaceur
 msgid "border radius"
 msgstr "زوايا الإطار (border radius)"
 
-#: news-ticker-benaceur-panel-page.php:397
+#: news-ticker-benaceur-panel-page.php:406
 #@ news-ticker-benaceur
 msgid "The level of transparency 1-0.1"
 msgstr "نسبة الشفافية من 1 إلى 0.1"
 
-#: news-ticker-benaceur-panel-page.php:405
+#: news-ticker-benaceur-panel-page.php:414
 #@ news-ticker-benaceur
 msgid "Width by adding: px or %"
 msgstr "العرض بإضافة % أو px"
 
-#: news-ticker-benaceur-panel-page.php:421
+#: news-ticker-benaceur-panel-page.php:438
 #@ news-ticker-benaceur
 msgid "padding top"
 msgstr "المسافة العلوية من الداخل"
 
-#: news-ticker-benaceur-panel-page.php:429
+#: news-ticker-benaceur-panel-page.php:446
 #@ news-ticker-benaceur
 msgid "padding bottom"
 msgstr "المسافة السفلية من الداخل"
 
-#: news-ticker-benaceur-panel-page.php:437
+#: news-ticker-benaceur-panel-page.php:454
 #@ news-ticker-benaceur
 msgid "padding top (Title)"
 msgstr "المسافة العلوية من الداخل (العنوان)"
 
-#: news-ticker-benaceur-panel-page.php:445
+#: news-ticker-benaceur-panel-page.php:462
 #@ news-ticker-benaceur
 msgid "margin top"
 msgstr "المسافة العلوية من الخارج"
 
-#: news-ticker-benaceur-panel-page.php:453
+#: news-ticker-benaceur-panel-page.php:470
 #@ news-ticker-benaceur
 msgid "margin bottom"
 msgstr "المسافة السفلية من الخارج"
 
-#: news-ticker-benaceur-panel-page.php:459
+#: news-ticker-benaceur-panel-page.php:476
 #@ news-ticker-benaceur
 msgid "Font family"
 msgstr "عائلة الخط"
 
-#: news-ticker-benaceur-panel-page.php:461
+#: news-ticker-benaceur-panel-page.php:478
 #@ news-ticker-benaceur
 msgid "Disable this font: DroidKufi_Ben "
 msgstr "تعطيل هذا الخط إن كان موجودا عندك: DroidKufi_Ben"
 
-#: news-ticker-benaceur-panel-page.php:471
+#: news-ticker-benaceur-panel-page.php:488
 #@ news-ticker-benaceur
 msgid "Font size"
 msgstr "حجم الخط"
 
-#: news-ticker-benaceur-panel-page.php:476
+#: news-ticker-benaceur-panel-page.php:493
 #@ news-ticker-benaceur
 msgid "Normal"
 msgstr "عادي"
 
-#: news-ticker-benaceur-panel-page.php:476
+#: news-ticker-benaceur-panel-page.php:493
 #@ news-ticker-benaceur
 msgid "Bold"
 msgstr "عريض"
 
-#: news-ticker-benaceur-panel-page.php:479
+#: news-ticker-benaceur-panel-page.php:496
 #@ news-ticker-benaceur
 msgid "Font weight"
 msgstr "عرض الخط"
 
-#: news-ticker-benaceur-panel-page.php:484
 #: news-ticker-benaceur-panel-page.php:501
+#: news-ticker-benaceur-panel-page.php:518
 #@ news-ticker-benaceur
 msgid "no"
 msgstr "لا"
 
-#: news-ticker-benaceur-panel-page.php:484
 #: news-ticker-benaceur-panel-page.php:501
+#: news-ticker-benaceur-panel-page.php:518
 #@ news-ticker-benaceur
 msgid "yes"
 msgstr "نعم"
 
-#: news-ticker-benaceur-panel-page.php:487
+#: news-ticker-benaceur-panel-page.php:504
 #@ news-ticker-benaceur
 msgid "text shadow"
 msgstr ""
 
-#: news-ticker-benaceur-panel-page.php:496
+#: news-ticker-benaceur-panel-page.php:513
 #@ news-ticker-benaceur
 msgid "text shadow color"
 msgstr ""
 
-#: news-ticker-benaceur-panel-page.php:504
+#: news-ticker-benaceur-panel-page.php:521
 #@ news-ticker-benaceur
 msgid "box shadow"
 msgstr ""
 
-#: news-ticker-benaceur-panel-page.php:513
+#: news-ticker-benaceur-panel-page.php:530
 #@ news-ticker-benaceur
 msgid "box shadow color"
 msgstr ""
 
-#: news-ticker-benaceur-panel-page.php:521
+#: news-ticker-benaceur-panel-page.php:538
 #@ news-ticker-benaceur
 msgid "box shadow v"
 msgstr ""
 
-#: news-ticker-benaceur-panel-page.php:561
+#: news-ticker-benaceur-panel-page.php:578
 #@ news-ticker-benaceur
 msgid "Click to reset style properties plugin"
 msgstr "انقر هنا لإعادة تعيين إعدادات ستايل الإضافة"
 
-#: news-ticker-benaceur-panel-page.php:617
-#: news-ticker-benaceur-panel-page.php:621
+#: news-ticker-benaceur-panel-page.php:634
+#: news-ticker-benaceur-panel-page.php:638
 #@ news-ticker-benaceur
 msgid "Hide this list"
 msgstr "إخفاء القائمة"
 
-#: news-ticker-benaceur.php:276
-#: news-ticker-benaceur.php:278
-#: news-ticker-benaceur.php:282
-#: news-ticker-benaceur.php:284
+#: news-ticker-benaceur.php:302
+#: news-ticker-benaceur.php:304
+#: news-ticker-benaceur.php:308
+#: news-ticker-benaceur.php:310
 #@ default
 msgid "News Ticker Benaceur"
 msgstr ""
 
-#: news-ticker-benaceur-panel-page.php:296
+#: news-ticker-benaceur-panel-page.php:305
 #@ news-ticker-benaceur
 msgid "Settings of style"
 msgstr "خصائص الستايل"
@@ -415,48 +375,44 @@ msgstr "إدراج  cat id/post id"
 msgid "Exclude cat id/post id"
 msgstr "استثناء  cat id/post id"
 
-#: style-anim/no-scrollntb.php:32
+#: style-anim/no-scrollntb-scroll_up.php:40
+#: style-anim/no-scrollntb.php:39
 #: style-anim/scrollntb.php:23
 #@ news-ticker-benaceur
 msgid "No comments"
 msgstr "لا توجد تعليقات"
 
-#: news-ticker-benaceur-panel-page.php:349
+#: news-ticker-benaceur-panel-page.php:358
 #@ news-ticker-benaceur
 msgid "Hover color"
 msgstr "لون الروابط عند تمرير الفأرة"
 
-#: news-ticker-benaceur-panel-page.php:413
+#: news-ticker-benaceur-panel-page.php:422
 #@ news-ticker-benaceur
 msgid "Height"
 msgstr "الإرتفاع"
 
-#: includes/notices-ntb.php:17
+#: includes/notices-ntb.php:16
 #@ news-ticker-benaceur
 msgid "Hide"
 msgstr "إخفاء"
 
-#: includes/notices-ntb.php:18
-#@ news-ticker-benaceur
-msgid "After this update Click on F5 to purge the browser cache ( For those who have installed the previous version(s) only )"
-msgstr "بعد هذا التحديث اضغط على F5 لتفريغ كاش المتصفح ( بالنسبة للذين قاموا بتنصيب الإصدار أو الإصدارات السابقة فقط )"
-
-#: news-ticker-benaceur-panel-page.php:531
+#: news-ticker-benaceur-panel-page.php:548
 #@ news-ticker-benaceur
 msgid "Standard theme"
 msgstr "ثيم قياسي"
 
-#: news-ticker-benaceur-panel-page.php:535
+#: news-ticker-benaceur-panel-page.php:552
 #@ news-ticker-benaceur
 msgid "Styles options page"
 msgstr "ستايل صفحة الإعدادات"
 
-#: news-ticker-benaceur-panel-page.php:267
+#: news-ticker-benaceur-panel-page.php:245
 #@ news-ticker-benaceur
 msgid "Number of letters of Title"
 msgstr "عدد حروف العنوان"
 
-#: news-ticker-benaceur-panel-page.php:273
+#: news-ticker-benaceur-panel-page.php:251
 #@ news-ticker-benaceur
 msgid "Number of letters of Comments"
 msgstr "عدد حروف التعليق"
@@ -467,49 +423,235 @@ msgstr "عدد حروف التعليق"
 msgid "Background color of the input boxes"
 msgstr "لون خلفية صندوق الإدخال "
 
-#: includes/news-ticker-benaceur-styles-p-options.php:36
-#@ news-ticker-benaceur
-msgid "Background color \"settings saved\" message"
-msgstr "لون خلفية رسالة \\\"تم حفظ الإعدادات\\\" "
-
 #: includes/news-ticker-benaceur-styles-p-options.php:45
 #: includes/news-ticker-benaceur-styles-p-options.php:92
 #@ news-ticker-benaceur
 msgid "Background on/off color"
 msgstr "لون خلفية on/off"
 
-#: news-ticker-benaceur-panel-page.php:529
+#: news-ticker-benaceur-panel-page.php:546
 #@ news-ticker-benaceur
 msgid "Orange Theme"
 msgstr "ثيم برتقالي"
 
-#: news-ticker-benaceur-panel-page.php:530
+#: news-ticker-benaceur-panel-page.php:547
 #@ news-ticker-benaceur
 msgid "Custom Theme"
 msgstr "ثيم مخصص"
 
-#: news-ticker-benaceur-panel-page.php:549
+#: news-ticker-benaceur-panel-page.php:566
 #@ news-ticker-benaceur
 msgid "Hide the plugin rating icon"
 msgstr "إخفاء أيقونة تقييم الإضافة"
 
-#: news-ticker-benaceur-panel-page.php:575
+#: news-ticker-benaceur-panel-page.php:592
 #@ news-ticker-benaceur
 msgid "Remove all settings and data of the plugin from database when the plugin is disabled"
 msgstr "حذف جميع إعدادات وبيانات الإضافة من قاعدة البيانات عند تعطيلها"
 
-#: news-ticker-benaceur-panel-page.php:582
+#: news-ticker-benaceur-panel-page.php:599
 #@ news-ticker-benaceur
 msgid "Do not delete"
 msgstr "لا تحذف"
 
-#: news-ticker-benaceur-panel-page.php:590
+#: news-ticker-benaceur-panel-page.php:607
 #@ news-ticker-benaceur
 msgid "Do not forget to rate the plugin"
 msgstr "لا تنس تقييم الإضافة"
 
+#: includes/news-ticker-benaceur-styles-p-options.php:36
 #: includes/news-ticker-benaceur-styles-p-options.php:83
 #@ news-ticker-benaceur
 msgid "Background color settings saved message"
 msgstr "لون خلفية رسالة تم حفظ الإعدادات"
+
+#: includes/notices-ntb.php:17
+#@ news-ticker-benaceur
+msgid "After this update Click on ctl+F5 to purge the browser cache ( For those who have installed the previous version(s) only )"
+msgstr "بعد هذا التحديث اضغط على ctl+F5 لتفريغ كاش المتصفح ( بالنسبة للذين قاموا بتنصيب الإصدار أو الإصدارات السابقة فقط )"
+
+#: includes/option-anim.php:20
+#: includes/option-anim.php:41
+#: includes/option-anim.php:130
+#: includes/option-anim.php:206
+#@ news-ticker-benaceur
+msgid "Speed"
+msgstr "السرعة"
+
+#: includes/option-anim.php:5
+#: includes/option-anim.php:26
+#: includes/option-anim.php:47
+#: includes/option-anim.php:124
+#: includes/option-anim.php:171
+#@ news-ticker-benaceur
+msgid "TimeOut"
+msgstr "وقت التوقف (بين عنوان وآخر)"
+
+#: news-ticker-benaceur-panel-page.php:281
+#@ news-ticker-benaceur
+msgid "Fade"
+msgstr ""
+
+#: news-ticker-benaceur-panel-page.php:282
+#@ news-ticker-benaceur
+msgid "Slide"
+msgstr ""
+
+#: news-ticker-benaceur-panel-page.php:283
+#@ news-ticker-benaceur
+msgid "Slide-Up-Down"
+msgstr ""
+
+#: news-ticker-benaceur-panel-page.php:284
+#@ news-ticker-benaceur
+msgid "FadeIn"
+msgstr ""
+
+#: news-ticker-benaceur-panel-page.php:285
+#@ news-ticker-benaceur
+msgid "Scroll-H"
+msgstr ""
+
+#: news-ticker-benaceur-panel-page.php:290
+#@ news-ticker-benaceur
+msgid "Save Changes"
+msgstr "حفظ التغييرات"
+
+#: includes/option-anim.php:13
+#: news-ticker-benaceur-panel-page.php:671
+#@ news-ticker-benaceur
+msgid "Settings Typing"
+msgstr "إعدادات: Typing"
+
+#: includes/option-anim.php:34
+#: news-ticker-benaceur-panel-page.php:683
+#@ news-ticker-benaceur
+msgid "Settings Fade"
+msgstr "إعدادات: Fade"
+
+#: includes/option-anim.php:55
+#: news-ticker-benaceur-panel-page.php:695
+#@ news-ticker-benaceur
+msgid "Settings Slide"
+msgstr "إعدادات: Slide"
+
+#: includes/option-anim.php:66
+#: includes/option-anim.php:147
+#@ news-ticker-benaceur
+msgid "Enable jquery-min (Disable if you have)"
+msgstr "تفعيل jquery-min (عطّله إن كان موجودا عندك)"
+
+#: includes/option-anim.php:73
+#: includes/option-anim.php:154
+#@ news-ticker-benaceur
+msgid "Disable jquery-min"
+msgstr "تعطيل jquery-min"
+
+#: includes/option-anim.php:80
+#: includes/option-anim.php:160
+#@ news-ticker-benaceur
+msgid "Enable img next/prev"
+msgstr "تفعيل صورة next/prev"
+
+#: includes/option-anim.php:86
+#: includes/option-anim.php:167
+#@ news-ticker-benaceur
+msgid "Disable img next/prev"
+msgstr "تعطيل صورة next/prev"
+
+#: includes/option-anim.php:93
+#@ news-ticker-benaceur
+msgid "Up"
+msgstr "إلى أعلى"
+
+#: includes/option-anim.php:99
+#@ news-ticker-benaceur
+msgid "Down"
+msgstr "إلى أسفل"
+
+#: includes/option-anim.php:104
+#: includes/option-anim.php:177
+#@ news-ticker-benaceur
+msgid "Pause on hover"
+msgstr "توقف عند تمرير الفأرة"
+
+#: includes/option-anim.php:114
+#: includes/option-anim.php:187
+#@ news-ticker-benaceur
+msgid "Autostart"
+msgstr "بدء تلقائي"
+
+#: includes/option-anim.php:138
+#: news-ticker-benaceur-panel-page.php:647
+#@ news-ticker-benaceur
+msgid "Settings Slide-Up-Down"
+msgstr "إعدادات: Slide-Up-Down"
+
+#: includes/option-anim.php:199
+#: news-ticker-benaceur-panel-page.php:659
+#@ news-ticker-benaceur
+msgid "Settings FadeIn"
+msgstr "إعدادات: FadeIn"
+
+#: includes/option-anim.php:214
+#: news-ticker-benaceur-panel-page.php:707
+#@ news-ticker-benaceur
+msgid "Settings Scroll-H"
+msgstr "إعدادات: Scroll-H"
+
+#: news-ticker-benaceur-panel-page.php:216
+#@ news-ticker-benaceur
+msgid "Title animation pulsate"
+msgstr "تأثير pulsate على العنوان"
+
+#: news-ticker-benaceur-panel-page.php:280
+#@ news-ticker-benaceur
+msgid "Typing"
+msgstr ""
+
+#: news-ticker-benaceur-panel-page.php:296
+#@ news-ticker-benaceur
+msgid "Click to reset Properties animations"
+msgstr "انقر هنا لإعادة تعيين إعدادات المؤثرات"
+
+#: news-ticker-benaceur-panel-page.php:430
+#@ news-ticker-benaceur
+msgid "Width of title background"
+msgstr "عرض خلفية العنوان"
+
+#: news-ticker-benaceur-panel-page.php:646
+#: news-ticker-benaceur-panel-page.php:650
+#@ news-ticker-benaceur
+msgid "Hide Slide-Up-Down"
+msgstr "إخفاء  Slide-Up-Down"
+
+#: news-ticker-benaceur-panel-page.php:658
+#: news-ticker-benaceur-panel-page.php:662
+#@ news-ticker-benaceur
+msgid "Hide FadeIn"
+msgstr "إخفاء FadeIn"
+
+#: news-ticker-benaceur-panel-page.php:670
+#: news-ticker-benaceur-panel-page.php:674
+#@ news-ticker-benaceur
+msgid "Hide Typing"
+msgstr "إخفاء Typing"
+
+#: news-ticker-benaceur-panel-page.php:682
+#: news-ticker-benaceur-panel-page.php:686
+#@ news-ticker-benaceur
+msgid "Hide Fade"
+msgstr "إخفاء Fade"
+
+#: news-ticker-benaceur-panel-page.php:694
+#: news-ticker-benaceur-panel-page.php:698
+#@ news-ticker-benaceur
+msgid "Hide Slide"
+msgstr "إخفاء Slide"
+
+#: news-ticker-benaceur-panel-page.php:706
+#: news-ticker-benaceur-panel-page.php:710
+#@ news-ticker-benaceur
+msgid "Hide Scroll-H"
+msgstr "إخفاء Scroll-H"
 

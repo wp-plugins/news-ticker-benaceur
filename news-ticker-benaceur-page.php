@@ -51,9 +51,14 @@ if ( $ntb_include_exclude_id == 'include_id' || $ntb_include_exclude_id == '') {
 			); 
 }
 			if ($ntb_st == 'ScrollNTB') {
-			include ('style-anim/scrollntb.php');	
+			include ('style-anim/scrollntb.php');
+            } elseif ($ntb_st == 'Scroll_Up_NTB') {
+			include ('style-anim/no-scrollntb-scroll_up.php');
 			} else {
-			include ('style-anim/no-scrollntb.php');	
+			include ('style-anim/no-scrollntb.php');
+            if ($ntb_st == 'fadein') {
+			include ('style-anim/no-scrollntb-fadeIn.php');
+			}
 			}
 }	
 add_action( 'wp_news_ticker_benaceur', 'news_ticker_benaceur_post' );

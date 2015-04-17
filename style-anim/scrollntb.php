@@ -51,13 +51,13 @@ $date_format = 'j F Y';
     	-webkit-box-shadow:<?php echo $ntb_box_shadow; ?> <?php if (!empty($ntb_box_shadow_v)) { echo $ntb_box_shadow_v; } elseif ($ntb_box_shadow_v == '') {echo "1";} elseif ($ntb_box_shadow_v == '0') {echo "0";} ?>px <?php if (!empty($ntb_box_shadow_color)) { echo $ntb_box_shadow_color; } else {echo "#B5B5B5";} ?>;
     	text-shadow:<?php echo $ntb_text_shadow; ?> <?php if ($ntb_text_shadow_color) echo $ntb_text_shadow_color ; else  echo '#000000'; ?>;
 		width:<?php if (!empty($ntb_width)) { echo $ntb_width; } else {echo "100%";} ?>;
-		height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
+		height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "34";} ?>px;
     	margin-top:<?php if (!empty($ntb_margin_top)) { echo $ntb_margin_top; } else {echo "0";} ?>px;
     	margin-bottom:<?php if (!empty($ntb_margin_bottom)) { echo $ntb_margin_bottom; } elseif ($ntb_margin_bottom == '') {echo "25";} elseif ($ntb_margin_bottom == '0') {echo "0";} ?>px;
     	opacity:<?php if (!empty($ntb_opacity)) { echo $ntb_opacity; } else {echo "1";} ?>;
 		overflow:hidden;
 		position:relative;	
-        line-height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
+        line-height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "34";} ?>px;
 		}
 	.n_t_ntb_b .n_t_ntb_b-name {
 		color:<?php if (!empty($ntb_color_text_title)) { echo $ntb_color_text_title; } else {echo "#FFFFFF";} ?>;
@@ -67,11 +67,17 @@ $date_format = 'j F Y';
 		margin-right: 10px;
 		-moz-box-shadow: 0px 1px 3px 0 #b5b5b5;
 		-webkit-box-shadow: 0px 1px 3px 0 #B5B5B5;
-		height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
-        line-height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
+		height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "34";} ?>px;
+		min-width:<?php if (!empty($ntb_width_title_background)) { echo $ntb_width_title_background; } else {echo "70";} ?>px;
+        line-height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "34";} ?>px;
+		text-align:center;
+		<?php if ($ntb_title_anim_pulsate) {  ?>
+        animation: pulsate 1.2s linear infinite;
+		-webkit-animation: pulsate 1.2s linear infinite;
+        <?php } ?>
 	}
 	#scroll-ntb {
-		height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
+		height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "34";} ?>px;
 	}
 	#scroll-ntb div {
 		padding-top:<?php if (!empty($ntb_padding_top)) { echo $ntb_padding_top; } elseif ($ntb_padding_top == '') {echo "1";} elseif ($ntb_padding_top == '0') {echo "0";} ?>px;
@@ -121,13 +127,13 @@ $date_format = 'j F Y';
     	-webkit-box-shadow:<?php echo $ntb_box_shadow; ?> <?php if (!empty($ntb_box_shadow_v)) { echo $ntb_box_shadow_v; } elseif ($ntb_box_shadow_v == '') {echo "1";} elseif ($ntb_box_shadow_v == '0') {echo "0";} ?>px <?php if (!empty($ntb_box_shadow_color)) { echo $ntb_box_shadow_color; } else {echo "#B5B5B5";} ?>;
     	text-shadow:<?php echo $ntb_text_shadow; ?> <?php if ($ntb_text_shadow_color) echo $ntb_text_shadow_color ; else  echo '#000000'; ?>;
 		width:<?php if (!empty($ntb_width)) { echo $ntb_width; } else {echo "100%";} ?>;
-		height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
+		height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "34";} ?>px;
     	margin-top:<?php if (!empty($ntb_margin_top)) { echo $ntb_margin_top; } else {echo "0";} ?>px;
     	margin-bottom:<?php if (!empty($ntb_margin_bottom)) { echo $ntb_margin_bottom; } elseif ($ntb_margin_bottom == '') {echo "25";} elseif ($ntb_margin_bottom == '0') {echo "0";} ?>px;
     	opacity:<?php if (!empty($ntb_opacity)) { echo $ntb_opacity; } else {echo "1";} ?>;
 		overflow:hidden;
 		position:relative;	
-        line-height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
+        line-height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "34";} ?>px;
 		}
 	.n_t_ntb_b .n_t_ntb_b-name {
 		color:<?php if (!empty($ntb_color_text_title)) { echo $ntb_color_text_title; } else {echo "#FFFFFF";} ?>;
@@ -137,11 +143,17 @@ $date_format = 'j F Y';
 		margin-left: 10px;
 		-moz-box-shadow: 0px 1px 3px 0 #b5b5b5;
 		-webkit-box-shadow: 0px 1px 3px 0 #B5B5B5;
-		height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
-        line-height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
+		height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "34";} ?>px;
+		min-width:<?php if (!empty($ntb_width_title_background)) { echo $ntb_width_title_background; } else {echo "70";} ?>px;
+        line-height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "34";} ?>px;
+		text-align:center;
+		<?php if ($ntb_title_anim_pulsate) {  ?>
+        animation: pulsate 1.2s linear infinite;
+		-webkit-animation: pulsate 1.2s linear infinite;
+        <?php } ?>
 	}
 	#scroll-ntb {
-		height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "28";} ?>px;
+		height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "34";} ?>px;
 	}
 	#scroll-ntb div {
 		padding-top:<?php if (!empty($ntb_padding_top)) { echo $ntb_padding_top; } elseif ($ntb_padding_top == '') {echo "1";} elseif ($ntb_padding_top == '0') {echo "0";} ?>px;

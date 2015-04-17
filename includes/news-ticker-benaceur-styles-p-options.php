@@ -33,7 +33,7 @@
 								<div class="news-ticker-benaceur-colsel news-ticker-benaceur-cust-color-back-msg_a"></div>
 							</div></div>
 						</td>
-						<div class="colwrap-display"><td><?php _e('Background color "settings saved" message','news-ticker-benaceur'); ?> </td></div></br>
+						<div class="colwrap-display"><td><?php _e("Background color settings saved message",'news-ticker-benaceur'); ?> </td></div></br>
 					</tr>
 					<tr>
 						<td>

@@ -3,7 +3,7 @@
 Plugin Name: news ticker benaceur
 Plugin URI: http://benaceur-php.com/
 Description: This plugin allow you to display the latest news or latest articles in a bar with four beautiful animations...
-Version: 2.1.4
+Version: 2.1.5
 Author: benaceur
 Author URI: http://benaceur-php.com/
 License: GPL2
@@ -34,6 +34,10 @@ add_action('admin_init', 'news_ticker_benaceur_register_options');
   function news_ticker_benaceur_register_options() { 
 	
   register_setting('news_ticker_benaceur_group_op', 'news_ticker_benaceur_delete_all_options');
+  
+  add_option( 'news_ticker_benaceur_title_anim_pulsate', '1');
+  add_option( 'news_ticker_benaceur_enable_plug', '1');
+  add_option( 'news_ticker_benaceur_style', 'fadein');
 
   global $AllOptionsNTB;	
   $AllOptionsNTB = array(
@@ -46,20 +50,16 @@ add_action('admin_init', 'news_ticker_benaceur_register_options');
   'news_ticker_benaceur_for_user_id',
   'news_ticker_benaceur_links_admin_bar_menu',
   'news_ticker_benaceur_dir',
-  'news_ticker_benaceur_style',
   'news_ticker_benaceur_for_cat',
   'news_ticker_benaceur_for_all_expt_admin',
   'news_ticker_benaceur_title',
   'news_ticker_benaceur_num_posts',
-  'news_ticker_benaceur_timeout_tickerntb',
-  'news_ticker_benaceur_anim_speed',
-  'news_ticker_benaceur_timeout',
-  'news_ticker_benaceur_speed_scrollntb',
   'news_ticker_benaceur_disable_title',
   'news_ticker_benaceur_latest_p_c',
   'news_ticker_benaceur_include_exclude_id',
   'news_ticker_benaceur_expt_txt_title',
-  'news_ticker_benaceur_expt_txt_comm'
+  'news_ticker_benaceur_expt_txt_comm',
+  'news_ticker_benaceur_title_anim_pulsate'
    );
   foreach($AllOptionsNTB as $optionN_NTB) {
     register_setting('news_ticker_benaceur_group', $optionN_NTB);
@@ -102,11 +102,40 @@ add_action('admin_init', 'news_ticker_benaceur_register_options');
   'news_ticker_benaceur_cust_color_back_input',
   'news_ticker_benaceur_cust_color_back_msg',
   'news_ticker_benaceur_cust_color_switch_input',
-  'news_ticker_benaceur_hide_icon_evol_plug'
+  'news_ticker_benaceur_hide_icon_evol_plug',
+  'news_ticker_benaceur_width_title_background'
    );
   foreach($AllOptionssNTB as $optionS_NTB ) {
     register_setting('news_ticker_benaceur_group_sty', $optionS_NTB);
+}
+
+// animation
+  global $AllOptions_anim_NTB;	
+  $AllOptions_anim_NTB = array(
+  'news_ticker_benaceur_timeout_tickerntb',
+  'news_ticker_benaceur_anim_speed_fade',
+  'news_ticker_benaceur_anim_speed_slide',
+  'news_ticker_benaceur_timeout_fade',
+  'news_ticker_benaceur_timeout_slide',
+  'news_ticker_benaceur_speed_scrollntb',
+  'news_ticker_benaceur_enable_jquerymin_slide_up_down',
+  'news_ticker_benaceur_enable_jquerymin_fadein',
+  'news_ticker_benaceur_disa_img_n_scrollup',
+  'news_ticker_benaceur_disa_img_n_fadein',
+  'news_ticker_benaceur_style',
+  'news_ticker_benaceur_timeout_slide_up_down',
+  'news_ticker_benaceur_speed_slide_up_down',
+  'news_ticker_benaceur_updown_slide_up_down',
+  'news_ticker_benaceur_pause_slide_up_down',
+  'news_ticker_benaceur_autostart_slide_up_down',
+  'news_ticker_benaceur_timeout_fadein',
+  'news_ticker_benaceur_pause_fadein',
+  'news_ticker_benaceur_autostart_fadein'
+   );
+  foreach($AllOptions_anim_NTB as $optionN_anim_NTB) {
+    register_setting('news_ticker_benaceur_group_anim', $optionN_anim_NTB);
 }	
+// animation
 	
 	    if ($GLOBALS['pagenow'] == 'options-general.php' && $_GET['page'] == 'news-ticker-benaceur'){
 		wp_enqueue_script ('jquery');
@@ -312,6 +341,11 @@ $wp_admin_bar->add_menu( array( 'parent' => 'site-name', 'id' => 'PLB_ntb8', 'ti
   global $AllOptionssNTB;	
   foreach($AllOptionssNTB as $optionS_NTB ) {
      delete_option($optionS_NTB);
+}
+
+  global $AllOptions_anim_NTB;	
+  foreach($AllOptions_anim_NTB as $optionN_anim_NTB ) {
+     delete_option($optionN_anim_NTB);
 }
      delete_option('news_ticker_benaceur_delete_all_options');
 }

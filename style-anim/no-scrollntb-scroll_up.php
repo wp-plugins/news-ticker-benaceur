@@ -1,3 +1,4 @@
+
                         <?php if ($dir == 'ltr' || $dir == '') { ?>	
 						<a title="next" href="#"><div id="next-button-ntb"></div></a>
 						<a title="prev" href="#"><div id="prev-button-ntb"></div></a>
@@ -6,7 +7,7 @@
 						<a title="next" href="#"><div id="prev-button-ntb"></div></a>
 						<?php } ?>	
 
-						<ul id="ntbne" >
+			<ul id="ntbne_five" >
 			<?php
 			if($ntb_latest_p_c == 'latest_posts' || $ntb_latest_p_c == '' ){
 			if ( $lp->have_posts() ) : 
@@ -47,14 +48,14 @@ if (!empty($ntb_expt_txt_comm)) {
 
 <?php if ($dir == 'ltr' || $dir == '') { ?>	
 <style>
-	#ntbne {
-		<?php if ($ntb_st == 'FadeNTB' || $ntb_st == 'SlideNTB') { ?>direction:ltr;<?php } ?>	
+	#ntbne_five {
+		direction:ltr;
 		float: left;
 		margin-left: 0;
 	    color:<?php if (!empty($ntb_color_text_back)) { echo $ntb_color_text_back; } else {echo "#000000";} ?>;
 		padding:<?php if (!empty($ntb_padding_top)) { echo $ntb_padding_top; } elseif ($ntb_padding_top == '') {echo "1";} elseif ($ntb_padding_top == '0') {echo "0";} ?>px 0 <?php if (!empty($ntb_padding_bottom)) { echo $ntb_padding_bottom; } else {echo "0";} ?>px 0;
 	}
-	#ntbne li {
+	#ntbne_five li {
 		list-style: none;
 		margin-top:0px;
 		display: block;
@@ -121,16 +122,40 @@ if (!empty($ntb_expt_txt_comm)) {
 	position:relative;	
 	line-height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "34";} ?>px;
 	}
+<?php if( $ntb_disa_img_n_scrollup == 'enable_img_n_scrollup' || $ntb_disa_img_n_scrollup == '') { ?>
+    #next-button-ntb {
+    position:absolute;
+    background-image: url(<?php echo '' . plugins_url( 'img/slide-next.png', dirname(__FILE__) ) . ''; ?>);
+    background-repeat: no-repeat;
+    background-position:0 55%;
+    background-size: 16px 16px;
+    width:28px;
+    height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "34";} ?>px;
+    right:6px;
+    cursor:pointer;
+    }
+    #prev-button-ntb {
+    position:absolute;
+    background-image: url(<?php echo '' . plugins_url( 'img/slide-prev.png', dirname(__FILE__) ) . ''; ?>);
+    background-repeat: no-repeat;
+    background-position:0 55%;
+    background-size: 16px 16px;
+    width:28px;
+    height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "34";} ?>px;
+    right:40px;
+    cursor:pointer;
+    }
+<?php } ?>
 </style>
 <?php } elseif ($dir == 'rtl') { ?>
 <style>
-	#ntbne {
+	#ntbne_five {
 		float: right;
 		margin-right: 0;
 	    color:<?php if (!empty($ntb_color_text_back)) { echo $ntb_color_text_back; } else {echo "#000000";} ?>;
 		padding:<?php if (!empty($ntb_padding_top)) { echo $ntb_padding_top; } elseif ($ntb_padding_top == '') {echo "1";} elseif ($ntb_padding_top == '0') {echo "0";} ?>px 0 <?php if (!empty($ntb_padding_bottom)) { echo $ntb_padding_bottom; } else {echo "0";} ?>px 0;
 	}
-	#ntbne li {
+	#ntbne_five li {
 		list-style: none;
 		margin-top:0px;
 		 display: block;
@@ -197,24 +222,272 @@ if (!empty($ntb_expt_txt_comm)) {
 	position:relative;	
 	line-height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "34";} ?>px;
 	}
+<?php if( $ntb_disa_img_n_scrollup == 'enable_img_n_scrollup' || $ntb_disa_img_n_scrollup == '') { ?>
+    #next-button-ntb {
+    position:absolute;
+    background-image: url(<?php echo '' . plugins_url( 'img/slide-next.png', dirname(__FILE__) ) . ''; ?>);
+    background-repeat: no-repeat;
+    background-position:0 55%;
+    background-size: 16px 16px;
+    width:28px;
+    height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "34";} ?>px;
+    left:37px;
+    cursor:pointer;
+}
+    #prev-button-ntb {
+    position:absolute;
+    background-image: url(<?php echo '' . plugins_url( 'img/slide-prev.png', dirname(__FILE__) ) . ''; ?>);
+    background-repeat: no-repeat;
+    background-position:0 55%;
+    background-size: 16px 16px;
+    width:28px;
+    height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "34";} ?>px;
+    left:6px;
+    cursor:pointer;
+}
+<?php } ?>
+
 </style>
 <?php } ?>
 
-<script type="text/javascript">
-			jQuery(document).ready(function(){
-<?php  if($ntb_st == 'TickerNTB'){ ?>
-createTickerNTB();
-<?php } elseif ($ntb_st == 'fadein'){ ?>
-$(function () {
-	$('#ntbne').newsTicker();
-});
-<?php } elseif ($ntb_st == 'FadeNTB') { ?>
-jQuery('.news-ticker-ntb ul').innerfade({animationtype: "<?php echo $ntb_st ?>" , speed: <?php if (!empty($ntb_anim_speed_fade)) { echo $ntb_anim_speed_fade; } else {echo "500";} ?> , timeout: <?php if (!empty($ntb_timeout_fade)) { echo $ntb_timeout_fade; } else {echo "3500";} ?>});
-<?php } elseif ($ntb_st == 'SlideNTB') { ?>
-jQuery('.news-ticker-ntb ul').innerfade({animationtype: "<?php echo $ntb_st ?>" , speed: <?php if (!empty($ntb_anim_speed_slide)) { echo $ntb_anim_speed_slide; } else {echo "500";} ?> , timeout: <?php if (!empty($ntb_timeout_slide)) { echo $ntb_timeout_slide; } else {echo "3500";} ?>});
+<?php if (!is_admin() && ($ntb_enable_jquerymin_slide_up_down == 'enable_jquery_min_sud' || $ntb_enable_jquerymin_slide_up_down == '' || $ntb_enable_jquerymin_fadein == 'enable_jquery_min_fa' || $ntb_enable_jquerymin_fadein == '' ))
+	{ ?><script <?php echo 'src="' . plugins_url( 'js/min-ben.js', dirname(__FILE__) ) . '"'; ?>></script><?php } ?>
+
+<script>
+(function($, window, document, undefined) {
+        'use strict';
+        var pluginName = 'news_ticker_benaceur',
+                defaults = {
+                        row_height: 20,
+                        max_rows: 3,
+                        speed: <?php if (!empty($ntb_speed_slide_up_down)) { echo $ntb_speed_slide_up_down; } else {echo "450";} ?>,
+                        duration: 2500,
+<?php if( $ntb_updown_slide_up_down == 'up_slide_u_d' || $ntb_updown_slide_up_down == '') { ?>
+                        direction: 'up',
+<?php } elseif( $ntb_updown_slide_up_down == 'down_slide_u_d') { ?>
+                        direction: 'down',
 <?php } ?>
-});
-function rotateTicker() {
-    i == tickerItems.length && (i = 0), tickerText = tickerItems[i], c = 0, typetext(), setTimeout("rotateTicker()", <?php if (!empty($ntb_timeout_tickerntb)) { echo $ntb_timeout_tickerntb; } else {echo "5000";} ?>), i++
-}
-</script>
+                        autostart: <?php if( !empty($ntb_autostart_slide_up_down)) { echo 0; } else { echo 1; } ?>,
+                        pauseOnHover: 1,
+                        nextButton: null,
+                        prevButton: null,
+                        startButton: null,
+                        stopButton: null,
+                        hasMoved: function() {},
+                        movingUp: function() {},
+                        movingDown: function() {},
+                        start: function() {},
+                        stop: function() {},
+                        pause: function() {},
+                        unpause: function() {}
+                };
+
+        function Plugin(element, options) {
+                this.element = element;
+                this.$el = $(element);
+                this.options = $.extend({}, defaults, options);
+                this._defaults = defaults;
+                this._name = pluginName;
+                this.moveInterval;
+                this.state = 0;
+                this.paused = 0;
+                this.moving = 0;
+                if (this.$el.is('ul')) {
+                        this.init();
+                }
+        }
+
+        Plugin.prototype = {
+                init: function() {
+                        this.$el.height(this.options.row_height * this.options.max_rows)
+                                .css({overflow : 'hidden'});
+
+                        this.checkSpeed();
+
+                        if(this.options.nextButton && typeof(this.options.nextButton[0]) !== 'undefined')
+                                this.options.nextButton.click(function(e) {
+                                        this.moveNext();
+                                        this.resetInterval();
+                                }.bind(this));
+                        if(this.options.prevButton && typeof(this.options.prevButton[0]) !== 'undefined')
+                                this.options.prevButton.click(function(e) {
+                                        this.movePrev();
+                                        this.resetInterval();
+                                }.bind(this));
+                        if(this.options.stopButton && typeof(this.options.stopButton[0]) !== 'undefined')
+                                this.options.stopButton.click(function(e) {
+                                        this.stop()
+                                }.bind(this));
+                        if(this.options.startButton && typeof(this.options.startButton[0]) !== 'undefined')
+                                this.options.startButton.click(function(e) {
+                                        this.start()
+                                }.bind(this));
+                        
+                        if(this.options.pauseOnHover) {
+                                this.$el.hover(function() {
+                                        if (this.state)
+                                                this.pause();
+                                }.bind(this), function() {
+                                        if (this.state)
+                                                this.unpause();
+                                }.bind(this));
+                        }
+
+                        if(this.options.autostart)
+                                this.start();
+                },
+
+                start: function() {
+                        if (!this.state) {
+                                this.state = 1;
+                                this.resetInterval();
+                                this.options.start();
+                        }
+                },
+
+                stop: function() {
+                        if (this.state) {
+                                clearInterval(this.moveInterval);
+                                this.state = 0;
+                                this.options.stop();
+                        }
+                },
+
+                resetInterval: function() {
+                        if (this.state) {
+                                clearInterval(this.moveInterval);
+                                this.moveInterval = setInterval(function() {this.move()}.bind(this), this.options.duration);
+                        }
+                },
+
+                move: function() {
+                         if (!this.paused) this.moveNext();
+                },
+
+                moveNext: function() {
+                        if (this.options.direction === 'down')
+                                this.moveDown();
+                        else if (this.options.direction === 'up')
+                                this.moveUp();
+                },
+
+                movePrev: function() {
+                        if (this.options.direction === 'down')
+                                this.moveUp();
+                        else if (this.options.direction === 'up')
+                                this.moveDown();
+                },
+
+                pause: function() {
+                        if (!this.paused) this.paused = 1;
+                        this.options.pause();
+                },
+
+                unpause: function() {
+                        if (this.paused) this.paused = 0;
+                        this.options.unpause();
+                },
+
+                moveDown: function() {
+                        if (!this.moving) {
+                                this.moving = 1;
+                                this.options.movingDown();
+                                this.$el.children('li:last').detach().prependTo(this.$el).css('marginTop', '-' + this.options.row_height + 'px')
+                                        .animate({marginTop: '0px'}, this.options.speed, function(){
+                                                this.moving = 0;
+                                                this.options.hasMoved();
+                                        }.bind(this));
+                        }
+                },
+
+                moveUp: function() {
+                        if (!this.moving) {
+                                this.moving = 1;
+                                this.options.movingUp();
+                                var element = this.$el.children('li:first');
+                                element.animate({marginTop: '-' + this.options.row_height + 'px'}, this.options.speed,
+                                        function(){
+                                                element.detach().css('marginTop', '0').appendTo(this.$el);
+                                                this.moving = 0;
+                                                this.options.hasMoved();
+                                        }.bind(this));
+                        }
+                },
+
+                updateOption: function(option, value) {
+                        if (typeof(this.options[option]) !== 'undefined'){
+                                this.options[option] = value;
+                                if (option == 'duration' || option == 'speed'){
+                                    this.checkSpeed();
+                                    this.resetInterval();
+                                }
+                        }
+                },
+
+                getState: function() {
+                        if (paused) return 2 // 2 = paused
+                        else return this.state;// 0 = stopped, 1 = started
+                },
+
+                checkSpeed: function() {
+                        if (this.options.duration < (this.options.speed + 25))
+                                this.options.speed = this.options.duration - 25;
+                },
+
+                destroy: function() {
+                        this._destroy(); // or this.delete; depends on jQuery version
+                }
+        };
+
+        $.fn[pluginName] = function(option) {
+                var args = arguments;
+                
+                return this.each(function() {
+                        var $this = $(this),
+                                data = $.data(this, 'plugin_' + pluginName),
+                                options = typeof option === 'object' && option;
+                        if (!data) {
+                                $this.data('plugin_' + pluginName, (data = new Plugin(this, options)));
+                        }
+                        // if first argument is a string, call silimarly named function
+                        if (typeof option === 'string') {
+                                data[option].apply(data, Array.prototype.slice.call(args, 1));
+                        }
+                });
+        };
+})(jQuery, window, document);
+
+//two
+	
+    		$('a[href*=#]').click(function(e) {
+			    var href = $.attr(this, 'href');
+			    if (href != "#") {
+				    $('html, body').animate({
+				        scrollTop: $(href).offset().top - 81
+				    }, 500);
+				}
+				else {
+					$('html, body').animate({
+				        scrollTop: 0
+				    }, 500);
+				}
+			    return false;
+			});
+
+    		$(window).load(function(){
+	            $('code.language-javascript').mCustomScrollbar();
+	        });
+            var ntbne_five = $('#ntbne_five').news_ticker_benaceur({
+                row_height: <?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "34";} ?>,
+                max_rows: 1,
+                duration: <?php if (!empty($ntb_timeout_slide_up_down)) { echo $ntb_timeout_slide_up_down; } else {echo "4000";} ?>,
+                pauseOnHover: <?php if( !empty($ntb_pause_slide_up_down)) { echo 1; } else { echo 0; } ?>,
+                <?php if ($dir == 'ltr' || $dir == '') { ?>	
+				prevButton:  $('#prev-button-ntb'),
+                nextButton:  $('#next-button-ntb')
+				<?php } elseif ($dir == 'rtl') { ?>	
+				prevButton:  $('#next-button-ntb'),
+                nextButton:  $('#prev-button-ntb')
+				<?php } ?>	
+            });
+        </script>
