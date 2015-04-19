@@ -3,7 +3,7 @@ Contributors: Benaceur
 Tags: news ticker, latest post, latest posts, news post, latest comments, Last posts bar, Last news ticker, Latest news, bar
 Requires at least: 3.0
 Tested up to: 4.1.1
-Stable tag: 2.1.5
+Stable tag: 2.1.6
 License: GPLv2 or later
 
 This plugin allow you to display the latest posts or latest comments or news in a bar with six beautiful animations...
@@ -32,8 +32,8 @@ you also the possibility to appear the bar to the particular group or member ...
 * The plugin, God willing, is open to development ...
 
 = TRANSLATED IN FOLLOWING LANGUAGES: =
-* - Arabic
-* - English
+* Arabic
+* English
 
 Link to preview <a href="http://benaceur-php.com/" target="_blank">Demo</a> 
 
@@ -43,10 +43,9 @@ Link to preview <a href="http://benaceur-php.com/" target="_blank">Demo</a>
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Activate the plugin again in the control panel (the plugin page)
 4. Put the following line in the place (in template) where you bar to appear:
-   &lt;?php if (has_action('wp_news_ticker_benaceur')) wp_news_ticker_benaceur_(); ?>
-   or put this short code (in post or page):
-   [wp_news_ticker_benaceur_short_code]
-   or read the note at the top of the options page in the control panel
+. &lt;?php if (has_action('wp_news_ticker_benaceur')) wp_news_ticker_benaceur_(); ?>
+. or put this short code (in post or page):
+. [wp_news_ticker_benaceur_short_code]
 5. Adjust your settings in Admin Panel.
 
 == Screenshots ==
@@ -58,6 +57,9 @@ Link to preview <a href="http://benaceur-php.com/" target="_blank">Demo</a>
 
 == Changelog ==
 
+= 2.1.6 =
+* Correction in in the default (values) style.
+* Some adjustment in Translation.
 = 2.1.5 =
 * Adding two new animations.
 * Adding pulsate animation for the title.

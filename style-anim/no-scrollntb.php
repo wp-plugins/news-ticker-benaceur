@@ -1,9 +1,9 @@
                         <?php if ($dir == 'ltr' || $dir == '') { ?>	
-						<a title="next" href="#"><div id="next-button-ntb"></div></a>
-						<a title="prev" href="#"><div id="prev-button-ntb"></div></a>
+						<a title="<?php _e("next",'news-ticker-benaceur'); ?>" href="#"><div id="next-button-ntb"></div></a>
+						<a title="<?php _e("prev",'news-ticker-benaceur'); ?>" href="#"><div id="prev-button-ntb"></div></a>
 						<?php } elseif ($dir == 'rtl') { ?>	
-						<a title="prev" href="#"><div id="next-button-ntb"></div></a>
-						<a title="next" href="#"><div id="prev-button-ntb"></div></a>
+						<a title="<?php _e("prev",'news-ticker-benaceur'); ?>" href="#"><div id="next-button-ntb"></div></a>
+						<a title="<?php _e("next",'news-ticker-benaceur'); ?>" href="#"><div id="prev-button-ntb"></div></a>
 						<?php } ?>	
 
 						<ul id="ntbne" >

@@ -1,10 +1,10 @@
 
                         <?php if ($dir == 'ltr' || $dir == '') { ?>	
-						<a title="next" href="#"><div id="next-button-ntb"></div></a>
-						<a title="prev" href="#"><div id="prev-button-ntb"></div></a>
+						<a title="<?php _e("next",'news-ticker-benaceur'); ?>" href="#"><div id="next-button-ntb"></div></a>
+						<a title="<?php _e("prev",'news-ticker-benaceur'); ?>" href="#"><div id="prev-button-ntb"></div></a>
 						<?php } elseif ($dir == 'rtl') { ?>	
-						<a title="prev" href="#"><div id="next-button-ntb"></div></a>
-						<a title="next" href="#"><div id="prev-button-ntb"></div></a>
+						<a title="<?php _e("prev",'news-ticker-benaceur'); ?>" href="#"><div id="next-button-ntb"></div></a>
+						<a title="<?php _e("next",'news-ticker-benaceur'); ?>" href="#"><div id="prev-button-ntb"></div></a>
 						<?php } ?>	
 
 			<ul id="ntbne_five" >
@@ -133,7 +133,18 @@ if (!empty($ntb_expt_txt_comm)) {
     height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "34";} ?>px;
     right:6px;
     cursor:pointer;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -ms-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out; 
+	filter: alpha(opacity=70);
+    opacity: 0.7;
     }
+    #next-button-ntb:hover {
+    filter: alpha(opacity=100);
+    opacity: 1;
+}
     #prev-button-ntb {
     position:absolute;
     background-image: url(<?php echo '' . plugins_url( 'img/slide-prev.png', dirname(__FILE__) ) . ''; ?>);
@@ -144,7 +155,18 @@ if (!empty($ntb_expt_txt_comm)) {
     height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "34";} ?>px;
     right:40px;
     cursor:pointer;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -ms-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out; 
+	filter: alpha(opacity=70);
+    opacity: 0.7;
     }
+    #prev-button-ntb:hover {
+    filter: alpha(opacity=100);
+    opacity: 1;
+}
 <?php } ?>
 </style>
 <?php } elseif ($dir == 'rtl') { ?>
@@ -233,6 +255,17 @@ if (!empty($ntb_expt_txt_comm)) {
     height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "34";} ?>px;
     left:37px;
     cursor:pointer;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -ms-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out; 
+	filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+    #next-button-ntb:hover {
+    filter: alpha(opacity=100);
+    opacity: 1;
 }
     #prev-button-ntb {
     position:absolute;
@@ -244,6 +277,17 @@ if (!empty($ntb_expt_txt_comm)) {
     height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "34";} ?>px;
     left:6px;
     cursor:pointer;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -ms-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out; 
+	filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+    #prev-button-ntb:hover {
+    filter: alpha(opacity=100);
+    opacity: 1;
 }
 <?php } ?>
 

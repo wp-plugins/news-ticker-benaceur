@@ -261,6 +261,7 @@ foreach($category_ids as $cat_id) {
             <?php settings_fields( 'news_ticker_benaceur_group' ); 
 				do_settings_sections( 'news_ticker_benaceur_group' );
 			?>
+	  <input type="hidden"  value="1" <?php if ($ntb_enable_plug == '') echo 'checked="checked"';  ?> name="news_ticker_benaceur_enable_plug" />
 	  <input type="hidden"  name="news_ticker_benaceur_title_anim_pulsate" value="1" <?php  if($ntb_title_anim_pulsate == '' ) { echo 'checked="checked"'; }   ?>/>
       <input type="submit" value="<?php _e('Click to reset properties plugin', 'news-ticker-benaceur');?>" class="button-secondary" />
     </form>
@@ -277,11 +278,11 @@ foreach($category_ids as $cat_id) {
                     
                     <td>
 				<div class="bold-3"><select onchange='this.form.submit()' id="dropdown" style="min-width:100px;text-align:center;"  name="news_ticker_benaceur_style" class="news-ticker-benaceur-color-inp">
+				<option value="fadein" <?php selected('fadein', $ntb_st); ?>><?php _e('FadeIn', 'news-ticker-benaceur'); ?></option>
 				<option value="TickerNTB" <?php selected('TickerNTB', $ntb_st); ?>><?php _e('Typing', 'news-ticker-benaceur'); ?></option>
 				<option value="FadeNTB" <?php selected('FadeNTB', $ntb_st); ?>><?php _e('Fade', 'news-ticker-benaceur'); ?></option>
 				<option value="SlideNTB" <?php selected('SlideNTB', $ntb_st); ?>><?php _e('Slide', 'news-ticker-benaceur'); ?></option>
 				<option value="Scroll_Up_NTB" <?php selected('Scroll_Up_NTB', $ntb_st); ?>><?php _e('Slide-Up-Down', 'news-ticker-benaceur'); ?></option>
-				<option value="fadein" <?php selected('fadein', $ntb_st); ?>><?php _e('FadeIn', 'news-ticker-benaceur'); ?></option>
 				<option value="ScrollNTB" <?php selected('ScrollNTB', $ntb_st); ?>><?php _e('Scroll-H', 'news-ticker-benaceur'); ?></option></select></div>
                 </tr>
 </table>
@@ -293,6 +294,9 @@ foreach($category_ids as $cat_id) {
             <?php settings_fields( 'news_ticker_benaceur_group_anim'); 
 				do_settings_sections( 'news_ticker_benaceur_group_anim' );
 			?>
+      <div class="hidden-selected-fadein"><select type="hidden" id="dropdown" style="min-width:100px;text-align:center;"  name="news_ticker_benaceur_style" class="news-ticker-benaceur-color-inp">
+		<option value="fadein" <?php selected('fadein', $ntb_st); ?>><?php _e('FadeIn', 'news-ticker-benaceur'); ?></option>
+	  </select></div>
       <input type="submit" value="<?php _e('Click to reset Properties animations', 'news-ticker-benaceur');?>" class="button-secondary" />
     </form>
 </br><center><div class="to-tr3"></div></center></br>
@@ -623,6 +627,7 @@ foreach($category_ids as $cat_id) {
   <?php } ?>
   }
 #NTBshowdiv{display:none;}
+.hidden-selected-fadein{display:none;}
 </style>
 
 <?php if (get_option('news_ticker_benaceur_styles_options_p') == 'theme_custom'  ) { 
