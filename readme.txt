@@ -2,7 +2,7 @@
 Contributors: Benaceur 
 Tags: news ticker, latest post, latest posts, news post, latest comments, Last posts bar, Last news ticker, Latest news, bar
 Requires at least: 3.0
-Tested up to: 4.1.1
+Tested up to: 4.1.2
 Stable tag: 2.1.6
 License: GPLv2 or later
 
