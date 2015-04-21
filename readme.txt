@@ -43,9 +43,9 @@ Link to preview <a href="http://benaceur-php.com/" target="_blank">Demo</a>
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Activate the plugin again in the control panel (the plugin page)
 4. Put the following line in the place (in template) where you bar to appear:
-. &lt;?php if (has_action('wp_news_ticker_benaceur')) wp_news_ticker_benaceur_(); ?>
-. or put this short code (in post or page):
-. [wp_news_ticker_benaceur_short_code]
+</br> &lt;?php if (has_action('wp_news_ticker_benaceur')) wp_news_ticker_benaceur_(); ?>
+</br> or put this short code (in post or page):
+</br> [wp_news_ticker_benaceur_short_code]
 5. Adjust your settings in Admin Panel.
 
 == Screenshots ==
