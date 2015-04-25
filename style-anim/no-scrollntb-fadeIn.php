@@ -1,5 +1,5 @@
 <style>
-<?php if( $ntb_disa_img_n_fadein == 'enable_img_n_fadein' || $ntb_disa_img_n_fadein == '') { ?>
+<?php if( $ntb_disa_img_n_fadein == 'enable_img_n_fadein') { ?>
     #next-button-ntb {
     position:absolute;
     background-image: url(<?php echo '' . plugins_url( 'img/slide-next.png', dirname(__FILE__) ) . ''; ?>);
@@ -7,7 +7,7 @@
     background-position:0 55%;
     background-size: 16px 16px;
     width:28px;
-    height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "34";} ?>px;
+    height:<?php echo $ntb_height; ?>px;
     cursor:pointer;
     -webkit-transition: opacity 1s ease-in-out;
     -moz-transition: opacity 0.3s ease-in-out;
@@ -16,8 +16,8 @@
     transition: opacity 0.3s ease-in-out; 
 	filter: alpha(opacity=70);
     opacity: 0.7;
-    <?php if ($dir == 'ltr' || $dir == '') { ?>	
-    right:6px;
+    <?php if ($dir == 'ltr') { ?>	
+    right:2px;
     <?php } elseif ($dir == 'rtl') { ?>	
     left:37px;
     <?php } ?>	
@@ -34,7 +34,7 @@
     background-position:0 55%;
     background-size: 16px 16px;
     width:28px;
-    height:<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "34";} ?>px;
+    height:<?php echo $ntb_height; ?>px;
     cursor:pointer;
     -webkit-transition: opacity 1s ease-in-out;
     -moz-transition: opacity 0.3s ease-in-out;
@@ -43,8 +43,8 @@
     transition: opacity 0.3s ease-in-out; 
 	filter: alpha(opacity=70);
     opacity: 0.7;
-    <?php if ($dir == 'ltr' || $dir == '') { ?>	
-    right:37px;
+    <?php if ($dir == 'ltr') { ?>	
+    right:30px;
     <?php } elseif ($dir == 'rtl') { ?>	
     left:6px;
     <?php } ?>	
@@ -57,7 +57,7 @@
 
 </style>
 
-<?php if (!is_admin() && ($ntb_enable_jquerymin_slide_up_down == 'enable_jquery_min_sud' || $ntb_enable_jquerymin_slide_up_down == '' || $ntb_enable_jquerymin_fadein == 'enable_jquery_min_fa' || $ntb_enable_jquerymin_fadein == '' ))
+<?php if (!is_admin() && ($ntb_enable_jquerymin_slide_up_down == 'enable_jquery_min_sud' || $ntb_enable_jquerymin_fadein == 'enable_jquery_min_fa'))
 	{ ?><script <?php echo 'src="' . plugins_url( 'js/min-ben.js', dirname(__FILE__) ) . '"'; ?>></script><?php } ?>
 
 <script>
@@ -248,7 +248,7 @@
 
     $.fn.newsTicker.config = {
         // set values and custom functions
-		interval: <?php if (!empty($ntb_timeout_fadein)) { echo $ntb_timeout_fadein; } else {echo "4000";} ?>,
+		interval: <?php echo $ntb_timeout_fadein; ?>,
 		newsData: "#ntbne",
 		prevBtnDiv: "#prev-button-ntb",
 		nextBtnDiv: "#next-button-ntb",

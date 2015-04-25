@@ -21,6 +21,7 @@ $jntb(document).ready(function(){
 		$jntb('.news-ticker-benaceur-color-back-input_a').farbtastic('#news-ticker-benaceur-color-back-input_a');
 		$jntb('.news-ticker-benaceur-cust-color-back-msg_a').farbtastic('#news-ticker-benaceur-cust-color-back-msg_a');
 		$jntb('.news-ticker-benaceur-cust-color-switch-input_a').farbtastic('#news-ticker-benaceur-cust-color-switch-input_a');
+		$jntb('.news-ticker-benaceur-borderclr-title_a').farbtastic('#news-ticker-benaceur-borderclr-title_a');
 	}
 	$jntb('html').click(function() {$jntb("#news-ticker-benaceur-font .farbtastic").fadeOut('fast');});
 	

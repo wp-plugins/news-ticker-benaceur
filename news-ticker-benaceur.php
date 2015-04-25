@@ -3,7 +3,7 @@
 Plugin Name: news ticker benaceur
 Plugin URI: http://benaceur-php.com/
 Description: This plugin allow you to display the latest news or latest articles in a bar with four beautiful animations...
-Version: 2.1.6
+Version: 2.2.0
 Author: benaceur
 Author URI: http://benaceur-php.com/
 License: GPL2
@@ -34,6 +34,7 @@ add_action('admin_init', 'news_ticker_benaceur_register_options');
   function news_ticker_benaceur_register_options() { 
 	
   register_setting('news_ticker_benaceur_group_op', 'news_ticker_benaceur_delete_all_options');
+  register_setting('news_ticker_benaceur_all_reset', 'ntb_all_reset');
 
   global $AllOptionsNTB;	
   $AllOptionsNTB = array(
@@ -55,7 +56,8 @@ add_action('admin_init', 'news_ticker_benaceur_register_options');
   'news_ticker_benaceur_include_exclude_id',
   'news_ticker_benaceur_expt_txt_title',
   'news_ticker_benaceur_expt_txt_comm',
-  'news_ticker_benaceur_title_anim_pulsate'
+  'news_ticker_benaceur_title_anim_pulsate',
+  'ntb_group_reset'
    );
   foreach($AllOptionsNTB as $optionN_NTB) {
     register_setting('news_ticker_benaceur_group', $optionN_NTB);
@@ -99,7 +101,11 @@ add_action('admin_init', 'news_ticker_benaceur_register_options');
   'news_ticker_benaceur_cust_color_back_msg',
   'news_ticker_benaceur_cust_color_switch_input',
   'news_ticker_benaceur_hide_icon_evol_plug',
-  'news_ticker_benaceur_width_title_background'
+  'news_ticker_benaceur_color_border_title',
+  'news_ticker_benaceur_border_title',
+  'news_ticker_benaceur_line_height_title',
+  'news_ticker_benaceur_width_title_background',
+  'ntb_group_sty_reset'
    );
   foreach($AllOptionssNTB as $optionS_NTB ) {
     register_setting('news_ticker_benaceur_group_sty', $optionS_NTB);
@@ -125,7 +131,8 @@ add_action('admin_init', 'news_ticker_benaceur_register_options');
   'news_ticker_benaceur_autostart_slide_up_down',
   'news_ticker_benaceur_timeout_fadein',
   'news_ticker_benaceur_pause_fadein',
-  'news_ticker_benaceur_autostart_fadein'
+  'news_ticker_benaceur_autostart_fadein',
+  'ntb_group_anim_reset'
    );
   foreach($AllOptions_anim_NTB as $optionN_anim_NTB) {
     register_setting('news_ticker_benaceur_group_anim', $optionN_anim_NTB);
@@ -135,20 +142,89 @@ add_action('admin_init', 'news_ticker_benaceur_register_options');
 		wp_enqueue_script ('jquery');
 		wp_enqueue_script('farbtastic');
 		wp_enqueue_script('news-ticker-benaceur-admin',plugins_url('admin/news-ticker-benaceur-admin.js',__FILE__), array('jquery'));
-		if (get_option('news_ticker_benaceur_styles_options_p') == 'theme_one' || get_option('news_ticker_benaceur_styles_options_p') == '' ) {
-		wp_enqueue_style('news-ticker-benaceur-admin',plugins_url('admin/news-ticker-benaceur-admin-one.css',__FILE__), false, '' );
-		} elseif (get_option('news_ticker_benaceur_styles_options_p') == 'theme_standard' ) {
-		wp_enqueue_style('news-ticker-benaceur-admin',plugins_url('admin/news-ticker-benaceur-admin-stand.css',__FILE__), false, '' );
-		}
 		wp_enqueue_style('farbtastic');	
 	}
 }
 
-     register_activation_hook( __FILE__, 'NTB_up_options' );
-     function NTB_up_options(){
+// add_option
+     function NTB_group_options_default() {
       add_option( 'news_ticker_benaceur_title_anim_pulsate', '1');
       add_option( 'news_ticker_benaceur_enable_plug', '1');
-      add_option( 'news_ticker_benaceur_style', 'fadein');
+      add_option('news_ticker_benaceur_links_admin_bar_menu', 'menu');
+      add_option('news_ticker_benaceur_dir', 'ltr');
+      add_option('news_ticker_benaceur_num_posts', '10');
+      add_option('news_ticker_benaceur_latest_p_c', 'latest_posts');
+      add_option('news_ticker_benaceur_include_exclude_id', 'include_id');
+      add_option('news_ticker_benaceur_expt_txt_title', '70');
+      add_option('news_ticker_benaceur_expt_txt_comm', '62');
+	 }
+     function NTB_group_anim_options_default() {
+      add_option('news_ticker_benaceur_style', 'fadein');
+      add_option('news_ticker_benaceur_timeout_tickerntb', '5000');
+      add_option('news_ticker_benaceur_anim_speed_fade', '500');
+      add_option('news_ticker_benaceur_anim_speed_slide', '500');
+      add_option('news_ticker_benaceur_timeout_fade', '3500');
+      add_option('news_ticker_benaceur_timeout_slide', '3500');
+      add_option('news_ticker_benaceur_speed_scrollntb', '17');
+      add_option('news_ticker_benaceur_enable_jquerymin_slide_up_down', 'enable_jquery_min_sud');
+      add_option('news_ticker_benaceur_enable_jquerymin_fadein', 'enable_jquery_min_fa');
+      add_option('news_ticker_benaceur_disa_img_n_scrollup', 'enable_img_n_scrollup');
+      add_option('news_ticker_benaceur_disa_img_n_fadein', 'enable_img_n_fadein');
+      add_option('news_ticker_benaceur_timeout_slide_up_down', '4000');
+      add_option('news_ticker_benaceur_speed_slide_up_down', '450');
+      add_option('news_ticker_benaceur_updown_slide_up_down', 'up_slide_u_d');
+      add_option('news_ticker_benaceur_timeout_fadein', '4000');
+	 }
+     function NTB_group_sty_options_default() {
+      add_option('news_ticker_benaceur_color_back_', '#FFFFFF');
+      add_option('news_ticker_benaceur_color_back_title', '#CE0000');
+      add_option('news_ticker_benaceur_color_text_back', '#000000');
+      add_option('news_ticker_benaceur_color_text_title', '#FFFFFF');
+      add_option('news_ticker_benaceur_color_border', '#CE1031');
+      add_option('news_ticker_benaceur_border_top', '0');
+      add_option('news_ticker_benaceur_border_bottom', '2');
+      add_option('news_ticker_benaceur_border_right', '0');
+      add_option('news_ticker_benaceur_border_left', '0');
+      add_option('news_ticker_benaceur_border_radius', '1');
+      add_option('news_ticker_benaceur_opacity', '1');
+      add_option('news_ticker_benaceur_font_family', 'DroidKufi_Ben, Arial');
+      add_option('news_ticker_benaceur_font_size', '14');
+      add_option('news_ticker_benaceur_width', '100%');
+      add_option('news_ticker_benaceur_padding_top', '1');
+      add_option('news_ticker_benaceur_padding_bottom', '0');
+      add_option('news_ticker_benaceur_margin_top', '0');
+      add_option('news_ticker_benaceur_margin_bottom', '25');
+      add_option('news_ticker_benaceur_font_weight', 'normal');
+      add_option('news_ticker_benaceur_text_shadow', 'no');
+      add_option('news_ticker_benaceur_text_shadow_color', '#000000');
+      add_option('news_ticker_benaceur_box_shadow', 'no');
+      add_option('news_ticker_benaceur_box_shadow_color', '#B5B5B5');
+      add_option('news_ticker_benaceur_box_shadow_v', '1');
+      add_option('news_ticker_benaceur_padding_top_title', '2');
+      add_option('news_ticker_benaceur_height', '34');
+      add_option('news_ticker_benaceur_a_hover', '#847c7c');
+      add_option('news_ticker_benaceur_styles_options_p', 'theme_one');
+      add_option('news_ticker_benaceur_cust_color_back', '#7A0049');
+      add_option('news_ticker_benaceur_cust_color_font', '#FFFFFF');
+      add_option('news_ticker_benaceur_cust_color_back_input', '#9B005E');
+      add_option('news_ticker_benaceur_cust_color_back_msg', '#B3006B');
+      add_option('news_ticker_benaceur_cust_color_switch_input', '#9B005E');
+      add_option('news_ticker_benaceur_width_title_background', '70');
+      add_option('news_ticker_benaceur_color_border_title', '#FFFFFF');
+      add_option('news_ticker_benaceur_border_title', '0');
+      add_option('news_ticker_benaceur_line_height_title', '34');
+	 }
+     function NTB_group_op_options_default() {
+      add_option('news_ticker_benaceur_delete_all_options', 'no_delete_opt');
+	 }
+// add_option
+
+     register_activation_hook( __FILE__, 'NTB_up_options' );
+     function NTB_up_options(){
+      NTB_group_options_default();
+      NTB_group_anim_options_default();
+      NTB_group_sty_options_default();
+	  NTB_group_op_options_default();
 	 }
 
 if (get_option('news_ticker_benaceur_enable_plug')):
@@ -301,13 +377,13 @@ endif; // news_ticker_benaceur_enable_plug
     function ntb_links_on_admin_bar($wp_admin_bar) {
 
         if (current_user_can( 'manage_options' ) && get_option( 'news_ticker_benaceur_links_admin_bar_front') && !is_admin() && get_option( 'news_ticker_benaceur_enable_plug')) {
-if (get_option( 'news_ticker_benaceur_links_admin_bar_menu') == 'menu' || get_option( 'news_ticker_benaceur_links_admin_bar_menu') == '') {
+if (get_option( 'news_ticker_benaceur_links_admin_bar_menu') == 'menu') {
 $wp_admin_bar->add_menu( array( 'id' => 'PLB_ntb5', 'title' => __('News Ticker Benaceur'), 'href' => admin_url('/options-general.php?page=news-ticker-benaceur' ) ) );
 } elseif (get_option( 'news_ticker_benaceur_links_admin_bar_menu') == 'submenu' ) { 
 $wp_admin_bar->add_menu( array( 'parent' => 'appearance', 'id' => 'PLB_ntb6', 'title' => __('News Ticker Benaceur'), 'href' => admin_url('/options-general.php?page=news-ticker-benaceur' ) ) );
 }
 		} elseif (current_user_can( 'manage_options' ) && get_option( 'news_ticker_benaceur_links_admin_bar_admin') && is_admin() && get_option( 'news_ticker_benaceur_enable_plug'))  {
-if (get_option( 'news_ticker_benaceur_links_admin_bar_menu') == 'menu' || get_option( 'news_ticker_benaceur_links_admin_bar_menu') == '') {
+if (get_option( 'news_ticker_benaceur_links_admin_bar_menu') == 'menu') {
 $wp_admin_bar->add_menu( array( 'id' => 'PLB_ntb7', 'title' => __('News Ticker Benaceur'), 'href' => admin_url('/options-general.php?page=news-ticker-benaceur' ) ) );
 } elseif (get_option( 'news_ticker_benaceur_links_admin_bar_menu') == 'submenu') { 
 $wp_admin_bar->add_menu( array( 'parent' => 'site-name', 'id' => 'PLB_ntb8', 'title' => __('News Ticker Benaceur'), 'href' => admin_url('/options-general.php?page=news-ticker-benaceur' ) ) );
@@ -319,7 +395,7 @@ $wp_admin_bar->add_menu( array( 'parent' => 'site-name', 'id' => 'PLB_ntb8', 'ti
     function news_ticker_benaceur_admin_notices() {
     $add_notice_admin = true;
 	
-	if ( false === $add_notice_admin ) { 
+	if ( true === $add_notice_admin ) { 
     if ( $GLOBALS['pagenow'] == 'options-general.php' && $_GET['page'] == 'news-ticker-benaceur' ) {
     include ('includes/notices-ntb.php');
     }
@@ -347,5 +423,80 @@ $wp_admin_bar->add_menu( array( 'parent' => 'site-name', 'id' => 'PLB_ntb8', 'ti
      delete_option($optionN_anim_NTB);
 }
      delete_option('news_ticker_benaceur_delete_all_options');
+     delete_option('ntb_all_reset');
 }
   endif; // endif news_ticker_benaceur_delete_all_options
+  
+// reset group
+if (get_option('ntb_group_reset')) :
+  add_action('admin_init', 'ntb_group_reset_AllOptions');
+  function ntb_group_reset_AllOptions() {
+	  
+  global $AllOptionsNTB;	
+  foreach($AllOptionsNTB as $optionN_NTB) {
+  delete_option($optionN_NTB);
+}	
+  NTB_group_options_default();
+  }  
+endif;	
+// reset group
+
+// reset group anim
+if (get_option('ntb_group_anim_reset')) :
+  add_action('admin_init', 'ntb_group_anim_reset_AllOptions');
+  function ntb_group_anim_reset_AllOptions() {
+	  
+  global $AllOptions_anim_NTB;	
+  foreach($AllOptions_anim_NTB as $optionN_anim_NTB ) {
+     delete_option($optionN_anim_NTB);
+}
+  NTB_group_anim_options_default();
+  }  
+endif;	
+// reset group anim
+
+// reset group sty
+if (get_option('ntb_group_sty_reset')) :
+  add_action('admin_init', 'ntb_group_sty_reset_AllOptions');
+  function ntb_group_sty_reset_AllOptions() {
+	  
+  global $AllOptionssNTB;	
+  foreach($AllOptionssNTB as $optionS_NTB ) {
+     delete_option($optionS_NTB);
+}
+  NTB_group_sty_options_default();
+  }  
+endif;	
+// reset group sty
+
+
+// reset all
+if (get_option('ntb_all_reset')) :
+  add_action('admin_init', 'ntb_all_reset_AllOptions');
+  function ntb_all_reset_AllOptions() {
+	  
+  global $AllOptionsNTB;	
+  foreach($AllOptionsNTB as $optionN_NTB) {
+     delete_option($optionN_NTB);
+}
+
+  global $AllOptionssNTB;	
+  foreach($AllOptionssNTB as $optionS_NTB ) {
+     delete_option($optionS_NTB);
+}
+
+  global $AllOptions_anim_NTB;	
+  foreach($AllOptions_anim_NTB as $optionN_anim_NTB ) {
+     delete_option($optionN_anim_NTB);
+}
+     delete_option('news_ticker_benaceur_delete_all_options');
+     delete_option('ntb_all_reset');
+	 
+      NTB_group_options_default();
+      NTB_group_anim_options_default();
+      NTB_group_sty_options_default();
+	  NTB_group_op_options_default();
+	  
+  }  
+endif;	
+// reset all

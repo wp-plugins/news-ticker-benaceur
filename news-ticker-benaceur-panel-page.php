@@ -18,9 +18,9 @@ function news_ticker_benaceur_page_options() {
 <?php if (isset($_GET['settings-updated']) && $GLOBALS['pagenow'] == 'options-general.php' && $_GET['page'] == 'news-ticker-benaceur'){ ?>
 <style>#setting-error-settings_updated {display:none;}</style>
 		<?php if ($ntb_styles_options_p == 'theme_one' || $ntb_styles_options_p == '' ) { ?>
-		<div  id="message" class="updated" style="background:#AC302D;color:<?php if (!empty($ntb_cust_color_font)) { echo $ntb_cust_color_font; } else {echo "#FFFFFF";} ?>;margin:20px 0 20px 0;">
+		<div  id="message" class="updated" style="background:#AC302D;color:<?php echo $ntb_cust_color_font; ?>;margin:20px 0 20px 0;">
 		<?php } elseif ($ntb_styles_options_p == 'theme_custom' ) { ?>
-		<div  id="message" class="updated" style="background:<?php if (!empty($ntb_cust_color_back_msg)) { echo $ntb_cust_color_back_msg; } else {echo "#B3006B";} ?>;color:<?php if (!empty($ntb_cust_color_font)) { echo $ntb_cust_color_font; } else {echo "#FFFFFF";} ?>;margin:20px 0 20px 0;">
+		<div  id="message" class="updated" style="background:<?php echo $ntb_cust_color_back_msg; ?>;color:<?php echo $ntb_cust_color_font; ?>;margin:20px 0 20px 0;">
 		<?php } elseif ($ntb_styles_options_p == 'theme_standard' ) { ?>
 		<div  id="message" class="updated" style="background:;color:;margin:20px;">
 		<?php } ?>
@@ -55,7 +55,7 @@ function news_ticker_benaceur_page_options() {
 	
 					<tr>
 						<td>
-                   <input type="radio" name="news_ticker_benaceur_latest_p_c" value="latest_posts" <?php if( $ntb_latest_p_c == 'latest_posts' || $ntb_latest_p_c == '')echo 'checked';?> >
+                   <input type="radio" name="news_ticker_benaceur_latest_p_c" value="latest_posts" <?php if( $ntb_latest_p_c == 'latest_posts')echo 'checked';?> >
                     <div class="colwrap-display">&nbsp;&nbsp;<td><?php _e("Latest posts",'news-ticker-benaceur'); ?></td></div>
 					</tr></br>
 					<tr> 
@@ -183,7 +183,7 @@ foreach($category_ids as $cat_id) {
                 </tr>
 					<tr>
 						<td>
-                   <input type="radio" name="news_ticker_benaceur_include_exclude_id" value="include_id" <?php if( $ntb_include_exclude_id == 'include_id' || $ntb_include_exclude_id == '') echo 'checked';?> >
+                   <input type="radio" name="news_ticker_benaceur_include_exclude_id" value="include_id" <?php if( $ntb_include_exclude_id == 'include_id') echo 'checked';?> >
                     <div class="colwrap-display">&nbsp;&nbsp;<td><?php _e("Include cat id/post id",'news-ticker-benaceur'); ?></td></div>
 					</tr></br>
 					<tr> 
@@ -226,7 +226,7 @@ foreach($category_ids as $cat_id) {
                 <tr valign="top">
                     <th style="font-size: 13px;font-weight:normal;" scope="row"><?php _e('Numbre of posts', 'news-ticker-benaceur'); ?></th>
                     <td>
-					<div class="sm_benaceurlist_caps_input-ntb"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_num_posts" value="<?php if (!empty($ntb_num_posts)) { echo $ntb_num_posts; } else {echo "10";} ?>" /></div>
+					<div class="sm_benaceurlist_caps_input-ntb"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_num_posts" value="<?php echo $ntb_num_posts; ?>" /></div>
                    </td>
                 </tr>
               </table>
@@ -236,21 +236,21 @@ foreach($category_ids as $cat_id) {
                     
                     <td>
 				<div class="bold-3"><select style="min-width:100px;text-align:center;"  name="news_ticker_benaceur_dir" class="news-ticker-benaceur-color-inp">
-				<option value="ltr" <?php $ntb_dir = get_option( 'news_ticker_benaceur_dir' ); selected('ltr', $ntb_dir); ?>><?php _e('LTR', 'news-ticker-benaceur'); ?></option>
-				<option value="rtl" <?php selected('rtl', $ntb_dir); ?>><?php _e('RTL', 'news-ticker-benaceur'); ?></option>
+				<option value="ltr" <?php selected('ltr', $ntb_dir); ?>><?php _e('LTR', 'news-ticker-benaceur'); ?></option>
+				<option value="rtl" <?php selected('rtl', $ntb_dir); ?>><?php _e('RTL', 'news-ticker-benaceur'); ?></option></select>
                 </tr>
             </table>
 <table class="form-table">
                 <tr valign="top">
                     <th style="font-size: 13px;font-weight:normal;" scope="row"><?php _e('Number of letters of Title', 'news-ticker-benaceur'); ?></th>
                     <td>
-					<div class="sm_benaceurlist_caps_input-ntb"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_expt_txt_title" value="<?php if (!empty($ntb_expt_txt_title)) { echo $ntb_expt_txt_title; } else {echo "70";} ?>" /></div>
+					<div class="sm_benaceurlist_caps_input-ntb"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_expt_txt_title" value="<?php echo $ntb_expt_txt_title; ?>" /></div>
                    </td>
                 </tr>
                 <tr valign="top">
                     <th style="font-size: 13px;font-weight:normal;" scope="row"><?php _e('Number of letters of Comments', 'news-ticker-benaceur'); ?></th>
                     <td>
-					<div class="sm_benaceurlist_caps_input-ntb"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_expt_txt_comm" value="<?php if (!empty($ntb_expt_txt_comm)) { echo $ntb_expt_txt_comm; } else {echo "62";} ?>" /></div>
+					<div class="sm_benaceurlist_caps_input-ntb"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_expt_txt_comm" value="<?php echo $ntb_expt_txt_comm; ?>" /></div>
                    </td>
                 </tr>
 </table>
@@ -258,11 +258,8 @@ foreach($category_ids as $cat_id) {
         </form>
 		
     <form action="options.php" method="post">
-            <?php settings_fields( 'news_ticker_benaceur_group' ); 
-				do_settings_sections( 'news_ticker_benaceur_group' );
-			?>
-	  <input type="hidden"  value="1" <?php if ($ntb_enable_plug == '') echo 'checked="checked"';  ?> name="news_ticker_benaceur_enable_plug" />
-	  <input type="hidden"  name="news_ticker_benaceur_title_anim_pulsate" value="1" <?php  if($ntb_title_anim_pulsate == '' ) { echo 'checked="checked"'; }   ?>/>
+            <?php settings_fields( 'news_ticker_benaceur_group' ); ?>
+	  <input type="hidden"  name="ntb_group_reset" value="1" <?php if(empty($ntb_group_reset) ) { echo 'checked="checked"'; } ?>/>
       <input type="submit" value="<?php _e('Click to reset properties plugin', 'news-ticker-benaceur');?>" class="button-secondary" />
     </form>
 </br>
@@ -291,12 +288,8 @@ foreach($category_ids as $cat_id) {
 <p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="<?php _e('Save Changes', 'news-ticker-benaceur'); ?>" onclick="javascript:sender()" /></p>
 <!--form: NTBForm2-->
     <form action="options.php" method="post">
-            <?php settings_fields( 'news_ticker_benaceur_group_anim'); 
-				do_settings_sections( 'news_ticker_benaceur_group_anim' );
-			?>
-      <div class="hidden-selected-fadein"><select type="hidden" id="dropdown" style="min-width:100px;text-align:center;"  name="news_ticker_benaceur_style" class="news-ticker-benaceur-color-inp">
-		<option value="fadein" <?php selected('fadein', $ntb_st); ?>><?php _e('FadeIn', 'news-ticker-benaceur'); ?></option>
-	  </select></div>
+            <?php settings_fields( 'news_ticker_benaceur_group_anim' ); ?>
+	  <input type="hidden"  name="ntb_group_anim_reset" value="1" <?php if(empty($ntb_group_anim_reset) ) { echo 'checked="checked"'; } ?>/>
       <input type="submit" value="<?php _e('Click to reset Properties animations', 'news-ticker-benaceur');?>" class="button-secondary" />
     </form>
 </br><center><div class="to-tr3"></div></center></br>
@@ -310,7 +303,7 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" name="news_ticker_benaceur_color_back_" id="news-ticker-benaceur-colorScheme_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_color_back)) { echo $ntb_color_back; } else {echo "#FFFFFF";} ?>"  />
+								<input type="text" name="news_ticker_benaceur_color_back_" id="news-ticker-benaceur-colorScheme_a" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_color_back; ?>"  />
 								<div class="news-ticker-benaceur-colsel news-ticker-benaceur-colorScheme_a"></div>
 							</div></div>
 						</td>
@@ -319,7 +312,7 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" id="news-ticker-benaceur-txtclr_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_color_text_back)) { echo $ntb_color_text_back; } else {echo "#000000";} ?>" name="news_ticker_benaceur_color_text_back" />
+								<input type="text" id="news-ticker-benaceur-txtclr_a" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_color_text_back; ?>" name="news_ticker_benaceur_color_text_back" />
 								<div class="news-ticker-benaceur-colsel news-ticker-benaceur-txtclr_a"></div>
 							</div></div>
 						</td>
@@ -328,7 +321,7 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" name="news_ticker_benaceur_color_back_title" id="news-ticker-benaceur-background2clr_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_color_back_title)) { echo $ntb_color_back_title; } else {echo "#CE0000";} ?>"  />
+								<input type="text" name="news_ticker_benaceur_color_back_title" id="news-ticker-benaceur-background2clr_a" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_color_back_title; ?>"  />
 								<div class="news-ticker-benaceur-colsel news-ticker-benaceur-background2clr_a"></div>
 							</div></div>
 						</td>
@@ -337,16 +330,16 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" name="news_ticker_benaceur_color_text_title" id="news-ticker-benaceur-TextTitleclr_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_color_text_title)) { echo $ntb_color_text_title; } else {echo "#FFFFFF";} ?>"  />
+								<input type="text" name="news_ticker_benaceur_color_text_title" id="news-ticker-benaceur-TextTitleclr_a" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_color_text_title; ?>"  />
 								<div class="news-ticker-benaceur-colsel news-ticker-benaceur-TextTitleclr_a"></div>
 							</div></div>
 						</td>
-						<div class="colwrap-display"><td><?php _e("Text color of title",'news-ticker-benaceur'); ?> </td></div></br>
+						<div class="colwrap-display"><td><?php _e("Text color of title (if animation pulsate is disabled)",'news-ticker-benaceur'); ?> </td></div></br>
 					</tr>
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" id="news-ticker-benaceur-borderclr_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_color_border)) { echo $ntb_color_border; } else {echo "#CE1031";} ?>" name="news_ticker_benaceur_color_border" />
+								<input type="text" id="news-ticker-benaceur-borderclr_a" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_color_border; ?>" name="news_ticker_benaceur_color_border" />
 								<div class="news-ticker-benaceur-colsel news-ticker-benaceur-borderclr_a"></div>
 							</div></div>
 						</td>
@@ -355,7 +348,16 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" id="news-ticker-benaceur-hoverclr_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_a_hover)) { echo $ntb_a_hover; } else {echo "#847c7c";} ?>" name="news_ticker_benaceur_a_hover" />
+								<input type="text" id="news-ticker-benaceur-borderclr-title_a" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_color_border_title; ?>" name="news_ticker_benaceur_color_border_title" />
+								<div class="news-ticker-benaceur-colsel news-ticker-benaceur-borderclr-title_a"></div>
+							</div></div>
+						</td>
+						<div class="colwrap-display"><td><?php _e("Border color (Title)",'news-ticker-benaceur'); ?> </td></div></br>
+					</tr>
+					<tr>
+						<td>
+							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
+								<input type="text" id="news-ticker-benaceur-hoverclr_a" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_a_hover; ?>" name="news_ticker_benaceur_a_hover" />
 								<div class="news-ticker-benaceur-colsel news-ticker-benaceur-hoverclr_a"></div>
 							</div></div>
 						</td>
@@ -364,7 +366,15 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" id="news-ticker-benaceur-txtclr_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_border_top)) { echo $ntb_border_top; } else {echo "0";} ?>" name="news_ticker_benaceur_border_top" />
+								<input type="text" id="news-ticker-benaceur-txtclr_a" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_border_title; ?>" name="news_ticker_benaceur_border_title" />
+							</div></div>
+						</td>
+						<div class="colwrap-display"><td><?php _e("border (Title)",'news-ticker-benaceur'); ?> </td></div></br>
+					</tr>
+					<tr>
+						<td>
+							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
+								<input type="text" id="news-ticker-benaceur-txtclr_a" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_border_top; ?>" name="news_ticker_benaceur_border_top" />
 							</div></div>
 						</td>
 						<div class="colwrap-display"><td><?php _e("border top",'news-ticker-benaceur'); ?> </td></div></br>
@@ -372,7 +382,7 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" id="news-ticker-benaceur-txtclr_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_border_bottom)) { echo $ntb_border_bottom; } elseif ($ntb_border_bottom == '') {echo "2";} elseif ($ntb_border_bottom == '0') {echo "0";} ?>" name="news_ticker_benaceur_border_bottom" />
+								<input type="text" id="news-ticker-benaceur-txtclr_a" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_border_bottom; ?>" name="news_ticker_benaceur_border_bottom" />
 							</div></div>
 						</td>
 						<div class="colwrap-display"><td><?php _e("border bottom",'news-ticker-benaceur'); ?> </td></div></br>
@@ -380,7 +390,7 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" id="news-ticker-benaceur-txtclr_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_border_right)) { echo $ntb_border_right; } else {echo "0";} ?>" name="news_ticker_benaceur_border_right" />
+								<input type="text" id="news-ticker-benaceur-txtclr_a" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_border_right; ?>" name="news_ticker_benaceur_border_right" />
 							</div></div>
 						</td>
 						<div class="colwrap-display"><td><?php _e("border right",'news-ticker-benaceur'); ?> </td></div></br>
@@ -388,7 +398,7 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" id="news-ticker-benaceur-txtclr_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_border_left)) { echo $ntb_border_left; } else {echo "0";} ?>" name="news_ticker_benaceur_border_left" />
+								<input type="text" id="news-ticker-benaceur-txtclr_a" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_border_left; ?>" name="news_ticker_benaceur_border_left" />
 							</div></div>
 						</td>
 						<div class="colwrap-display"><td><?php _e("border left",'news-ticker-benaceur'); ?> </td></div></br>
@@ -396,7 +406,7 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" id="news-ticker-benaceur-txtclr_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_border_radius)) { echo $ntb_border_radius; } elseif ($ntb_border_radius == '') {echo "1";} elseif ($ntb_border_radius == '0') {echo "0";} ?>" name="news_ticker_benaceur_border_radius" />
+								<input type="text" id="news-ticker-benaceur-txtclr_a" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_border_radius; ?>" name="news_ticker_benaceur_border_radius" />
 							</div></div>
 						</td>
 						<div class="colwrap-display"><td><?php _e("border radius",'news-ticker-benaceur'); ?> </td></div></br>
@@ -404,7 +414,7 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_opacity)) { echo $ntb_opacity; } else {echo "1";} ?>" name="news_ticker_benaceur_opacity" />
+								<input type="text" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_opacity; ?>" name="news_ticker_benaceur_opacity" />
 							</div></div>
 						</td>
 						<div class="colwrap-display"><td><?php _e("The level of transparency 1-0.1",'news-ticker-benaceur'); ?> </td></div></br>
@@ -412,7 +422,7 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_width)) { echo $ntb_width; } else {echo "100%";} ?>" name="news_ticker_benaceur_width" />
+								<input type="text" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_width; ?>" name="news_ticker_benaceur_width" />
 							</div></div>
 						</td>
 						<div class="colwrap-display"><td><?php _e("Width by adding: px or %",'news-ticker-benaceur'); ?> </td></div></br>
@@ -420,7 +430,7 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_height)) { echo $ntb_height; } else {echo "34";} ?>" name="news_ticker_benaceur_height" />
+								<input type="text" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_height; ?>" name="news_ticker_benaceur_height" />
 							</div></div>
 						</td>
 						<div class="colwrap-display"><td><?php _e("Height",'news-ticker-benaceur'); ?> </td></div></br>
@@ -428,7 +438,15 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_width_title_background)) { echo $ntb_width_title_background; } else {echo "70";} ?>" name="news_ticker_benaceur_width_title_background" />
+								<input type="text" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_line_height_title; ?>" name="news_ticker_benaceur_line_height_title" />
+							</div></div>
+						</td>
+						<div class="colwrap-display"><td><?php _e("line height (Title)",'news-ticker-benaceur'); ?> </td></div></br>
+					</tr>
+					<tr>
+						<td>
+							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
+								<input type="text" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_width_title_background; ?>" name="news_ticker_benaceur_width_title_background" />
 							</div></div>
 						</td>
 						<div class="colwrap-display"><td><?php _e("Width of title background",'news-ticker-benaceur'); ?> </td></div></br>
@@ -436,7 +454,7 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_padding_top)) { echo $ntb_padding_top; } elseif ($ntb_padding_top == '') {echo "1";} elseif ($ntb_padding_top == '0') {echo "0";} ?>" name="news_ticker_benaceur_padding_top" />
+								<input type="text" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_padding_top; ?>" name="news_ticker_benaceur_padding_top" />
 							</div></div>
 						</td>
 						<div class="colwrap-display"><td><?php _e("padding top",'news-ticker-benaceur'); ?> </td></div></br>
@@ -444,7 +462,7 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_padding_bottom)) { echo $ntb_padding_bottom; } else {echo "0";} ?>" name="news_ticker_benaceur_padding_bottom" />
+								<input type="text" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_padding_bottom; ?>" name="news_ticker_benaceur_padding_bottom" />
 							</div></div>
 						</td>
 						<div class="colwrap-display"><td><?php _e("padding bottom",'news-ticker-benaceur'); ?> </td></div></br>
@@ -452,7 +470,7 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_padding_top_title)) { echo $ntb_padding_top_title; } elseif ($ntb_padding_top_title == '') {echo "2";} elseif ($ntb_padding_top_title == '0') {echo "0";} ?>" name="news_ticker_benaceur_padding_top_title" />
+								<input type="text" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_padding_top_title; ?>" name="news_ticker_benaceur_padding_top_title" />
 							</div></div>
 						</td>
 						<div class="colwrap-display"><td><?php _e("padding top (Title)",'news-ticker-benaceur'); ?> </td></div></br>
@@ -460,7 +478,7 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_margin_top)) { echo $ntb_margin_top; } else {echo "0";} ?>" name="news_ticker_benaceur_margin_top" />
+								<input type="text" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_margin_top; ?>" name="news_ticker_benaceur_margin_top" />
 							</div></div>
 						</td>
 						<div class="colwrap-display"><td><?php _e("margin top",'news-ticker-benaceur'); ?> </td></div></br>
@@ -468,7 +486,7 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_margin_bottom)) { echo $ntb_margin_bottom; } elseif ($ntb_margin_bottom == '') {echo "25";} elseif ($ntb_margin_bottom == '0') {echo "0";} ?>" name="news_ticker_benaceur_margin_bottom" />
+								<input type="text" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_margin_bottom; ?>" name="news_ticker_benaceur_margin_bottom" />
 							</div></div>
 						</td>
 						<div class="colwrap-display"><td><?php _e("margin bottom",'news-ticker-benaceur'); ?> </td></div></br>
@@ -476,7 +494,7 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="news-ticker-benaceur-colwrap2">
-								<input type="text" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_font_family)) { echo $ntb_font_family; } else {echo "DroidKufi_Ben, Arial";} ?>" name="news_ticker_benaceur_font_family" />
+								<input type="text" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_font_family; ?>" name="news_ticker_benaceur_font_family" />
 						&nbsp;&nbsp;&nbsp;&nbsp;<?php _e("Font family",'news-ticker-benaceur'); ?> /
                                <input type="checkbox"  value="enable" <?php checked('enable', get_option( 'news_ticker_benaceur_disable_this_font' )); ?> name="news_ticker_benaceur_disable_this_font" />
                         <?php _e("Disable this font: DroidKufi_Ben ",'news-ticker-benaceur'); ?>
@@ -486,7 +504,7 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_font_size)) { echo $ntb_font_size; } else {echo "14";} ?>" name="news_ticker_benaceur_font_size" />
+								<input type="text" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_font_size; ?>" name="news_ticker_benaceur_font_size" />
 							</div></div>
 						</td>
 						<div class="colwrap-display"><td><?php _e("Font size",'news-ticker-benaceur'); ?> </td></div></br>
@@ -510,7 +528,7 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" id="news-ticker-benaceur-textshadowclr_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_text_shadow_color)) { echo $ntb_text_shadow_color; } else {echo "#000000";} ?>" name="news_ticker_benaceur_text_shadow_color" />
+								<input type="text" id="news-ticker-benaceur-textshadowclr_a" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_text_shadow_color; ?>" name="news_ticker_benaceur_text_shadow_color" />
 								<div class="news-ticker-benaceur-colsel news-ticker-benaceur-textshadowclr_a"></div>
 							</div></div>
 						</td>
@@ -527,7 +545,7 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" id="news-ticker-benaceur-boxshadowclr_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_box_shadow_color)) { echo $ntb_box_shadow_color; } else {echo "#B5B5B5";} ?>" name="news_ticker_benaceur_box_shadow_color" />
+								<input type="text" id="news-ticker-benaceur-boxshadowclr_a" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_box_shadow_color; ?>" name="news_ticker_benaceur_box_shadow_color" />
 								<div class="news-ticker-benaceur-colsel news-ticker-benaceur-boxshadowclr_a"></div>
 							</div></div>
 						</td>
@@ -536,7 +554,7 @@ foreach($category_ids as $cat_id) {
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" id="news-ticker-benaceur-txtclr_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_box_shadow_v)) { echo $ntb_box_shadow_v; } elseif ($ntb_box_shadow_v == '') {echo "1";} elseif ($ntb_box_shadow_v == '0') {echo "0";} ?>" name="news_ticker_benaceur_box_shadow_v" />
+								<input type="text" id="news-ticker-benaceur-txtclr_a" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_box_shadow_v; ?>" name="news_ticker_benaceur_box_shadow_v" />
 							</div></div>
 						</td>
 						<div class="colwrap-display"><td><?php _e("box shadow v",'news-ticker-benaceur'); ?> </td></div></br>
@@ -554,10 +572,8 @@ foreach($category_ids as $cat_id) {
 						</div></div>
 						</td>
 						<div class="colwrap-display">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td><?php _e("Styles options page",'news-ticker-benaceur'); ?> </td></div></br>
-						
-      <?php  include ('includes/news-ticker-benaceur-styles-p-options.php'); ?>
-
 					</tr>
+					      <?php  require ('includes/news-ticker-benaceur-styles-p-options.php'); ?>
 </br><div class="to-tr2"></div></br>
                 <tr>  
                     <td> 
@@ -575,12 +591,9 @@ foreach($category_ids as $cat_id) {
 				</div>	
 			</form>
     <form action="options.php" method="post">
-            <?php
-			settings_fields( 'news_ticker_benaceur_group_sty' ); 
-			do_settings_sections( 'news_ticker_benaceur_group_sty' );
-			?>
+            <?php settings_fields( 'news_ticker_benaceur_group_sty' ); ?>
+	  <input type="hidden"  name="ntb_group_sty_reset" value="1" <?php if(empty($ntb_group_sty_reset) ) { echo 'checked="checked"'; } ?>/>
       <input type="submit" value="<?php _e('Click to reset style properties plugin', 'news-ticker-benaceur');?>" class="button-secondary" />
-      <input type="hidden" name="news_ticker_benaceur_style" value="style1" <?php echo get_option( 'news_ticker_benaceur_style' ) == 'style1'; ?> >
     </form>
 </br><div class="to-tr"></div>
     <form action="options.php" method="post">
@@ -592,18 +605,25 @@ foreach($category_ids as $cat_id) {
 	
 					<tr>
 						<td>
-                   <input type="radio" name="news_ticker_benaceur_delete_all_options" value="delete_opt" <?php if( $ntb_delete_all_options== 'delete_opt')echo 'checked';?> >
+                   <input type="radio" name="news_ticker_benaceur_delete_all_options" value="delete_opt" <?php if( $ntb_delete_all_options == 'delete_opt')echo 'checked';?> >
                     <td><?php _e("Remove all settings and data of the plugin from database when the plugin is disabled",'news-ticker-benaceur'); ?></td>
 						</td>
 					</tr>
 					<tr> 
 						<td>
-                   <input type="radio" name="news_ticker_benaceur_delete_all_options" value="no_delete_opt" <?php if( $ntb_delete_all_options == 'no_delete_opt' || $ntb_delete_all_options == '')echo 'checked';?> >
+                   <input type="radio" name="news_ticker_benaceur_delete_all_options" value="no_delete_opt" <?php if( $ntb_delete_all_options == 'no_delete_opt')echo 'checked';?> >
 						</td>
                    <td><?php _e("Do not delete",'news-ticker-benaceur'); ?></td>
 					</tr>
 </table>
 					<p><?php submit_button(); ?></p>
+    </form>
+</br>
+    <form action="options.php" method="post">
+            <?php settings_fields( 'news_ticker_benaceur_all_reset' ); 
+			?>
+	  <input type="hidden"  name="ntb_all_reset" value="1" <?php if(empty($ntb_all_reset) ) { echo 'checked="checked"'; } ?>/>
+      <input type="submit" value="<?php _e('Reset all settings', 'news-ticker-benaceur');?>" class="button-secondary" />
     </form>
 </br>
     </div></div>
@@ -630,9 +650,15 @@ foreach($category_ids as $cat_id) {
 .hidden-selected-fadein{display:none;}
 </style>
 
-<?php if (get_option('news_ticker_benaceur_styles_options_p') == 'theme_custom'  ) { 
- include ('admin/news-ticker-benaceur-admin-custom.php');
-} ?>
+	  <?php if ($GLOBALS['pagenow'] == 'options-general.php' && $_GET['page'] == 'news-ticker-benaceur') { 
+        	if (get_option('news_ticker_benaceur_styles_options_p') == 'theme_one') { 
+	        include ('admin/news-ticker-benaceur-admin-one.php'); 
+	        } elseif (get_option('news_ticker_benaceur_styles_options_p') == 'theme_custom' ) {
+		    include ('admin/news-ticker-benaceur-admin-custom.php');
+	        } elseif (get_option('news_ticker_benaceur_styles_options_p') == 'theme_standard' ) {
+		    include ('admin/news-ticker-benaceur-admin-stand.php');
+		}
+		?>
 
 <script language="JavaScript">
 function setVisibility_ntb(id) {
@@ -734,4 +760,6 @@ function sender() {
 </script>
 
 <?php
+        }
+
 }	

@@ -1,8 +1,9 @@
+<style type="text/css">
 #news-ticker-benaceur-font .news-ticker-benaceur-colwrap{position:relative;width:120px;}	
 #news-ticker-benaceur-font .news-ticker-benaceur-colwrap .news-ticker-benaceur-color-inp{ border: 1px solid #EA2F22;  width: 103px; text-align:center;} 	
 #news-ticker-benaceur-font .news-ticker-benaceur-colwrap2{position:relative;}	
 #news-ticker-benaceur-font .news-ticker-benaceur-colwrap2 .news-ticker-benaceur-color-inp{ border: 1px solid #EA2F22;  width: 103px; text-align:center;} 	
-#news-ticker-benaceur-font .news-ticker-benaceur-colsel{background: url("color_picker.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0); background-size: 22px 24px; cursor: pointer; height: 24px;  position: absolute;  top:1px; width: 23px; } 
+#news-ticker-benaceur-font .news-ticker-benaceur-colsel{background: url(<?php echo '' . plugins_url( 'admin/color_picker.png', dirname(__FILE__) ) . ''; ?>) no-repeat scroll 0 0 rgba(0, 0, 0, 0); background-size: 22px 24px; cursor: pointer; height: 24px;  position: absolute;  top:1px; width: 23px; } 
 #news-ticker-benaceur-font .news-ticker-benaceur-colsel .farbtastic{display:none;position:absolute;top:8px;z-index:1;}
 
 input[type="text"] {
@@ -81,7 +82,7 @@ input[type="text"] {
 
 th {min-width:150px;}
 .switch-handle-w  {min-width:200px;margin-top:7px;}
-/* checked on / off ------- */
+
 .switch-nab {
   position: relative;
   display: inline-block;
@@ -197,9 +198,6 @@ th {min-width:150px;}
   left: 40px;
   box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
 }
-
-/* checked on / off --- rond ---- */
-
 .switch {
   margin: 5px auto;
   position: relative;
@@ -224,9 +222,6 @@ th {min-width:150px;}
   height: 100%;
   cursor: pointer;
 }
-
-/* 1 */
-
 .switch.demo1 {
   width: 80px;
   height: 80px;
@@ -347,3 +342,4 @@ th {min-width:150px;}
 .bold-3 {margin-bottom:6px;}
 .bold-4 {margin-top:8px;}
 .hov-button-primary-sub a:link {color:white;text-decoration: none;} .hov-button-primary-sub a:visited {color:white;} .hov-button-primary-sub a:active,.hov-button-primary-sub a:hover {olor:white;}
+</style>

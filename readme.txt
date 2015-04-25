@@ -2,8 +2,8 @@
 Contributors: Benaceur 
 Tags: news ticker, latest post, latest posts, news post, latest comments, Last posts bar, Last news ticker, Latest news, bar
 Requires at least: 3.0
-Tested up to: 4.1.2
-Stable tag: 2.1.6
+Tested up to: 4.2
+Stable tag: 2.2.0
 License: GPLv2 or later
 
 This plugin allow you to display the latest posts or latest comments or news in a bar with six beautiful animations...
@@ -43,9 +43,9 @@ Link to preview <a href="http://benaceur-php.com/" target="_blank">Demo</a>
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Activate the plugin again in the control panel (the plugin page)
 4. Put the following line in the place (in template) where you bar to appear:
-</br> &lt;?php if (has_action('wp_news_ticker_benaceur')) wp_news_ticker_benaceur_(); ?>
-</br> or put this short code (in post or page):
-</br> [wp_news_ticker_benaceur_short_code]
+ `&lt;?php if (has_action('wp_news_ticker_benaceur')) wp_news_ticker_benaceur_(); ?>`
+ or put this short code (in post or page):
+ `[wp_news_ticker_benaceur_short_code]`
 5. Adjust your settings in Admin Panel.
 
 == Screenshots ==
@@ -57,6 +57,12 @@ Link to preview <a href="http://benaceur-php.com/" target="_blank">Demo</a>
 
 == Changelog ==
 
+= 2.2.0 =
+* Tested with WordPress 4.2. 
+* Some change in the programming of the plugin.
+* Adding reset all setting.
+* Adding border of title and line-height.
+* Some adjustments.
 = 2.1.6 =
 * Correction in in the default (values) style.
 * Some adjustment in Translation.

@@ -2,7 +2,7 @@
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" id="news-ticker-benaceur-cust-color-back_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_cust_color_back)) { echo $ntb_cust_color_back; } else {echo "#7A0049";} ?>" name="news_ticker_benaceur_cust_color_back" />
+								<input type="text" id="news-ticker-benaceur-cust-color-back_a" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_cust_color_back; ?>" name="news_ticker_benaceur_cust_color_back" />
 								<div class="news-ticker-benaceur-colsel news-ticker-benaceur-cust-color-back_a"></div>
 							</div></div>
 						</td>
@@ -11,7 +11,7 @@
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" id="news-ticker-benaceur-cust-color-font_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_cust_color_font)) { echo $ntb_cust_color_font; } else {echo "#FFFFFF";} ?>" name="news_ticker_benaceur_cust_color_font" />
+								<input type="text" id="news-ticker-benaceur-cust-color-font_a" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_cust_color_font; ?>" name="news_ticker_benaceur_cust_color_font" />
 								<div class="news-ticker-benaceur-colsel news-ticker-benaceur-cust-color-font_a"></div>
 							</div></div>
 						</td>
@@ -20,7 +20,7 @@
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" id="news-ticker-benaceur-color-back-input_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_cust_color_back_input)) { echo $ntb_cust_color_back_input; } else {echo "#9B005E";} ?>" name="news_ticker_benaceur_cust_color_back_input" />
+								<input type="text" id="news-ticker-benaceur-color-back-input_a" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_cust_color_back_input; ?>" name="news_ticker_benaceur_cust_color_back_input" />
 								<div class="news-ticker-benaceur-colsel news-ticker-benaceur-color-back-input_a"></div>
 							</div></div>
 						</td>
@@ -29,7 +29,7 @@
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" id="news-ticker-benaceur-cust-color-back-msg_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_cust_color_back_msg)) { echo $ntb_cust_color_back_msg; } else {echo "#B3006B";} ?>" name="news_ticker_benaceur_cust_color_back_msg" />
+								<input type="text" id="news-ticker-benaceur-cust-color-back-msg_a" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_cust_color_back_msg; ?>" name="news_ticker_benaceur_cust_color_back_msg" />
 								<div class="news-ticker-benaceur-colsel news-ticker-benaceur-cust-color-back-msg_a"></div>
 							</div></div>
 						</td>
@@ -38,7 +38,7 @@
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" id="news-ticker-benaceur-cust-color-switch-input_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_cust_color_switch_input)) { echo $ntb_cust_color_switch_input; } else {echo "#9B005E";} ?>" name="news_ticker_benaceur_cust_color_switch_input" />
+								<input type="text" id="news-ticker-benaceur-cust-color-switch-input_a" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_cust_color_switch_input; ?>" name="news_ticker_benaceur_cust_color_switch_input" />
 								<div class="news-ticker-benaceur-colsel news-ticker-benaceur-cust-color-switch-input_a"></div>
 							</div></div>
 						</td>
@@ -49,7 +49,7 @@
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" id="news-ticker-benaceur-cust-color-back_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_cust_color_back)) { echo $ntb_cust_color_back; } else {echo "#7A0049";} ?>" name="news_ticker_benaceur_cust_color_back" />
+								<input type="text" id="news-ticker-benaceur-cust-color-back_a" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_cust_color_back; ?>" name="news_ticker_benaceur_cust_color_back" />
 								<div class="news-ticker-benaceur-colsel news-ticker-benaceur-cust-color-back_a"></div>
 							</div></div>
 						</td>
@@ -58,7 +58,7 @@
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" id="news-ticker-benaceur-cust-color-font_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_cust_color_font)) { echo $ntb_cust_color_font; } else {echo "#FFFFFF";} ?>" name="news_ticker_benaceur_cust_color_font" />
+								<input type="text" id="news-ticker-benaceur-cust-color-font_a" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_cust_color_font; ?>" name="news_ticker_benaceur_cust_color_font" />
 								<div class="news-ticker-benaceur-colsel news-ticker-benaceur-cust-color-font_a"></div>
 							</div></div>
 						</td>
@@ -67,7 +67,7 @@
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" id="news-ticker-benaceur-color-back-input_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_cust_color_back_input)) { echo $ntb_cust_color_back_input; } else {echo "#9B005E";} ?>" name="news_ticker_benaceur_cust_color_back_input" />
+								<input type="text" id="news-ticker-benaceur-color-back-input_a" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_cust_color_back_input; ?>" name="news_ticker_benaceur_cust_color_back_input" />
 								<div class="news-ticker-benaceur-colsel news-ticker-benaceur-color-back-input_a"></div>
 							</div></div>
 						</td>
@@ -76,7 +76,7 @@
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" id="news-ticker-benaceur-cust-color-back-msg_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_cust_color_back_msg)) { echo $ntb_cust_color_back_msg; } else {echo "#B3006B";} ?>" name="news_ticker_benaceur_cust_color_back_msg" />
+								<input type="text" id="news-ticker-benaceur-cust-color-back-msg_a" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_cust_color_back_msg; ?>" name="news_ticker_benaceur_cust_color_back_msg" />
 								<div class="news-ticker-benaceur-colsel news-ticker-benaceur-cust-color-back-msg_a"></div>
 							</div></div>
 						</td>
@@ -85,7 +85,7 @@
 					<tr>
 						<td>
 							<div class="colwrap-display"><div class="news-ticker-benaceur-colwrap">
-								<input type="text" id="news-ticker-benaceur-cust-color-switch-input_a" class="news-ticker-benaceur-color-inp" value="<?php if (!empty($ntb_cust_color_switch_input)) { echo $ntb_cust_color_switch_input; } else {echo "#9B005E";} ?>" name="news_ticker_benaceur_cust_color_switch_input" />
+								<input type="text" id="news-ticker-benaceur-cust-color-switch-input_a" class="news-ticker-benaceur-color-inp" value="<?php echo $ntb_cust_color_switch_input; ?>" name="news_ticker_benaceur_cust_color_switch_input" />
 								<div class="news-ticker-benaceur-colsel news-ticker-benaceur-cust-color-switch-input_a"></div>
 							</div></div>
 						</td>

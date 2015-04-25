@@ -8,7 +8,7 @@ if ( current_user_can( 'administrator' ) )
 
 	global $current_user;
 	$user_id = $current_user->ID;
-    $nden_n = ntb_17_04_15_en_ntb;
+    $nden_n = ntb_25_04_15_en_ntb;
 	
 	if ( ! get_user_meta($user_id, 'NTB_notice_ignore_n') ) {
 		    ?>

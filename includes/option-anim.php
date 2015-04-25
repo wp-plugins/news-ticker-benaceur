@@ -4,7 +4,7 @@
                 <tr valign="top">
                     <th style="font-size: 13px;font-weight:normal;" scope="row"><?php _e('TimeOut', 'news-ticker-benaceur'); ?></th>
                     <td>
-					<div class="sm_benaceurlist_caps_input-ntb"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_timeout_tickerntb" value="<?php if (!empty($ntb_timeout_tickerntb)) { echo $ntb_timeout_tickerntb; } else {echo "5000";} ?>" /></div>
+					<div class="sm_benaceurlist_caps_input-ntb"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_timeout_tickerntb" value="<?php echo $ntb_timeout_tickerntb; ?>" /></div>
                    </td>
                 </tr>
 </table>
@@ -19,13 +19,13 @@
                 <tr valign="top">
                     <th style="font-size: 13px;font-weight:normal;" scope="row"><?php _e('Speed', 'news-ticker-benaceur'); ?></th>
                     <td>
-					<div class="sm_benaceurlist_caps_input-ntb"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_anim_speed_fade" value="<?php if (!empty($ntb_anim_speed_fade)) { echo $ntb_anim_speed_fade; } else {echo "500";} ?>" /></div>
+					<div class="sm_benaceurlist_caps_input-ntb"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_anim_speed_fade" value="<?php echo $ntb_anim_speed_fade; ?>" /></div>
                    </td>
                 </tr>
                 <tr valign="top">
                     <th style="font-size: 13px;font-weight:normal;" scope="row"><?php _e('TimeOut', 'news-ticker-benaceur'); ?></th>
                     <td>
-					<div class="sm_benaceurlist_caps_input-ntb"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_timeout_fade" value="<?php if (!empty($ntb_timeout_fade)) { echo $ntb_timeout_fade; } else {echo "3500";} ?>" /></div>
+					<div class="sm_benaceurlist_caps_input-ntb"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_timeout_fade" value="<?php echo $ntb_timeout_fade; ?>" /></div>
                    </td>
                 </tr>
 </table>
@@ -40,13 +40,13 @@
                 <tr valign="top">
                     <th style="font-size: 13px;font-weight:normal;" scope="row"><?php _e('Speed', 'news-ticker-benaceur'); ?></th>
                     <td>
-					<div class="sm_benaceurlist_caps_input-ntb"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_anim_speed_slide" value="<?php if (!empty($ntb_anim_speed_slide)) { echo $ntb_anim_speed_slide; } else {echo "500";} ?>" /></div>
+					<div class="sm_benaceurlist_caps_input-ntb"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_anim_speed_slide" value="<?php echo $ntb_anim_speed_slide; ?>" /></div>
                    </td>
                 </tr>
                 <tr valign="top">
                     <th style="font-size: 13px;font-weight:normal;" scope="row"><?php _e('TimeOut', 'news-ticker-benaceur'); ?></th>
                     <td>
-					<div class="sm_benaceurlist_caps_input-ntb"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_timeout_slide" value="<?php if (!empty($ntb_timeout_slide)) { echo $ntb_timeout_slide; } else {echo "3500";} ?>" /></div>
+					<div class="sm_benaceurlist_caps_input-ntb"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_timeout_slide" value="<?php echo $ntb_timeout_slide; ?>" /></div>
                    </td>
                 </tr>
 </table>
@@ -62,7 +62,7 @@
 <table class="form-table">
 					<tr>
 						<td>
-                   <input type="radio" name="news_ticker_benaceur_enable_jquerymin_slide_up_down" value="enable_jquery_min_sud" <?php if( $ntb_enable_jquerymin_slide_up_down == 'enable_jquery_min_sud' || $ntb_enable_jquerymin_slide_up_down == '')echo 'checked';?> >
+                   <input type="radio" name="news_ticker_benaceur_enable_jquerymin_slide_up_down" value="enable_jquery_min_sud" <?php if( $ntb_enable_jquerymin_slide_up_down == 'enable_jquery_min_sud')echo 'checked';?> >
                     <td><?php _e("Enable jquery-min (Disable if you have)",'news-ticker-benaceur'); ?></td>
 						</td>
 					</tr>
@@ -76,7 +76,7 @@
 <tr><td style="padding-top:0;padding-bottom:0;">------------</tr>
 					<tr>
 						<td>
-                   <input type="radio" name="news_ticker_benaceur_disa_img_n_scrollup" value="enable_img_n_scrollup" <?php if( $ntb_disa_img_n_scrollup == 'enable_img_n_scrollup' || $ntb_disa_img_n_scrollup == '')echo 'checked';?> >
+                   <input type="radio" name="news_ticker_benaceur_disa_img_n_scrollup" value="enable_img_n_scrollup" <?php if( $ntb_disa_img_n_scrollup == 'enable_img_n_scrollup')echo 'checked';?> >
                     <td><?php _e("Enable img next/prev",'news-ticker-benaceur'); ?></td>
 						</td>
 					</tr>
@@ -89,7 +89,7 @@
 <tr><td style="padding-top:0;padding-bottom:0;">------------</tr>
 					<tr>
 						<td>
-                   <input type="radio" name="news_ticker_benaceur_updown_slide_up_down" value="up_slide_u_d" <?php if( $ntb_updown_slide_up_down == 'up_slide_u_d' || $ntb_updown_slide_up_down == '')echo 'checked';?> >
+                   <input type="radio" name="news_ticker_benaceur_updown_slide_up_down" value="up_slide_u_d" <?php if( $ntb_updown_slide_up_down == 'up_slide_u_d')echo 'checked';?> >
                     <td><?php _e("Up",'news-ticker-benaceur'); ?></td>
 						</td>
 					</tr>
@@ -111,7 +111,7 @@
 				   </td>
                 </tr>
                 <tr>  
-                    <th style="font-size: 13px;font-weight:normal;" scope="row"><div class="dd"><?php _e('Autostart', 'news-ticker-benaceur'); ?></div></th>
+                    <th style="font-size: 13px;font-weight:normal;" scope="row"><div class="dd"><?php _e('Disable autostart', 'news-ticker-benaceur'); ?></div></th>
                     <td> 
 					<label class="switch-nab">				
 	                    <input type="checkbox" class="switch-input" name="news_ticker_benaceur_autostart_slide_up_down" value="1" <?php if( !empty($ntb_autostart_slide_up_down)) { echo 'checked="checked"'; } ?>/>
@@ -123,13 +123,13 @@
                 <tr valign="top">
                     <th style="font-size: 13px;font-weight:normal;" scope="row"><?php _e('TimeOut', 'news-ticker-benaceur'); ?></th>
                     <td>
-					<div class="sm_benaceurlist_caps_input-ntb"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_timeout_slide_up_down" value="<?php if (!empty($ntb_timeout_slide_up_down)) { echo $ntb_timeout_slide_up_down; } else {echo "4000";} ?>" /></div>
+					<div class="sm_benaceurlist_caps_input-ntb"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_timeout_slide_up_down" value="<?php echo $ntb_timeout_slide_up_down; ?>" /></div>
                    </td>
                 </tr>
                 <tr valign="top">
                     <th style="font-size: 13px;font-weight:normal;" scope="row"><?php _e('Speed', 'news-ticker-benaceur'); ?></th>
                     <td>
-					<div class="sm_benaceurlist_caps_input-ntb"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_speed_slide_up_down" value="<?php if (!empty($ntb_speed_slide_up_down)) { echo $ntb_speed_slide_up_down; } else {echo "450";} ?>" /></div>
+					<div class="sm_benaceurlist_caps_input-ntb"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_speed_slide_up_down" value="<?php echo $ntb_speed_slide_up_down; ?>" /></div>
                    </td>
                 </tr>
 </table>
@@ -143,7 +143,7 @@
 <table class="form-table">
 					<tr>
 						<td>
-                   <input type="radio" name="news_ticker_benaceur_enable_jquerymin_fadein" value="enable_jquery_min_fa" <?php if( $ntb_enable_jquerymin_fadein == 'enable_jquery_min_fa' || $ntb_enable_jquerymin_fadein == '')echo 'checked';?> >
+                   <input type="radio" name="news_ticker_benaceur_enable_jquerymin_fadein" value="enable_jquery_min_fa" <?php if( $ntb_enable_jquerymin_fadein == 'enable_jquery_min_fa')echo 'checked';?> >
                     <td><?php _e("Enable jquery-min (Disable if you have)",'news-ticker-benaceur'); ?></td>
 						</td>
 					</tr>
@@ -156,7 +156,7 @@
 <tr><td style="padding-top:0;padding-bottom:0;">------------</tr>
 					<tr>
 						<td>
-                   <input type="radio" name="news_ticker_benaceur_disa_img_n_fadein" value="enable_img_n_fadein" <?php if( $ntb_disa_img_n_fadein == 'enable_img_n_fadein' || $ntb_disa_img_n_fadein == '')echo 'checked';?> >
+                   <input type="radio" name="news_ticker_benaceur_disa_img_n_fadein" value="enable_img_n_fadein" <?php if( $ntb_disa_img_n_fadein == 'enable_img_n_fadein')echo 'checked';?> >
                     <td><?php _e("Enable img next/prev",'news-ticker-benaceur'); ?></td>
 						</td>
 					</tr>
@@ -170,7 +170,7 @@
                 <tr valign="top">
                     <th style="font-size: 13px;font-weight:normal;" scope="row"><?php _e('TimeOut', 'news-ticker-benaceur'); ?></th>
                     <td>
-					<div class="sm_benaceurlist_caps_input-ntb"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_timeout_fadein" value="<?php if (!empty($ntb_timeout_fadein)) { echo $ntb_timeout_fadein; } else {echo "4000";} ?>" /></div>
+					<div class="sm_benaceurlist_caps_input-ntb"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_timeout_fadein" value="<?php echo $ntb_timeout_fadein; ?>" /></div>
                    </td>
                 </tr>
                 <tr>  
@@ -184,7 +184,7 @@
 				   </td>
                 </tr>
                 <tr>  
-                    <th style="font-size: 13px;font-weight:normal;" scope="row"><div class="dd"><?php _e('Autostart', 'news-ticker-benaceur'); ?></div></th>
+                    <th style="font-size: 13px;font-weight:normal;" scope="row"><div class="dd"><?php _e('Disable autostart', 'news-ticker-benaceur'); ?></div></th>
                     <td> 
 					<label class="switch-nab">				
 	                    <input type="checkbox" class="switch-input" name="news_ticker_benaceur_autostart_fadein" value="1" <?php if( !empty($ntb_autostart_fadein)) { echo 'checked="checked"'; } ?>/>
@@ -205,7 +205,7 @@
                 <tr valign="top">
                     <th style="font-size: 13px;font-weight:normal;" scope="row"><?php _e('Speed', 'news-ticker-benaceur'); ?></th>
                     <td>
-					<div class="sm_benaceurlist_caps_input-ntb"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_speed_scrollntb" value="<?php if (!empty($ntb_speed_scrollntb)) { echo $ntb_speed_scrollntb; } else {echo "17";} ?>" /></div>
+					<div class="sm_benaceurlist_caps_input-ntb"><input style="font-weight:bold;max-width:100px;text-align:center;" type="text" name="news_ticker_benaceur_speed_scrollntb" value="<?php echo $ntb_speed_scrollntb; ?>" /></div>
                    </td>
                 </tr>
 </table>
