@@ -3,7 +3,7 @@
 Plugin Name: news ticker benaceur
 Plugin URI: http://benaceur-php.com/
 Description: This plugin allow you to display the latest news or latest articles in a bar with four beautiful animations...
-Version: 2.2.1
+Version: 2.2.2
 Author: benaceur
 Author URI: http://benaceur-php.com/
 License: GPL2
@@ -395,7 +395,7 @@ $wp_admin_bar->add_menu( array( 'parent' => 'site-name', 'id' => 'PLB_ntb8', 'ti
     function news_ticker_benaceur_admin_notices() {
     $add_notice_admin = true;
 	
-	if ( true === $add_notice_admin ) { 
+	if ( false === $add_notice_admin ) { 
     if ( $GLOBALS['pagenow'] == 'options-general.php' && $_GET['page'] == 'news-ticker-benaceur' ) {
     include ('includes/notices-ntb.php');
     }
